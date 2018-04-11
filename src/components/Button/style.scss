@@ -1,0 +1,28 @@
+@import "../../config/styles";
+
+.btn {
+	color: white;
+	height: 40px;
+	border-width: 0;
+	text-transform: lowercase;
+	font-size: 12px;
+	font-weight: 600;
+	padding: 0 20px 0 20px;
+	cursor: pointer;
+	margin-bottom: 10px;
+
+	&-primary {
+		background-color: $primary; 
+	}
+
+	&-secondary {
+		background-color: $secondary; 
+	}
+
+	@include hover-state {
+		outline: 0;
+		background-color: $secondary;
+	}
+
+	@include transition (all, .75s, ease)
+}
