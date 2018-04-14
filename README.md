@@ -1,4 +1,4 @@
-# mondrian
+# genie
 
 creative labs spring 2018
 
