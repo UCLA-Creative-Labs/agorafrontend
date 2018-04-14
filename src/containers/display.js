@@ -15,7 +15,7 @@ class Display extends React.Component {
 
 		return (
 			<div className="display">
-				<Button label="Find a Ride" color="primary" onClick={onClickNull} />
+				<Button label="hello" color="primary" onClick={onClickNull} />
 			</div>
 		);
 	}
