@@ -1,24 +1,23 @@
-import React from "react";
+import React from 'react';
 
-import Button from "../components/Button";
+import Button from '../components/Button';
 
 class Display extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-	render() {
+  render() {
+    const onClickNull
+      = () => {};
 
-		const onClickNull =
-			() => {}
-
-		return (
-			<div className="display">
-				<Button label="hello" color="primary" onClick={onClickNull} />
-			</div>
-		);
-	}
+    return (
+      <div className="display">
+        <Button label="hello" color="primary" onClick={onClickNull} />
+      </div>
+    );
+  }
 }
 
 

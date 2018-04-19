@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import Display from "./display";
+import Display from './display';
 
 class Home extends React.Component {
   constructor(props) {

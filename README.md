@@ -12,4 +12,5 @@ yarn install
 
 ```
 yarn start
+yarn watch-css
 ```
