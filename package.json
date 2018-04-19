@@ -17,7 +17,7 @@
     "build": "npm run build-css && npm run build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.js --ignore-pattern node_modules/"
+    "lint": "eslint ./src --ext .js --ignore-pattern node_modules/"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
