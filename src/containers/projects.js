@@ -2,6 +2,7 @@ import React from 'react';
 import { PROJECTS } from '../config/config';
 
 import Card from '../components/Card';
+import Header from '../components/Header';
 
 class Projects extends React.Component {
   constructor(props) {
@@ -25,11 +26,11 @@ class Projects extends React.Component {
 
   render() {
     const projectsStyle = {
-      margin: '4rem',
+      margin: '0 4rem 4rem 4rem',
     };
 
     const quarterContainerStyle = {
-      margin: '5rem 0 5rem 0',
+      margin: '3rem 0 5rem 0',
     };
 
     const projectsContainerStyle = {
@@ -41,6 +42,7 @@ class Projects extends React.Component {
 
     return (
       <div style={projectsStyle}>
+        <Header links={[{ name: 'swag' }, { name: 'yuh' }]} />
         {this.state.projects.map((quarter, i) => (
           <div key={i} style={quarterContainerStyle}>
             <h1>{quarter.name}</h1>
