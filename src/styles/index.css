@@ -12,7 +12,9 @@ body {
   font-weight: 600;
   padding: 0 20px 0 20px;
   cursor: pointer;
-  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: .5rem;
+  box-shadow: 0rem 0rem 2rem .1rem #7f8c8d;
   -webkit-transition: all 0.75s ease;
   -moz-transition: all 0.75s ease;
   -ms-transition: all 0.75s ease;

@@ -25,25 +25,32 @@ class Projects extends React.Component {
 
   render() {
     const projectsStyle = {
-      margin: '50px',
+      margin: '4rem',
+    };
+
+    const quarterContainerStyle = {
+      margin: '5rem 0 5rem 0',
     };
 
     const projectsContainerStyle = {
       display: 'flex',
       flexWrap: 'wrap',
-      justifyContent: 'center',
+      justifyContent: 'space-between',
+      alignItems: 'space-between',
     };
 
     return (
       <div style={projectsStyle}>
-        <h1>projects / fall 2017</h1>
-        <div style={projectsContainerStyle}>
-          {this.state.projects.map((project, index) => {
-            return (
-              <Card project={project} key={index} />
-            );
-          })}
-        </div>
+        {this.state.projects.map((quarter, i) => (
+          <div key={i} style={quarterContainerStyle}>
+            <h1>{quarter.name}</h1>
+            <div style={projectsContainerStyle}>
+              {quarter.projects.map((project, j) => (
+                <Card project={project} key={j} />
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     );
   }
