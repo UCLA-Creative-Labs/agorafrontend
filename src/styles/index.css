@@ -25,3 +25,18 @@ body {
   .btn:hover, .btn:active, .btn:focus {
     outline: 0;
     background-color: #ffd69e; }
+
+.card {
+  background-color: #fff;
+  border-radius: .5rem;
+  box-shadow: 0rem 0rem 2rem .1rem #7f8c8d;
+  margin: 2rem 1.5rem .5rem 1.5rem;
+  max-width: 25rem; }
+  .card img {
+    max-width: 100%;
+    border-radius: .5rem .5rem 0rem 0rem; }
+  .card .body {
+    padding: 1rem 1rem; }
+    .card .body h1 {
+      color: black;
+      margin: 0; }

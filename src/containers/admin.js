@@ -1,8 +1,6 @@
 import React from 'react';
 
-import Landing from './landing';
-
-class Home extends React.Component {
+class Admin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -11,11 +9,10 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <h1>home</h1>
-        <Landing />
+        <h1>admin</h1>
       </div>
     );
   }
 }
 
-export default Home;
+export default Admin;

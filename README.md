@@ -1,6 +1,6 @@
-# genie
+# agorafrontend
 
-creative labs spring 2018
+creative labs
 
 ## setup
 
