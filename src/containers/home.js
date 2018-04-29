@@ -9,24 +9,10 @@ class Home extends React.Component {
   }
 
   render() {
-    const landingContainerStyle = {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '100%',
-      height: '400px',
-    };
-
-    const homeStyle = {
-      margin: '50px',
-    };
-
     return (
-      <div style={homeStyle}>
+      <div>
         <h1>home</h1>
-        <div style={landingContainerStyle}>
-          <Landing />
-        </div>
+        <Landing />
       </div>
     );
   }

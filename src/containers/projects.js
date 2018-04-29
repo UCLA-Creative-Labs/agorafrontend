@@ -1,12 +1,7 @@
 import React from 'react';
-import { push } from 'react-router-redux';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-
 import { PROJECTS } from '../config/config';
 
 import Card from '../components/Card';
-import Header from '../components/Header';
 
 class Projects extends React.Component {
   constructor(props) {
@@ -30,61 +25,28 @@ class Projects extends React.Component {
 
   render() {
     const projectsStyle = {
-      margin: '0 4rem 4rem 4rem',
-    };
-
-    const quarterContainerStyle = {
-      margin: '3rem 0 5rem 0',
+      margin: '50px',
     };
 
     const projectsContainerStyle = {
       display: 'flex',
       flexWrap: 'wrap',
-      justifyContent: 'space-between',
-      alignItems: 'space-between',
+      justifyContent: 'center',
     };
-
-    const onClickNav = path => this.props.navigate(path);
-
-    const headerPaths = [
-      {
-        name: 'home',
-        onClick: () => onClickNav('/')
-      },
-      {
-        name: 'about',
-        onClick: () => onClickNav('/about')
-      },
-    ];
 
     return (
       <div style={projectsStyle}>
-        <Header links={headerPaths} />
-        {this.state.projects.map((quarter, i) => (
-          <div key={i} style={quarterContainerStyle}>
-            <h1>{quarter.name}</h1>
-            <div style={projectsContainerStyle}>
-              {quarter.projects.map((project, j) => (
-                <Card project={project} key={j} />
-              ))}
-            </div>
-          </div>
-        ))}
+        <h1>projects / fall 2017</h1>
+        <div style={projectsContainerStyle}>
+          {this.state.projects.map((project, index) => {
+            return (
+              <Card project={project} key={index} />
+            );
+          })}
+        </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  ...state.user,
-});
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      navigate: link => push(link),
-    },
-    dispatch
-  );
-
-export default connect(mapStateToProps, mapDispatchToProps)(Projects);
+export default Projects;
