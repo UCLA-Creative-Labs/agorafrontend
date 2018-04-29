@@ -3,8 +3,13 @@ import React from 'react';
 const Header = props => (
   <div className="hdr">
     {props.links.map((link, i) => (
-      <div className="link">
-        <p key={i}>{link.name}</p>
+      <div
+        role="presentation"
+        className="link"
+        onClick={link.onClick}
+        key={i}
+      >
+        <p>{link.name}</p>
       </div>
     ))}
   </div>

@@ -1,4 +1,8 @@
 import React from 'react';
+import { push } from 'react-router-redux';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
 import { PROJECTS } from '../config/config';
 
 import Card from '../components/Card';
@@ -40,9 +44,22 @@ class Projects extends React.Component {
       alignItems: 'space-between',
     };
 
+    const onClickNav = path => this.props.navigate(path);
+
+    const headerPaths = [
+      {
+        name: 'home',
+        onClick: () => onClickNav('/')
+      },
+      {
+        name: 'about',
+        onClick: () => onClickNav('/about')
+      },
+    ];
+
     return (
       <div style={projectsStyle}>
-        <Header links={[{ name: 'swag' }, { name: 'yuh' }]} />
+        <Header links={headerPaths} />
         {this.state.projects.map((quarter, i) => (
           <div key={i} style={quarterContainerStyle}>
             <h1>{quarter.name}</h1>
@@ -58,4 +75,16 @@ class Projects extends React.Component {
   }
 }
 
-export default Projects;
+const mapStateToProps = state => ({
+  ...state.user,
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      navigate: link => push(link),
+    },
+    dispatch
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(Projects);
