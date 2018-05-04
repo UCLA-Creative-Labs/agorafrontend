@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 
 import { PROJECTS } from '../config/config';
 
-import Card from '../components/Card';
 import Header from '../components/Header';
+import Project from '../components/Project';
 
 class Projects extends React.Component {
   constructor(props) {
@@ -40,8 +40,9 @@ class Projects extends React.Component {
     const projectsContainerStyle = {
       display: 'flex',
       flexWrap: 'wrap',
-      justifyContent: 'space-between',
+      justifyContent: 'start',
       alignItems: 'space-between',
+      flexDirection: 'row',
     };
 
     const onClickNav = path => this.props.navigate(path);
@@ -66,7 +67,7 @@ class Projects extends React.Component {
               <h1>{quarter.name}</h1>
               <div style={projectsContainerStyle}>
                 {quarter.projects.map((project, j) => (
-                  <Card title={project.title} alt="A Day in LA" text={project.text} key={j} img="https://www.gettyimages.ie/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg" />
+                  <Project title={project.title} alt="A Day in LA" description={project.text} key={j} img="https://www.gettyimages.ie/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg" />
                 ))}
               </div>
             </div>
