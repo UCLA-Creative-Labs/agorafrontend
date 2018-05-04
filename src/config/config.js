@@ -43,4 +43,27 @@ const PROJECTS = [
   },
 ];
 
-export { PROJECTS };
+const CURRENT_PROJECTS = [
+    {
+      title: 'home',
+      text: 'An interactive visual, audio, and animated experience that takes you around some of our favorite spots in LA.'
+    },
+    {
+      title: 'fashion lookbook',
+      text: 'An interactive visual, audio, and animated experience that takes you around some of our favorite spots in LA.'
+    },
+    {
+      title: 'zine',
+      text: 'An interactive visual, audio, and animated experience that takes you around some of our favorite spots in LA.'
+    },
+    {
+      title: 'VR game',
+      text: 'An interactive visual, audio, and animated experience that takes you around some of our favorite spots in LA.'
+    },
+    {
+      title: 'WebGL intro',
+      text: 'An interactive visual, audio, and animated experience that takes you around some of our favorite spots in LA.'
+    },
+];
+
+export { PROJECTS, CURRENT_PROJECTS };
