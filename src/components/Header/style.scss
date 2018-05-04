@@ -6,11 +6,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FFFFF3;
   flex-direction: column; 
+  padding: 1rem 0 0 0;
 
   .title {
     @include font-primary();
+    margin: 0;
   }
 
   .links_container {
@@ -20,18 +21,21 @@
     .link {
       display: flex;
       margin: 0 2rem 0 2rem;
-  
-      @include hover-state {
-        outline: 0;
-        color: $secondary;
-      }
+      height: fit-content;
       
-      @include transition (all, .75s, ease);
-  
       p {
         flex: 1;
+        margin: 0;
         @include font-secondary();
+
+        @include hover-state {
+          outline: 0;
+          color: $secondary;
+        }
+
+        @include transition (all, .75s, ease);
       }
+
     }
 
   }

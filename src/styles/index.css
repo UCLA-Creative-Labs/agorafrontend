@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald|Quattrocento");
 @import url("https://fonts.googleapis.com/css?family=Oswald|Quattrocento");
 @import url("https://fonts.googleapis.com/css?family=Oswald|Quattrocento");
+@import url("https://fonts.googleapis.com/css?family=Oswald|Quattrocento");
 body {
   margin: 0;
   padding: 0;
@@ -57,26 +58,46 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FFFFF3;
-  flex-direction: column; }
+  flex-direction: column;
+  padding: 1rem 0 0 0; }
   .hdr .title {
     color: #0A0B12;
-    font-family: "Oswald", sans-serif; }
+    font-family: "Oswald", sans-serif;
+    margin: 0; }
   .hdr .links_container {
     display: flex;
     flex-direction: row; }
     .hdr .links_container .link {
       display: flex;
       margin: 0 2rem 0 2rem;
-      -webkit-transition: all 0.75s ease;
-      -moz-transition: all 0.75s ease;
-      -ms-transition: all 0.75s ease;
-      -o-transition: all 0.75s ease;
-      transition: all 0.75s ease; }
-      .hdr .links_container .link:hover, .hdr .links_container .link:active, .hdr .links_container .link:focus {
-        outline: 0;
-        color: #ffd69e; }
+      height: fit-content; }
       .hdr .links_container .link p {
         flex: 1;
+        margin: 0;
         color: #7B7B7B;
-        font-family: "Quattrocentro", serif; }
+        font-family: "Quattrocentro", serif;
+        -webkit-transition: all 0.75s ease;
+        -moz-transition: all 0.75s ease;
+        -ms-transition: all 0.75s ease;
+        -o-transition: all 0.75s ease;
+        transition: all 0.75s ease; }
+        .hdr .links_container .link p:hover, .hdr .links_container .link p:active, .hdr .links_container .link p:focus {
+          outline: 0;
+          color: #ffd69e; }
+
+.project {
+  width: 50%;
+  margin: 4rem 0 7rem 0; }
+  .project img {
+    width: 100%; }
+  .project .body {
+    padding: 1rem 1rem; }
+    .project .body h1 {
+      color: black;
+      margin: 0;
+      color: #0A0B12;
+      font-family: "Oswald", sans-serif; }
+    .project .body p {
+      color: #7B7B7B;
+      font-family: "Quattrocentro", serif;
+      margin: 0; }
