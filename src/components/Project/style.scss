@@ -1,0 +1,25 @@
+@import "../../config/styles";
+
+.project {
+  width: 50%;
+  margin: 4rem 0 7rem 0;
+
+  img {
+    width: 100%;
+  }
+
+  .body {
+    padding: 1rem 1rem;
+
+    h1 {
+      color:black;
+      margin: 0;
+      @include font-primary();
+    }
+
+    p {
+      @include font-secondary();
+      margin: 0;
+    }
+  }
+}
