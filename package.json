@@ -61,6 +61,7 @@
     "build-css": "node-sass-chokidar src/styles/index.scss -o src/styles",
     "watch-css": "npm run build-css && node-sass-chokidar src/styles/index.scss -o src/styles --watch --recursive",
     "start": "node scripts/start.js",
+    "start-admin": "node scripts/start-admin.js",
     "build-js": "node scripts/build.js",
     "build": "npm run build-css && npm run build-js",
     "test": "jest",
