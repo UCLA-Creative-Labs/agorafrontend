@@ -26,5 +26,5 @@
 		background-color: $secondary;
 	}
 
-	@include transition (all, .75s, ease)
+	@include transition (all, .75s, ease);
 }

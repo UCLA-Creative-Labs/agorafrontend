@@ -1,5 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Quattrocento');
+
 $primary: #ff7575;
 $secondary: #ffd69e;
+
+$font-primary: 'Oswald', sans-serif;
+$font-secondary: 'Quattrocentro', serif;
+
+$font-primary-color: #0A0B12;
+$font-secondary-color: #7B7B7B;
+
+@mixin font-primary {
+    color: $font-primary-color;
+    font-family: $font-primary;
+}
+
+@mixin font-secondary {
+    color: $font-secondary-color;
+    font-family: $font-secondary;
+}
 
 @mixin hover-state {
     &:hover, &:active, &:focus {

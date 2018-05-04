@@ -59,7 +59,7 @@ class Projects extends React.Component {
 
     return (
       <div>
-        <Header links={headerPaths} />
+        <Header title="Projects" links={headerPaths} />
         <div style={projectsStyle}>
           {this.state.projects.map((quarter, i) => (
             <div key={i} style={quarterContainerStyle}>

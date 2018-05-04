@@ -18,6 +18,11 @@
     h1 {
       color:black;
       margin: 0;
+      @include font-primary();
+    }
+
+    p {
+      @include font-secondary();
     }
   }
   

@@ -7,20 +7,33 @@
   justify-content: center;
   align-items: center;
   background-color: #FFFFF3;
+  flex-direction: column; 
 
-  .link {
-    display: flex;
-    margin: 0 2rem 0 2rem;
-
-    @include hover-state {
-      outline: 0;
-      color: $secondary;
-    }
-    
-    @include transition (all, .75s, ease)
-
-    p {
-      flex: 1;
-    }
+  .title {
+    @include font-primary();
   }
+
+  .links_container {
+    display: flex;
+    flex-direction: row;
+
+    .link {
+      display: flex;
+      margin: 0 2rem 0 2rem;
+  
+      @include hover-state {
+        outline: 0;
+        color: $secondary;
+      }
+      
+      @include transition (all, .75s, ease);
+  
+      p {
+        flex: 1;
+        @include font-secondary();
+      }
+    }
+
+  }
+
 }

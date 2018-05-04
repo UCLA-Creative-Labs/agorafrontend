@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald|Quattrocento");
+@import url("https://fonts.googleapis.com/css?family=Oswald|Quattrocento");
+@import url("https://fonts.googleapis.com/css?family=Oswald|Quattrocento");
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: 'Oswald', sans-serif; }
 
 .btn {
   color: white;
@@ -41,7 +44,12 @@ body {
     padding: 1rem 1rem; }
     .card .body h1 {
       color: black;
-      margin: 0; }
+      margin: 0;
+      color: #0A0B12;
+      font-family: "Oswald", sans-serif; }
+    .card .body p {
+      color: #7B7B7B;
+      font-family: "Quattrocentro", serif; }
 
 .hdr {
   width: 100%;
@@ -49,17 +57,26 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FFFFF3; }
-  .hdr .link {
+  background-color: #FFFFF3;
+  flex-direction: column; }
+  .hdr .title {
+    color: #0A0B12;
+    font-family: "Oswald", sans-serif; }
+  .hdr .links_container {
     display: flex;
-    margin: 0 2rem 0 2rem;
-    -webkit-transition: all 0.75s ease;
-    -moz-transition: all 0.75s ease;
-    -ms-transition: all 0.75s ease;
-    -o-transition: all 0.75s ease;
-    transition: all 0.75s ease; }
-    .hdr .link:hover, .hdr .link:active, .hdr .link:focus {
-      outline: 0;
-      color: #ffd69e; }
-    .hdr .link p {
-      flex: 1; }
+    flex-direction: row; }
+    .hdr .links_container .link {
+      display: flex;
+      margin: 0 2rem 0 2rem;
+      -webkit-transition: all 0.75s ease;
+      -moz-transition: all 0.75s ease;
+      -ms-transition: all 0.75s ease;
+      -o-transition: all 0.75s ease;
+      transition: all 0.75s ease; }
+      .hdr .links_container .link:hover, .hdr .links_container .link:active, .hdr .links_container .link:focus {
+        outline: 0;
+        color: #ffd69e; }
+      .hdr .links_container .link p {
+        flex: 1;
+        color: #7B7B7B;
+        font-family: "Quattrocentro", serif; }
