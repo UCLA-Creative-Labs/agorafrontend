@@ -58,18 +58,20 @@ class Projects extends React.Component {
     ];
 
     return (
-      <div style={projectsStyle}>
+      <div>
         <Header links={headerPaths} />
-        {this.state.projects.map((quarter, i) => (
-          <div key={i} style={quarterContainerStyle}>
-            <h1>{quarter.name}</h1>
-            <div style={projectsContainerStyle}>
-              {quarter.projects.map((project, j) => (
-                <Card project={project} key={j} />
-              ))}
+        <div style={projectsStyle}>
+          {this.state.projects.map((quarter, i) => (
+            <div key={i} style={quarterContainerStyle}>
+              <h1>{quarter.name}</h1>
+              <div style={projectsContainerStyle}>
+                {quarter.projects.map((project, j) => (
+                  <Card title={project.title} alt="A Day in LA" text={project.text} key={j} img="https://www.gettyimages.ie/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg" />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     );
   }
