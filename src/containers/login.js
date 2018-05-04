@@ -90,6 +90,12 @@ class Login extends React.Component {
 	  }
 	}
 
+	componentDidUpdate(){
+		if(this.state.loggedin){
+			this.props.navigate('/dashboard');
+		}
+	}
+
 	async onSubmit(e){
     const state = Object.assign({}, this.state);
     // createAccount(state);
@@ -101,7 +107,10 @@ class Login extends React.Component {
     }
 
     if(data.confirm){
-    	this.setState({ confirm: data.confirm });
+    	this.setState({ 
+    		confirm: data.confirm, 
+    		loggedin: true,
+    	});
     }
   }
 
