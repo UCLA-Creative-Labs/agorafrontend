@@ -48,7 +48,8 @@ body {
   height: 4rem;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  background-color: #FFFFF3; }
   .hdr .link {
     display: flex;
     margin: 0 2rem 0 2rem;
