@@ -43,4 +43,22 @@ const PROJECTS = [
   },
 ];
 
-export { PROJECTS };
+const USERS = [
+  {
+    last_name: 'wong',
+    first_name: 'bryan',
+    username: 'bwong'
+  },
+  {
+    last_name: 'yu',
+    first_name: 'michael',
+    username: 'mnyu'
+  },
+  {
+    last_name: 'xu',
+    first_name: 'alex',
+    username: 'xual'
+  },
+];
+
+export { PROJECTS, USERS };
