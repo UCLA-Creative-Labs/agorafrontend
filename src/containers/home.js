@@ -1,12 +1,21 @@
 import React from 'react';
 
 import Landing from './landing';
+import SButton from '../components/Steven_Button/index';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      number: 0,
+    };
   }
+
+  handleClick() {
+      this.setState({
+        number: (this.state.number+1),
+      });
+    }
 
   render() {
     const landingContainerStyle = {
@@ -26,6 +35,9 @@ class Home extends React.Component {
         <h1>home</h1>
         <div style={landingContainerStyle}>
           <Landing />
+        </div>
+        <div style={landingContainerStyle}>
+          <SButton onClick={() => this.handleClick()} value={this.state.number}/>
         </div>
       </div>
     );
