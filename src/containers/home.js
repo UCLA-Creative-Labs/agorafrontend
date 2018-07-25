@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Landing from './landing';
+import FormItem from '../components/FormItem';
 
 class Home extends React.Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class Home extends React.Component {
         <h1>home</h1>
         <div style={landingContainerStyle}>
           <Landing />
+          <FormItem type="bool" title="Do you want to donate a swipe?" />
         </div>
       </div>
     );
