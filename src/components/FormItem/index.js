@@ -9,38 +9,36 @@ class FormItem extends React.Component {
 
 	checkbox(id, text) {
 		return (
-			<form>
+			<fieldset>
 				<input type="checkbox" id={id} name={text} className="click" />
 				<label htmlFor={id}>{text}</label>
-			</form>
+			</fieldset>
 		);
 	}
 
 	short_resp(id, text) {
 		return (
-			<form>
+			<fieldset>
 				<label htmlFor={id}>{text}</label>
 				<br />
 				<input type="text" id={id} name={text} />
-			</form>
+			</fieldset>
 		);
 	}
 
 	long_resp(id, text) {
 		return (
-			<form>
+			<fieldset>
 				<label htmlFor={id}>{text}</label>
 				<br />
 				<textarea name={text} id={id} cols="40" rows="5"></textarea>
 				<br />
-				<input type="submit" className="click" />
-			</form>
+			</fieldset>
 		);
 	}
 
 	bool(yesID, noID, text) {
 		return (
-			<form>
 				<fieldset>
 					<legend>{text}</legend>
 					<input type="radio" name={text} id={yesID} value="1" className="click" />
@@ -48,7 +46,6 @@ class FormItem extends React.Component {
 					<input type="radio" name={text} id={noID} value="0" className="click" />
 					<label htmlFor={noID}>No</label>
 				</fieldset>
-			</form>
 		);
 	}
 
@@ -79,7 +76,6 @@ class FormItem extends React.Component {
 				displayType = null;
 				break;
 		}
-
 		return (displayType);
 	}
 }
