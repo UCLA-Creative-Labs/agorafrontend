@@ -7,45 +7,50 @@ class FormItem extends React.Component {
 		this.state = {};
 	}
 
-	checkbox(id, text) {
+	checkbox(id, text, reqResponse) {
 		return (
 			<fieldset>
-				<input type="checkbox" id={id} name={text} className="click" />
+				{reqResponse ? <input type="checkbox" id={id} name={text} className="click" required/>
+				: <input type="checkbox" id={id} name={text} className="click" />}
 				<label htmlFor={id}>{text}</label>
 			</fieldset>
 		);
 	}
 
-	short_resp(id, text) {
+	short_resp(id, text, reqResponse) {
 		return (
 			<fieldset>
 				<label htmlFor={id}>{text}</label>
 				<br />
-				<input type="text" id={id} name={text} />
+				{reqResponse ? <input type="text" id={id} name={text} required/>
+				: <input type="text" id={id} name={text} />}
 			</fieldset>
 		);
 	}
 
-	long_resp(id, text) {
+	long_resp(id, text, reqResponse) {
 		return (
 			<fieldset>
 				<label htmlFor={id}>{text}</label>
 				<br />
-				<textarea name={text} id={id} cols="40" rows="5"></textarea>
+				{reqResponse ? <textarea name={text} id={id} cols="40" rows="5" required></textarea>
+				: <textarea name={text} id={id} cols="40" rows="5"></textarea>}
 				<br />
 			</fieldset>
 		);
 	}
 
-	bool(yesID, noID, text) {
+	bool(yesID, noID, text, reqResponse) {
 		return (
-				<fieldset>
-					<legend>{text}</legend>
-					<input type="radio" name={text} id={yesID} value="1" className="click" />
-					<label htmlFor={yesID}>Yes</label>
-					<input type="radio" name={text} id={noID} value="0" className="click" />
-					<label htmlFor={noID}>No</label>
-				</fieldset>
+			<fieldset>
+				<legend>{text}</legend>
+				{reqResponse ? <input type="radio" name={text} id={yesID} value="1" className="click" required/>
+				: <input type="radio" name={text} id={yesID} value="1" className="click" />}
+				<label htmlFor={yesID}>Yes</label>
+				{reqResponse ? <input type="radio" name={text} id={noID} value="0" className="click" required/>
+				: <input type="radio" name={text} id={noID} value="0" className="click" />}
+				<label htmlFor={noID}>No</label>
+			</fieldset>
 		);
 	}
 
@@ -53,24 +58,25 @@ class FormItem extends React.Component {
 		let displayType;
 		let text = this.props.title;
 		let itemID = this.props.title;
+		let reqResponse = (this.props.required) ? true : false;
 		switch (this.props.type) {
 			case 'checkbox':
 				itemID += ' checkbox';
-				displayType = this.checkbox(itemID, text);
+				displayType = this.checkbox(itemID, text, reqResponse);
 				break;
 			case 'short_resp':
 				itemID += ' short_resp';
-				displayType = this.short_resp(itemID, text);
+				displayType = this.short_resp(itemID, text, reqResponse);
 				break;
 			case 'long_resp':
 				itemID += ' long_resp';
-				displayType = this.long_resp(itemID, text);
+				displayType = this.long_resp(itemID, text, reqResponse);
 				break;
 			case 'bool':
 				itemID += ' bool';
 				let yes = itemID + ' yes';
 				let no = itemID + ' no';
-				displayType = this.bool(yes, no, text);
+				displayType = this.bool(yes, no, text, reqResponse);
 				break;
 			default:
 				displayType = null;

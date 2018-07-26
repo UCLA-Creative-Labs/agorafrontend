@@ -17,12 +17,15 @@ class About extends React.Component {
         <h1>about</h1>
 
         <form>
-          <FormItem type="long_resp" title="Tell me about yourself." /><br />
-          <FormItem type="short_resp" title="First name:" /><br />
-          <FormItem type="checkbox" title="I understand the terms of this agreement." /><br />
-          <FormItem type="bool" title="Do you want to donate a swipe?" /><br />
+
+          <FormItem type="long_resp" title="Tell me about yourself." required={true}/>
+          <FormItem type="short_resp" title="First name:" required={true}/>
+          <FormItem type="checkbox" title="I understand the terms of this agreement." required={true}/>
+          <FormItem type="bool" title="Do you want to donate a swipe?" required={true}/>
+
+          <input type="submit" className="click" />
         </form>
-        
+
       </div>
     );
   }
