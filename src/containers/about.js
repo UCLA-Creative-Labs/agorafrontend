@@ -13,7 +13,7 @@ class About extends React.Component {
       margin: '4rem',
     };
 
-    let optionsArr = ['What\'s your name?', 'How are you?']
+    const optionsArr = ['What\'s your name?', 'How are you?'];
     function try_me() {
       console.log("HELLO!");
     }

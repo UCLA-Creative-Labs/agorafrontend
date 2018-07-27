@@ -1,6 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/*
+	FormItem component is for creating entries/input areas within a Form component.
+
+	Takes 4 props:
+	- type (REQUIRED STRING): Sets the type of entry/input area. Currently only supports 4 options: 'checkbox'
+	(self-explanatory), 'short_resp' (a short response field, i.e. for identification info. like 'First Name', 'Last Name'
+	, etc), 'long_resp' (a long response field, i.e. for essay questions), and 'bool' (for questions that can only be
+	answered with 1 option, i.e. 'Yes or No' prompts)
+	- title (REQUIRED STRING): Sets the title of the overall form item.
+	- required (OPTIONAL BOOLEAN): Setting this to {true} causes the entry/input area to be required (user must fill out).
+	By default, entry/input areas are not required.
+	- options (OPTIONAL ARRAY OF STRINGS): Sets the available options/prompts of the overall form item. For example,
+	if this.props.options = ['First Name', 'Last Name'], and we're using a FormItem component of type 'short_resp', then
+	we would have something like: 
+
+	First Name 
+	[              ]
+	Last name
+	[              ]
+
+	Basically, the options prop defines all of the possible options/prompts. If this was a FormItem component of type
+	'bool' and this.props.options = ['yes', 'no', 'maybe so'], we would have something like:
+
+	[ ] yes
+	[ ] no
+	[ ] maybe so
+*/
+
 class FormItem extends React.Component {
 	constructor(props) {
 		super(props);
@@ -21,9 +49,10 @@ class FormItem extends React.Component {
 		return (
 			<div key={id}>
 				<label htmlFor={id}>{option}</label>
-				<br />
-				{reqResponse ? <input type="text" id={id} name={title} required/>
-				: <input type="text" id={id} name={title} />}
+				<div>
+					{reqResponse ? <input type="text" id={id} name={title} required/>
+					: <input type="text" id={id} name={title} />}
+				</div>
 			</div>
 		);
 	}
@@ -32,10 +61,10 @@ class FormItem extends React.Component {
 		return (
 			<div key={id}>
 				<label htmlFor={id}>{option}</label>
-				<br />
-				{reqResponse ? <textarea name={title} id={id} cols="40" rows="5" required></textarea>
-				: <textarea name={title} id={id} cols="40" rows="5"></textarea>}
-				<br />
+				<div>
+					{reqResponse ? <textarea name={title} id={id} cols="40" rows="5" required></textarea>
+					: <textarea name={title} id={id} cols="40" rows="5"></textarea>}
+				</div>
 			</div>
 		);
 	}
@@ -86,12 +115,12 @@ class FormItem extends React.Component {
 	}
 
 	render() {
-		if (!(this.props.type || this.props.title || this.props.required || this.props.options)) {
+		const {type, title, required, options} = this.props;
+		if (!(type || title || required || options)) {
 			return (null);
 		}
-		let reqResponse = (this.props.required) ? true : false;
-		let optionsArr = (this.props.options) ? this.props.options : [];
-		let displayType = this.displayWrapper(this.props.type, this.props.title, reqResponse, optionsArr);
+		const optionsArr = options ? options : [];
+		const displayType = this.displayWrapper(type, title, required, optionsArr);
 		return (displayType);
 	}
 }
