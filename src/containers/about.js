@@ -12,16 +12,20 @@ class About extends React.Component {
       margin: '4rem',
     };
 
+    let optionsArr = ['What\'s your name?', 'How are you?']
+
     return (
       <div style={aboutStyle}>
         <h1>about</h1>
 
         <form>
 
-          <FormItem type="long_resp" title="Tell me about yourself." required={true}/>
-          <FormItem type="short_resp" title="First name:" required={true}/>
-          <FormItem type="checkbox" title="I understand the terms of this agreement." required={true}/>
-          <FormItem type="bool" title="Do you want to donate a swipe?" required={true}/>
+
+          <FormItem type="long_resp" title="Tell me about yourself." required={true} options={optionsArr}/>
+          <FormItem type="short_resp" title="First name:" required={true} options={optionsArr}/>
+          <FormItem type="checkbox" title="I understand the terms of this agreement." required={true} options={optionsArr}/>
+          <FormItem type="bool" title="Do you want to donate a swipe?" required={true} options={optionsArr}/>
+          <FormItem />
 
           <input type="submit" className="click" />
         </form>

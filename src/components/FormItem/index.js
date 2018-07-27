@@ -7,81 +7,91 @@ class FormItem extends React.Component {
 		this.state = {};
 	}
 
-	checkbox(id, text, reqResponse) {
+	checkbox(id, title, option, reqResponse) {
 		return (
-			<fieldset>
-				{reqResponse ? <input type="checkbox" id={id} name={text} className="click" required/>
-				: <input type="checkbox" id={id} name={text} className="click" />}
-				<label htmlFor={id}>{text}</label>
-			</fieldset>
+			<div key={id}>
+				{reqResponse ? <input type="checkbox" id={id} name={title} className="click" required/>
+				: <input type="checkbox" id={id} name={title} className="click" />}
+				<label htmlFor={id}>{option}</label>
+			</div>
 		);
 	}
 
-	short_resp(id, text, reqResponse) {
+	short_resp(id, title, option, reqResponse) {
 		return (
-			<fieldset>
-				<label htmlFor={id}>{text}</label>
+			<div key={id}>
+				<label htmlFor={id}>{option}</label>
 				<br />
-				{reqResponse ? <input type="text" id={id} name={text} required/>
-				: <input type="text" id={id} name={text} />}
-			</fieldset>
+				{reqResponse ? <input type="text" id={id} name={title} required/>
+				: <input type="text" id={id} name={title} />}
+			</div>
 		);
 	}
 
-	long_resp(id, text, reqResponse) {
+	long_resp(id, title, option, reqResponse) {
 		return (
-			<fieldset>
-				<label htmlFor={id}>{text}</label>
+			<div key={id}>
+				<label htmlFor={id}>{option}</label>
 				<br />
-				{reqResponse ? <textarea name={text} id={id} cols="40" rows="5" required></textarea>
-				: <textarea name={text} id={id} cols="40" rows="5"></textarea>}
+				{reqResponse ? <textarea name={title} id={id} cols="40" rows="5" required></textarea>
+				: <textarea name={title} id={id} cols="40" rows="5"></textarea>}
 				<br />
-			</fieldset>
+			</div>
 		);
 	}
 
-	bool(yesID, noID, text, reqResponse) {
+	bool(id, title, option, reqResponse) {
+		return (
+			<div key={id}>
+				{reqResponse ? <input type="radio" name={title} id={id} value={option} className="click" required/>
+				: <input type="radio" name={title} id={id} value={option} className="click" />}
+				<label htmlFor={id}>{option}</label>
+			</div>
+		);
+	}
+
+	displayWrapper(type, title, reqResponse, optionsArr) {
+		let buffer = []
+		let itemID = title;
+		for (var i = 0; i < optionsArr.length; i++) {
+			let element;
+			switch (type) {
+				case 'checkbox':
+					itemID += ' checkbox';
+					element = this.checkbox(itemID, title, optionsArr[i], reqResponse);
+					break;
+				case 'short_resp':
+					itemID += ' short_resp';
+					element = this.short_resp(itemID, title, optionsArr[i], reqResponse);
+					break;
+				case 'long_resp':
+					itemID += ' long_resp';
+					element = this.long_resp(itemID, title, optionsArr[i], reqResponse);
+					break;
+				case 'bool':
+					itemID += optionsArr[i] + ' bool';
+					element = this.bool(itemID, title, optionsArr[i], reqResponse);
+					break;
+				default:
+					break;
+			}
+			buffer.push(element);
+		}
 		return (
 			<fieldset>
-				<legend>{text}</legend>
-				{reqResponse ? <input type="radio" name={text} id={yesID} value="1" className="click" required/>
-				: <input type="radio" name={text} id={yesID} value="1" className="click" />}
-				<label htmlFor={yesID}>Yes</label>
-				{reqResponse ? <input type="radio" name={text} id={noID} value="0" className="click" required/>
-				: <input type="radio" name={text} id={noID} value="0" className="click" />}
-				<label htmlFor={noID}>No</label>
+				<legend>{title}</legend>
+				{buffer}
 			</fieldset>
 		);
 	}
 
 	render() {
-		let displayType;
-		let text = this.props.title;
-		let itemID = this.props.title;
-		let reqResponse = (this.props.required) ? true : false;
-		switch (this.props.type) {
-			case 'checkbox':
-				itemID += ' checkbox';
-				displayType = this.checkbox(itemID, text, reqResponse);
-				break;
-			case 'short_resp':
-				itemID += ' short_resp';
-				displayType = this.short_resp(itemID, text, reqResponse);
-				break;
-			case 'long_resp':
-				itemID += ' long_resp';
-				displayType = this.long_resp(itemID, text, reqResponse);
-				break;
-			case 'bool':
-				itemID += ' bool';
-				let yes = itemID + ' yes';
-				let no = itemID + ' no';
-				displayType = this.bool(yes, no, text, reqResponse);
-				break;
-			default:
-				displayType = null;
-				break;
+		if (!(this.props.type || this.props.title || this.props.required || this.props.options)) {
+			return (null);
 		}
+		let reqResponse = (this.props.required) ? true : false;
+		let optionsArr = (this.props.options) ? this.props.options : [];
+		let displayType = this.displayWrapper(this.props.type, this.props.title, reqResponse, optionsArr);
 		return (displayType);
 	}
 }
