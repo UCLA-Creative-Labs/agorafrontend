@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 	Takes 4 props:
 	- type (REQUIRED STRING): Sets the type of entry/input area. Currently only supports 4 options: 'checkbox'
-	(self-explanatory), 'short_resp' (a short response field, i.e. for identification info. like 'First Name', 'Last Name'
+	(self-explanatory), 'short_resp' (a short response field <= 25 chars, i.e. for identification info. like 'First Name', 'Last Name'
 	, etc), 'long_resp' (a long response field, i.e. for essay questions), and 'bool' (for questions that can only be
 	answered with 1 option, i.e. 'Yes or No' prompts)
 	- title (REQUIRED STRING): Sets the title of the overall form item.
@@ -27,6 +27,9 @@ import PropTypes from 'prop-types';
 	[ ] yes
 	[ ] no
 	[ ] maybe so
+	- secure (OPTIONAL BOOLEAN): Only applies to 'short_resp' types; setting this to {true} causes the 'short_resp' entry
+	/input area to be obscured so that it cannot be read, i.e. for login password fields. By default, entry/input areas
+	are not secure (text is not obscured, but shown fully).
 */
 
 class FormItem extends React.Component {
@@ -45,13 +48,14 @@ class FormItem extends React.Component {
 		);
 	}
 
-	short_resp(id, title, option, reqResponse) {
+	short_resp(id, title, option, reqResponse, secure) {
+		const respType = secure ? "password" : "text";
 		return (
 			<div key={id}>
 				<label htmlFor={id}>{option}</label>
 				<div>
-					{reqResponse ? <input type="text" id={id} name={title} required/>
-					: <input type="text" id={id} name={title} />}
+					{reqResponse ? <input type={respType} id={id} name={title} maxLength="25" required/>
+					: <input type={respType} id={id} name={title} maxLength="25" />}
 				</div>
 			</div>
 		);
@@ -79,7 +83,7 @@ class FormItem extends React.Component {
 		);
 	}
 
-	displayWrapper(type, title, reqResponse, optionsArr) {
+	displayWrapper(type, title, reqResponse, optionsArr, secure) {
 		let buffer = []
 		let itemID = title;
 		for (var i = 0; i < optionsArr.length; i++) {
@@ -91,7 +95,7 @@ class FormItem extends React.Component {
 					break;
 				case 'short_resp':
 					itemID += ' short_resp';
-					element = this.short_resp(itemID, title, optionsArr[i], reqResponse);
+					element = this.short_resp(itemID, title, optionsArr[i], reqResponse, secure);
 					break;
 				case 'long_resp':
 					itemID += ' long_resp';
@@ -115,12 +119,12 @@ class FormItem extends React.Component {
 	}
 
 	render() {
-		const {type, title, required, options} = this.props;
-		if (!(type || title || required || options)) {
+		const {type, title, required, options, secure} = this.props;
+		if (!(type || title || required || options || secure)) {
 			return (null);
 		}
 		const optionsArr = options ? options : [];
-		const displayType = this.displayWrapper(type, title, required, optionsArr);
+		const displayType = this.displayWrapper(type, title, required, optionsArr, secure);
 		return (displayType);
 	}
 }
@@ -130,6 +134,7 @@ FormItem.propTypes = {
 	title: PropTypes.string.isRequired,
 	required: PropTypes.bool,
 	options: PropTypes.arrayOf(PropTypes.string),
+	secure: PropTypes.bool,
 };
 
 export default FormItem;
