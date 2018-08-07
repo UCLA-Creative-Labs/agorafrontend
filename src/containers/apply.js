@@ -1,6 +1,6 @@
 import React from 'react';
 import linkState from 'linkstate';
-import { CURRENT_PROJECTS } from '../config/config';
+import { CURRENT_PROJECTS, CONTACT_METHODS } from '../config/config';
 
 import { createApp } from '../api/api';
 import Button from '../components/Button';
@@ -17,6 +17,7 @@ class Apply extends React.Component {
         first_choice: '',
         second_choice: '',
         third_choice: '',
+        preferred_contact: '',
       },
       err: false,
     }
@@ -73,6 +74,14 @@ class Apply extends React.Component {
           {
             project_titles.map( p => {
               return <option>{p}</option>
+            })
+          }
+        </select>
+        <h1>preferred group chat</h1>
+        <select onChange= { linkState(this, 'form.preferred_contact') }>
+          {
+            CONTACT_METHODS.map( c => {
+              return <option>{c}</option>
             })
           }
         </select>

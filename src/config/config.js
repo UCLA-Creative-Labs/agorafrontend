@@ -1,3 +1,4 @@
+const CONTACT_METHODS = ['facebook', 'groupme', 'whatsapp', 'slack', 'text'];
 const PROJECTS = [
   {
     name: 'winter 2017-18',
@@ -84,4 +85,4 @@ const USERS = [
   },
 ];
 
-export { PROJECTS, CURRENT_PROJECTS, USERS };
+export { CONTACT_METHODS, PROJECTS, CURRENT_PROJECTS, USERS };
