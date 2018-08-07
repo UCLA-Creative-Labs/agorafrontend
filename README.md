@@ -14,3 +14,9 @@ yarn install
 yarn start
 yarn watch-css
 ```
+
+## e2e testing
+
+```
+yarn test:e2e
+```

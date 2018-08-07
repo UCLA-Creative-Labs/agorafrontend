@@ -82,6 +82,11 @@ const USERS = [
     first_name: 'alex',
     username: 'xual'
   },
+  {
+    last_name: 'zhou',
+    first_name: 'simon',
+    username: 'szhou'
+  }
 ];
 
 export { PROJECTS, CURRENT_PROJECTS, USERS };
