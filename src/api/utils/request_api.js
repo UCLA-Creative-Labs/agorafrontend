@@ -57,10 +57,7 @@ class Request {
     }
 
     if (params) {
-      options = {
-        ...options,
-        body: JSON.stringify(params)
-      }
+      options.body = JSON.stringify(params);
     }
 
     let fetchResponse, fetchStatusCode, errorResponse;

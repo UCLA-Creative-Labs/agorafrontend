@@ -22,8 +22,8 @@ class Landing extends React.Component {
     const payload = {
       firstName: "the last",
       lastName: "boob",
-      email: "boob30@boob.com",
-      username: "blah71",
+      email: "boob40@boob.com",
+      username: "blah72",
       password: "password"
     }
 
