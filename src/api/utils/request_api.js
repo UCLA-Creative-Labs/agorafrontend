@@ -49,14 +49,19 @@ class Request {
     // for logging/debugging
     console.log(`${verb} ${url}`, params);
 
-    // baseURL is URL without params
-    // useful if settings/filters are in URL
-    const baseURL = url.split('?')[0];
-
     // options are the complicated object of options that are passed in a fetch response
     // another benefit of abstracting this portion away
-    let options = Object.assign({ method: verb }, params ? { body: JSON.stringify(params) } : null);
-    options.headers = Request.headers();
+    let options = {
+      method: verb,
+      headers: Request.headers()
+    }
+
+    if (params) {
+      options = {
+        ...options,
+        body: JSON.stringify(params)
+      }
+    }
 
     let fetchResponse, fetchStatusCode, errorResponse;
 
