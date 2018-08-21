@@ -1,3 +1,11 @@
+/**
+ * Add a description about this file here.
+ *
+ * @flow
+ *
+ */
+
+
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 

@@ -1,3 +1,11 @@
+/**
+ * Add a description about this file here.
+ *
+ * @flow
+ *
+ */
+
+
 const createAccount = async (data) => { //bs fetch function to test stuff... change later
   try{
     const resp = await fetch('http://localhost:3000/admins/new/', {

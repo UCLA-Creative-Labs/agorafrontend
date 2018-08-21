@@ -1,3 +1,11 @@
+/**
+ * Add a description about this file here.
+ *
+ * @flow
+ *
+ */
+
+
 import React from 'react';
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';

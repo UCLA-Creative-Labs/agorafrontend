@@ -1,3 +1,11 @@
+/**
+ * Add a description about this file here.
+ *
+ * @flow
+ *
+ */
+
+
 import React from 'react';
 
 import Landing from './landing';

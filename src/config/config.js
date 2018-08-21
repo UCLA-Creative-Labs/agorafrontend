@@ -1,3 +1,11 @@
+/**
+ * Add a description about this file here.
+ *
+ * @flow
+ *
+ */
+
+
 const PROJECTS = [
   {
     name: 'winter 2017-18',
