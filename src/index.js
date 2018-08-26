@@ -8,10 +8,12 @@ import App from "./containers/app";
 import "./styles/index.css";
 
 const target = document.querySelector("#root");
-const api = { store };
-global.app = {
-  api
-};
+if (process.env.NODE_ENV === "development") {
+  const api = { store };
+  global.app = {
+    api
+  };
+}
 
 render(
   <Provider store={store}>
