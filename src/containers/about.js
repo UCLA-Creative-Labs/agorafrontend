@@ -12,10 +12,18 @@ class About extends React.Component {
       margin: '4rem',
     };
 
-    const columnData = [{'id': 'first_name', 'name': 'First Name'}, {'id': 'last_name', 'name': 'Last Name'}, {'id': 'year', 'name': 'Year'}];
-    const dataArr = [{'id': 'first_name', 'name': 'Steven'}, {'id': 'last_name', 'name': 'La'}, {'id': 'year', 'name': '3'},
-    {'id': 'first_name', 'name': 'Michael'}, {'id': 'last_name', 'name': 'Yu'}, {'id': 'year', 'name': '3'},
-    {'id': 'first_name', 'name': 'Alex'}, {'id': 'last_name', 'name': 'Xu'}, {'id': 'year', 'name': '2'}];
+    const columnData = [
+      {'id': 'first_name', 'display': 'First Name'},
+      {'id': 'last_name', 'display': 'Last Name'},
+      {'id': 'year', 'display': 'Year'}
+    ];
+
+    const dataArr = [
+      {'first_name': 'Steven', 'last_name': 'La', 'year': 3},
+      {'first_name': 'Michael', 'last_name': 'Yu', 'year': 3},
+      {'first_name': 'Alex', 'last_name': 'Xu', 'year': 2},
+      {'first_name': 'Bryan', 'last_name': 'Wong', 'year': 3}
+    ];
 
     return (
       <div style={aboutStyle}>

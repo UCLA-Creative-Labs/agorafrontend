@@ -1,20 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Table from 'rc-table';
+import 'rc-table/assets/index.css';
 
 /*
 	Grid for viewing submitted applications.
 
 	Props:
-	- columns (ARRAY OF OBJECTS): Sets the headers for the grid. The format is like 
-	[{'id': 'first_name', 'name': 'First Name'}, {'id': 'last_name', 'name': 'Last Name'}, ...]
-	- data (ARRAY OF OBJECTS): Sets the data for the grid. The format is like
-	[{'id': 'first_name', 'name': 'Steven'}, {'id': 'last_name', 'name': 'La'}, ...]
+	- columns (ARRAY OF OBJECTS): Sets the headers for the grid. The format is like:
+	[{'id': 'first_name', 'display': 'First Name'}, {'id': 'last_name', 'display': 'Last Name'}, ...]
+	- data (ARRAY OF OBJECTS): Sets the data for the grid. The format is like:
+	[{'first_name': 'Steven', 'last_name': 'La'}, {'first_name': 'Alex', 'last_name': 'Xu'}, ...]
 */
 
 class Grid extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			columns: [],
+			data: []
+		};
 
 		this.addHeaders = this.addHeaders.bind(this);
 		this.addData = this.addData.bind(this);
@@ -22,53 +27,29 @@ class Grid extends React.Component {
 
 	addHeaders() {
 		const {columns} = this.props;
-		let buffer = [];
-		for (var i = 0; i < columns.length; i++) {
-			const curr = (
-				<th key={i}>
-					{columns[i]['name']}
-				</th>
-			);
-			buffer.push(curr);
+		for (let i = 0; i < columns.length; i++) {
+			const temp = {};
+			temp.dataIndex = columns[i].id;
+			temp.key = columns[i].id;
+			temp.title = columns[i].display;
+			this.state.columns.push(temp);
 		}
-		return (
-			<tr>
-				{buffer}
-			</tr>
-		);
 	}
 
 	addData() {
-		const {columns, data} = this.props;
-		let buffer = [];
-		for (var i = 0; i < data.length;) {
-			let curr = [];
-			for (var j = 0; j < columns.length; j++) {
-				const dataEntry = (
-					<td key={i}>
-						{data[i++]['name']}
-					</td>
-				);
-				curr.push(dataEntry);
-			}
-			const finalEntry = (
-				<tr key={i}>
-					{curr}
-				</tr>
-			);
-			buffer.push(finalEntry);
+		const {data} = this.props;
+		for (let i = 0; i < data.length; i++) {
+			const temp = data[i];
+			temp.key = i;
+			this.state.data.push(temp);
 		}
-		return buffer;
 	}
 
 	render() {
+		this.addHeaders();
+		this.addData();
 		return (
-			<table>
-				<tbody>
-					{this.addHeaders()}
-					{this.addData()}
-				</tbody>
-			</table>
+			<Table columns={this.state.columns} data={this.state.data}/>
 		);
 	}
 }
