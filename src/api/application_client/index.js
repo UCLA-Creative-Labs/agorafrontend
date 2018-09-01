@@ -37,7 +37,9 @@ class ApplicationClient {
     const URL = `${APPLICATION_HOST}/fetch`;
     const params = {years, firstChoice, secondChoice, thirdChoice, limit, offset};
 
-    return Request.post(URL, params);
+    return Request.post(URL, params).then(response => {
+      return response.apps;
+    });
   }
 }
 
