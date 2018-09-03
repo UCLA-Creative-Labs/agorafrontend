@@ -7,9 +7,13 @@ import 'rc-table/assets/index.css';
 	Grid for viewing submitted applications.
 
 	Props:
-	- columns (ARRAY OF OBJECTS): Sets the headers for the grid. The format is like:
+	- columns (ARRAY OF OBJECTS): Sets the headers for the grid. Example format:
 	[{'id': 'first_name', 'display': 'First Name'}, {'id': 'last_name', 'display': 'Last Name'}, ...]
-	- data (ARRAY OF OBJECTS): Sets the data for the grid. The format is like:
+	If you want to include links as data, make sure you set ('link': true) inside of your respective column,
+	i.e.: {'id': 'resume', 'display': 'Resume', 'link': true}
+	Then, in your corresponding data, you'd just have a field like: {'resume': 'www.google.com'}
+
+	- data (ARRAY OF OBJECTS): Sets the data for the grid. Example format (extended from 'columns' example):
 	[{'first_name': 'Steven', 'last_name': 'La'}, {'first_name': 'Alex', 'last_name': 'Xu'}, ...]
 */
 
@@ -32,6 +36,15 @@ class Grid extends React.Component {
 			temp.dataIndex = columns[i].id;
 			temp.key = columns[i].id;
 			temp.title = columns[i].display;
+			if (columns[i].link) {
+				temp.render = function(text) {
+					const linkDisplay = text ? 'Link' : '';
+					return (
+					<a href={text}>
+						{linkDisplay}
+					</a>);
+				};
+			}
 			this.state.columns.push(temp);
 		}
 	}
@@ -49,7 +62,10 @@ class Grid extends React.Component {
 		this.addHeaders();
 		this.addData();
 		return (
-			<Table columns={this.state.columns} data={this.state.data}/>
+			<Table
+				columns={this.state.columns}
+				data={this.state.data}
+			/>
 		);
 	}
 }
