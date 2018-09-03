@@ -30,7 +30,11 @@ class ApplicationClient {
     const URL = `${APPLICATION_HOST}/create`;
     const params = {firstName, lastName, email, response, year, firstChoice};
 
-    return Request.post(URL, params);
+    return Request.post(URL, params).then(response => {
+      return response;
+    }).catch(err => {
+      return err.message;
+    });
   }
 
   fetchApplications({years=[1,2,3,4], firstChoice, secondChoice, thirdChoice, limit=400, offset=0}) {
@@ -39,6 +43,8 @@ class ApplicationClient {
 
     return Request.post(URL, params).then(response => {
       return response.apps;
+    }).catch(err => {
+      return err.message
     });
   }
 }
