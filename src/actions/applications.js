@@ -7,11 +7,26 @@ export const fetchApplications = payload => {
     
     try {
         const applications = await ApplicationClient.getSingleton().fetchApplications(payload);
-        console.log('fetchRetailers', applications);
+        console.log('fetchApplications', applications);
         dispatch({type : Action.FETCH_APPLICATIONS_SUCCEEDED, applications});
     } catch(err) {
         console.log('fetchApplications failed', err);
         dispatch({type : Action.FETCH_APPLICATIONS_FAILED});
+    }
+  }
+};
+
+export const createApplication = payload => {
+  return async dispatch => {
+    dispatch({type : Action.CREATE_APPLICATION_REQUESTED});
+
+    try {
+      const response = await ApplicationClient.getSingleton().createApplication(payload);
+      console.log('createApplication', response);
+      dispatch({type : Action.CREATE_APPLICATION_SUCCEEDED, response});
+    } catch(err) {
+      console.log('createApplications failed', err);
+      dispatch({type : Action.CREATE_APPLICATION_FAILED});
     }
   }
 };

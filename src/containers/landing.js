@@ -4,7 +4,9 @@ import { push } from 'react-router-redux';
 import { connect } from 'react-redux';
 
 import AdminClient from '../api/admin_client/index'
-import { fetchApplications } from '../actions/applications';
+import { fetchApplications, createApplication } from '../actions/applications';
+import { selectors } from '../reducers/rootReducer';
+import { CreateStatus } from '../api/constants';
 
 import Button from '../components/Button';
 
@@ -15,6 +17,7 @@ class Landing extends React.Component {
 
     this.createAdmin = this.createAdmin.bind(this);
     this.fetchApplications = this.fetchApplications.bind(this);
+    this.createApp = this.createApp.bind(this);
   }
 
   createAdmin() {
@@ -37,12 +40,26 @@ class Landing extends React.Component {
       })
   }
 
+  createApp() {
+    const payload = {
+      lastName: "swag money",
+      firstName: "michael",
+      email: "test@email.com",
+      response: "booty",
+      firstChoice: "88",
+      secondChoice: "89",
+      thirdChoice: "yeet"
+    }
+
+    this.props.createApplication(payload);
+  }
+
   fetchApplications() {
     this.props.fetchApplications({});
   }
 
   render() {
-    const { loggedIn } = this.props;
+    const { loggedIn, showLoadingIcon } = this.props;
 
     const onClickView = loggedIn
       ? () => this.props.navigate('/admin')
@@ -54,19 +71,28 @@ class Landing extends React.Component {
 
         <Button label="create an admin" color="primary" onClick={this.createAdmin} />
         <Button label="fetch applications" color="primary" onClick={this.fetchApplications} />
+        <Button label="create application" color="primary" onClick={this.createApp} />
+
+        {showLoadingIcon && <Button label="FAKE LOADING ICON" color="primary" onClick={()=>{}} />}
+
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  ...state.user,
-});
+const mapStateToProps = state => {
+  const applications = selectors.applications(state);
+
+  return {
+    showLoadingIcon: applications.getCreateStatus() === CreateStatus.CREATING,
+  }
+};
 
 const mapDispatchToProps = (dispatch, payload) => {
   return {
     navigate: link => push(link),
-    fetchApplications: payload => dispatch(fetchApplications(payload))
+    fetchApplications: payload => dispatch(fetchApplications(payload)),
+    createApplication: payload => dispatch(createApplication(payload))
   }
 }
 
