@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Table from 'rc-table';
-import 'rc-table/assets/index.css';
+import React from "react";
+import PropTypes from "prop-types";
+import Table from "rc-table";
+import "rc-table/assets/index.css";
 
 /*
 	Grid for viewing submitted applications.
@@ -14,65 +14,59 @@ import 'rc-table/assets/index.css';
 	Then, in your corresponding data, you'd just have a field like: {'resume': 'www.google.com'}
 
 	- data (ARRAY OF OBJECTS): Sets the data for the grid. Example format (extended from 'columns' example):
-	[{'first_name': 'Steven', 'last_name': 'La'}, {'first_name': 'Alex', 'last_name': 'Xu'}, ...]
+	[{'first_name': 'Steven', 'last_name': 'La', 'id': '4086381'}, {'first_name': 'Alex', 'last_name': 'Xu', 'id': '1649862'}, ...]
+	Note that an 'id' field is required.
 */
 
 class Grid extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			columns: [],
-			data: []
-		};
+  constructor(props) {
+    super(props);
+    this.state = {};
 
-		this.addHeaders = this.addHeaders.bind(this);
-		this.addData = this.addData.bind(this);
-	}
+    this.addHeaders = this.getHeaders.bind(this);
+    this.addData = this.getData.bind(this);
+  }
 
-	addHeaders() {
-		const {columns} = this.props;
-		for (let i = 0; i < columns.length; i++) {
-			const temp = {};
-			temp.dataIndex = columns[i].id;
-			temp.key = columns[i].id;
-			temp.title = columns[i].display;
-			if (columns[i].link) {
-				temp.render = function(text) {
-					const linkDisplay = text ? 'Link' : '';
-					return (
-					<a href={text}>
-						{linkDisplay}
-					</a>);
-				};
-			}
-			this.state.columns.push(temp);
-		}
-	}
+  getHeaders() {
+    const { columns } = this.props;
+    const result = [];
+    columns.forEach(function(column) {
+      const temp = {};
+      temp.dataIndex = column.id;
+      temp.key = column.id;
+      temp.title = column.display;
+      if (column.link) {
+        temp.render = function(text) {
+          const linkDisplay = text ? "Link" : "";
+          return <a href={text}>{linkDisplay}</a>;
+        };
+      }
+      result.push(temp);
+    });
+    return result;
+  }
 
-	addData() {
-		const {data} = this.props;
-		for (let i = 0; i < data.length; i++) {
-			const temp = data[i];
-			temp.key = i;
-			this.state.data.push(temp);
-		}
-	}
+  getData() {
+    const { data } = this.props;
+    const result = [];
+    data.forEach(function(dataEntry) {
+      const temp = dataEntry;
+      temp.key = dataEntry.id;
+      result.push(temp);
+    });
+    return result;
+  }
 
-	render() {
-		this.addHeaders();
-		this.addData();
-		return (
-			<Table
-				columns={this.state.columns}
-				data={this.state.data}
-			/>
-		);
-	}
+  render() {
+    const columns = this.getHeaders();
+    const data = this.getData();
+    return <Table columns={columns} data={data} />;
+  }
 }
 
 Grid.propTypes = {
-	columns: PropTypes.arrayOf(PropTypes.object),
-	data: PropTypes.arrayOf(PropTypes.object),
+  columns: PropTypes.arrayOf(PropTypes.object),
+  data: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default Grid;
