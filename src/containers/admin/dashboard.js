@@ -1,8 +1,8 @@
 import React from "react";
 
-import Grid from "../../components/Grid";
 import Row from "../../components/Row";
 import { USERS } from "../../config/config";
+import ApplicationsTable from "../../components/ApplicationsTable";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -10,7 +10,21 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    const columnData = [
+    const choiceOptions = [
+      { value: "first_choice", label: "1st" },
+      { value: "second_choice", label: "2nd" },
+      { value: "third_choice", label: "3rd" }
+    ];
+
+    const yearOptions = [
+      { value: "first_year", label: "1" },
+      { value: "second_year", label: "2" },
+      { value: "third_year", label: "3" },
+      { value: "fourth_year", label: "4" },
+      { value: "fifth_year", label: "5+" }
+    ];
+
+    const columnArr = [
       { id: "first_name", display: "First Name" },
       { id: "last_name", display: "Last Name" },
       { id: "year", display: "Year" },
@@ -47,17 +61,12 @@ class Dashboard extends React.Component {
     return (
       <div>
         <h1>Dashboard</h1>
-        {USERS.map((user, i) => (
-          <Row key={i}>
-            {Object.keys(user).map((key, i) => (
-              <p key={i} style={{ flex: "1" }}>
-                {user[key]}
-              </p>
-            ))}
-          </Row>
-        ))}
-
-        <Grid columns={columnData} data={dataArr} />
+        <ApplicationsTable
+          columns={columnArr}
+          data={dataArr}
+          yearOptions={yearOptions}
+          choiceOptions={choiceOptions}
+        />
       </div>
     );
   }
