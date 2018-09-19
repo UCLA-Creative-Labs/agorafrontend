@@ -10,20 +10,6 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    const choiceOptions = [
-      { value: "first_choice", label: "1st" },
-      { value: "second_choice", label: "2nd" },
-      { value: "third_choice", label: "3rd" }
-    ];
-
-    const yearOptions = [
-      { value: "first_year", label: "1" },
-      { value: "second_year", label: "2" },
-      { value: "third_year", label: "3" },
-      { value: "fourth_year", label: "4" },
-      { value: "fifth_year", label: "5+" }
-    ];
-
     const columnArr = [
       { id: "first_name", display: "First Name" },
       { id: "last_name", display: "Last Name" },
@@ -61,12 +47,7 @@ class Dashboard extends React.Component {
     return (
       <div>
         <h1>Dashboard</h1>
-        <ApplicationsTable
-          columns={columnArr}
-          data={dataArr}
-          yearOptions={yearOptions}
-          choiceOptions={choiceOptions}
-        />
+        <ApplicationsTable columns={columnArr} data={dataArr} />
       </div>
     );
   }
