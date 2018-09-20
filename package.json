@@ -49,6 +49,7 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "next",
     "react-router-redux": "next",
+    "react-select": "^2.0.0",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0",
