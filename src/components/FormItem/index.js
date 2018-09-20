@@ -38,103 +38,147 @@ class FormItem extends React.Component {
 		this.state = {};
 	}
 
-	checkbox(id, title, option, reqResponse) {
+	checkbox(title, option, reqResponse) {
 		return (
-			<div key={id}>
-				{reqResponse ? <input type="checkbox" id={id} name={title} className="click" required/>
-				: <input type="checkbox" id={id} name={title} className="click" />}
-				<label htmlFor={id}>{option}</label>
+			<div>
+				{reqResponse ? <input type="checkbox" name={title} className="click" required/>
+				: <input type="checkbox" name={title} className="click" />}
+				<label>{option}</label>
 			</div>
 		);
 	}
 
-	short_resp(id, title, option, reqResponse, secure) {
+	short_resp(reqResponse, secure) {
 		const respType = secure ? "password" : "text";
 		return (
-			<div key={id}>
-				<label htmlFor={id}>{option}</label>
+			<div>
 				<div>
-					{reqResponse ? <input type={respType} id={id} name={title} maxLength="25" required/>
-					: <input type={respType} id={id} name={title} maxLength="25" />}
+					{reqResponse ? <input type={respType} maxLength="25" required/>
+					: <input type={respType} maxLength="25" />}
 				</div>
 			</div>
 		);
 	}
 
-	long_resp(id, title, option, reqResponse) {
+	long_resp(reqResponse) {
 		return (
-			<div key={id}>
-				<label htmlFor={id}>{option}</label>
+			<div>
 				<div>
-					{reqResponse ? <textarea name={title} id={id} cols="40" rows="5" required></textarea>
-					: <textarea name={title} id={id} cols="40" rows="5"></textarea>}
+					{reqResponse ? <textarea cols="40" rows="5" required></textarea>
+					: <textarea cols="40" rows="5"></textarea>}
 				</div>
 			</div>
 		);
 	}
 
-	bool(id, title, option, reqResponse) {
+	bool() {
 		return (
-			<div key={id}>
-				{reqResponse ? <input type="radio" name={title} id={id} value={option} className="click" required/>
-				: <input type="radio" name={title} id={id} value={option} className="click" />}
-				<label htmlFor={id}>{option}</label>
+			<div>
+				<span>
+					<input type="radio" className="click" name="True"/>
+					<label>{"True"}</label>
+				</span>
+				<span style={{paddingLeft: '20px'}}>
+					<input type="radio" className="click" name="True"/>
+					<label>{"False"}</label>
+				</span>
 			</div>
 		);
 	}
 
 	displayWrapper(type, title, reqResponse, optionsArr, secure) {
 		let buffer = []
-		let itemID = title;
-		for (var i = 0; i < optionsArr.length; i++) {
-			let element;
-			switch (type) {
-				case 'checkbox':
-					itemID += ' checkbox';
-					element = this.checkbox(itemID, title, optionsArr[i], reqResponse);
-					break;
-				case 'short_resp':
-					itemID += ' short_resp';
-					element = this.short_resp(itemID, title, optionsArr[i], reqResponse, secure);
-					break;
-				case 'long_resp':
-					itemID += ' long_resp';
-					element = this.long_resp(itemID, title, optionsArr[i], reqResponse);
-					break;
-				case 'bool':
-					itemID += optionsArr[i] + ' bool';
-					element = this.bool(itemID, title, optionsArr[i], reqResponse);
-					break;
-				default:
-					break;
-			}
-			buffer.push(element);
+
+		switch (type) {
+			case 'checkbox':
+				buffer = optionsArr.map((option, index) => {
+					return <div key={index}>
+						{this.checkbox(title, option, reqResponse)}
+					</div>
+				});
+				break;
+			case 'short_resp':
+				buffer.push(
+					<div key="0">
+						{this.short_resp(reqResponse, secure)}
+					</div>
+				);
+				break;
+			case 'long_resp':
+				buffer.push(
+					<div key="0">
+						{this.long_resp(title, reqResponse)}
+					</div>
+				);
+				break;
+			case 'bool':
+				buffer.push(
+					<div key="0">
+						{this.bool()}
+					</div>
+					)
+				break;
+			default:
+				break;
 		}
+
+		const itemContainer = {
+			margin: '0',
+			padding: '10px 0px'
+		};
+
+		const titleContainer = {
+			padding: '0'
+		};
+
+		const titleStyle = {
+			margin: '2px',
+			display: 'inline'
+		};
+
+		const requiredStyle = {
+			margin: '2px',
+			paddingLeft: '50px',
+			display: 'inline',
+			color: 'red'
+		}
+
+		const fieldSet = {
+			padding: '10px 5px',
+			margin: '5px 0px'
+		};
+
 		return (
-			<fieldset>
-				<legend>{title}</legend>
-				{buffer}
-			</fieldset>
+			<div style={itemContainer}>
+				<div style={titleContainer}>
+					<span>
+						<p style={titleStyle}>{title}</p>
+						{reqResponse && <p style={requiredStyle}>*Required</p>}
+					</span>
+				</div>
+				<fieldset style={fieldSet}>
+					{buffer}
+				</fieldset>
+			</div>
 		);
 	}
 
 	render() {
-		const {type, title, required, options, secure} = this.props;
-		if (!(type || title || required || options || secure)) {
-			return (null);
-		}
+		const {type, title, required, options, secure} = this.props.entry;
+
 		const optionsArr = options ? options : [];
-		const displayType = this.displayWrapper(type, title, required, optionsArr, secure);
-		return (displayType);
+		return this.displayWrapper(type, title, required, optionsArr, secure);
 	}
 }
 
 FormItem.propTypes = {
-	type: PropTypes.string.isRequired,
-	title: PropTypes.string.isRequired,
-	required: PropTypes.bool,
-	options: PropTypes.arrayOf(PropTypes.string),
-	secure: PropTypes.bool,
+	entry: PropTypes.shape({
+		type: PropTypes.string.isRequired,
+		title: PropTypes.string.isRequired,
+		required: PropTypes.bool,
+		options: PropTypes.arrayOf(PropTypes.string),
+		secure: PropTypes.bool
+	})
 };
 
 export default FormItem;
