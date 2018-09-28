@@ -117,5 +117,40 @@ th,
 td {
   border: 1px solid black; }
 
-.header-primary {
-  font-family: "Sentinel"; }
+.navbar-logo {
+  font-size: 1.85rem;
+  margin-bottom: 9px; }
+
+.navbar-link {
+  font-size: 1.1rem;
+  margin-bottom: 1px; }
+
+.sentinel-primary {
+  font-family: "Sentinel";
+  font-weight: 600; }
+
+.sentinel-secondary {
+  font-family: "Sentinel";
+  font-weight: normal; }
+
+.untitled-primary {
+  font-family: "Untitled Sans";
+  font-weight: normal; }
+
+.untitled-secondary {
+  font-family: "Untitled Sans";
+  font-weight: 300; }
+
+.untitled-secondary-italic {
+  font-family: "Untitled Sans";
+  font-weight: 300;
+  font-style: italic; }
+
+.black {
+  color: #32373c; }
+
+.gray {
+  color: #4f4f51; }
+
+.white {
+  color: #fbfbf8; }
