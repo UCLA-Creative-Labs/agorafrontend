@@ -1,10 +1,10 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
+import React from "react";
+import { Route } from "react-router-dom";
 
-import Home from './home';
-import Projects from './projects';
-import About from './about';
-import Apply from './apply';
+import Home from "./home";
+import Projects from "./projects";
+import About from "./about";
+import Apply from "./apply";
 
 const App = () => (
   <div>

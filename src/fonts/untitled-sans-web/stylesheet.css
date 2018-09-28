@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'Untitled Sans';
+    src: url('UntitledSans-LightItalic.woff2') format('woff2'),
+        url('UntitledSans-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Untitled Sans';
+    src: url('UntitledSans-Bold.woff2') format('woff2'),
+        url('UntitledSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Untitled Sans';
+    src: url('UntitledSans-MediumItalic.woff2') format('woff2'),
+        url('UntitledSans-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Untitled Sans';
+    src: url('UntitledSans-Light.woff2') format('woff2'),
+        url('UntitledSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Untitled Sans';
+    src: url('UntitledSans-RegularItalic.woff2') format('woff2'),
+        url('UntitledSans-RegularItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Untitled Sans';
+    src: url('UntitledSans-Regular.woff2') format('woff2'),
+        url('UntitledSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Untitled Sans';
+    src: url('UntitledSans-BoldItalic.woff2') format('woff2'),
+        url('UntitledSans-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Untitled Sans';
+    src: url('UntitledSans-Black.woff2') format('woff2'),
+        url('UntitledSans-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Untitled Sans';
+    src: url('UntitledSans-BlackItalic.woff2') format('woff2'),
+        url('UntitledSans-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}

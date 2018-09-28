@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Sentinel';
+    src: url('Sentinel-Black.woff2') format('woff2'),
+        url('Sentinel-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sentinel';
+    src: url('Sentinel-BoldItalic.woff2') format('woff2'),
+        url('Sentinel-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Sentinel';
+    src: url('Sentinel-Bold.woff2') format('woff2'),
+        url('Sentinel-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sentinel';
+    src: url('Sentinel-BlackItalic.woff2') format('woff2'),
+        url('Sentinel-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Sentinel';
+    src: url('Sentinel-LightItalic.woff2') format('woff2'),
+        url('Sentinel-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Sentinel';
+    src: url('Sentinel-Medium.woff2') format('woff2'),
+        url('Sentinel-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sentinel';
+    src: url('Sentinel-Light.woff2') format('woff2'),
+        url('Sentinel-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sentinel Book';
+    src: url('Sentinel-Book.woff2') format('woff2'),
+        url('Sentinel-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sentinel Book';
+    src: url('Sentinel-BookItalic.woff2') format('woff2'),
+        url('Sentinel-BookItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Sentinel';
+    src: url('Sentinel-Semibold.woff2') format('woff2'),
+        url('Sentinel-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sentinel';
+    src: url('Sentinel-MediumItalic.woff2') format('woff2'),
+        url('Sentinel-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Sentinel';
+    src: url('Sentinel-SemiboldItalic.woff2') format('woff2'),
+        url('Sentinel-SemiboldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+

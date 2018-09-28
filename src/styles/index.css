@@ -3,10 +3,12 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald|Quattrocento");
 @import url("https://fonts.googleapis.com/css?family=Oswald|Quattrocento");
 @import url("https://fonts.googleapis.com/css?family=Oswald|Quattrocento");
+@import url(../fonts/sentinel-web/stylesheet.css);
+@import url(../fonts/untitled-sans-web/stylesheet.css);
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Oswald', sans-serif; }
+  font-family: "Oswald", sans-serif; }
 
 .btn {
   color: white;
@@ -110,5 +112,10 @@ body {
 .click:hover {
   cursor: pointer; }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid black; }
+
+.header-primary {
+  font-family: "Sentinel"; }
