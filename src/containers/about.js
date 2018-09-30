@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 class About extends React.Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class About extends React.Component {
 
   render() {
     const aboutStyle = {
-      margin: '4rem',
+      margin: "4rem"
     };
 
     return (

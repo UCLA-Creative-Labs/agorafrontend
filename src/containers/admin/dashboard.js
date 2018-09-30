@@ -1,25 +1,19 @@
-import React from 'react';
-
-import Row from '../../components/Row';
-import { USERS } from '../../config/config';
+import React from "react";
+import ApplicationsTable from "../../components/ApplicationsTable";
 
 class Dashboard extends React.Component {
-	constructor(props){
-		super(props);
-	}
+  constructor(props) {
+    super(props);
+  }
 
-	render(){
-		return <div>
-			<h1>Dashboard</h1>
-			{USERS.map((user, i) => (
-				<Row key={i}>
-					{Object.keys(user).map((key, i) => (
-						<p key={i} style={{flex: '1'}}>{user[key]}</p>
-					))}
-				</Row>
-			))}
-		</div>
-	}
+  render() {
+    return (
+      <div>
+        <h1>Dashboard</h1>
+        <ApplicationsTable />
+      </div>
+    );
+  }
 }
 
 export default Dashboard;

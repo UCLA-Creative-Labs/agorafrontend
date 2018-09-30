@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 /*
 	FormItem component is for creating entries/input areas within a Form component.
@@ -13,10 +13,10 @@ import PropTypes from 'prop-types';
 */
 
 class FormItem extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
 	checkbox(title, options, reqResponse) {
 		const checkbox = options.map((option, index) => {
