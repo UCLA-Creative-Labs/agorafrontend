@@ -5,6 +5,7 @@ import Home from "./home";
 import Projects from "./projects";
 import About from "./about";
 import Apply from "./apply";
+import Interest from "./interest";
 import NavBar from "../components/NavBar";
 
 const App = () => (
@@ -15,6 +16,7 @@ const App = () => (
       <Route exact path="/projects" component={Projects} />
       <Route exact path="/about" component={About} />
       <Route exact path="/apply" component={Apply} />
+      <Route exact path="/interest" component={Interest} />
     </div>
   </div>
 );
