@@ -3,10 +3,12 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald|Quattrocento");
 @import url("https://fonts.googleapis.com/css?family=Oswald|Quattrocento");
 @import url("https://fonts.googleapis.com/css?family=Oswald|Quattrocento");
+@import url(../fonts/sentinel-web/stylesheet.css);
+@import url(../fonts/untitled-sans-web/stylesheet.css);
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Oswald', sans-serif; }
+  font-family: "Oswald", sans-serif; }
 
 .btn {
   color: white;
@@ -32,6 +34,18 @@ body {
   .btn:hover, .btn:active, .btn:focus {
     outline: 0;
     background-color: #ffd69e; }
+
+.apply-teaser {
+  text-align: center; }
+
+.apply-teaser-header {
+  width: 300px;
+  margin: auto;
+  font-size: 1.8rem; }
+
+.apply-teaser-header2 {
+  margin: 10px;
+  font-size: 1.3rem; }
 
 .card {
   background-color: #fff;
@@ -109,3 +123,84 @@ body {
 
 .click:hover {
   cursor: pointer; }
+
+table,
+th,
+td {
+  border: 1px solid black; }
+
+.navbar-logo {
+  font-size: 1.6rem;
+  margin-bottom: 9px; }
+
+.navbar-link {
+  font-size: 1rem;
+  margin-bottom: 1px; }
+
+.sentinel-primary {
+  font-family: "Sentinel";
+  font-weight: 600; }
+
+.sentinel-secondary {
+  font-family: "Sentinel Book";
+  font-weight: normal; }
+
+.untitled-primary {
+  font-family: "Untitled Sans";
+  font-weight: normal; }
+
+.untitled-secondary {
+  font-family: "Untitled Sans";
+  font-weight: 300; }
+
+.untitled-secondary-italic {
+  font-family: "Untitled Sans";
+  font-weight: 300;
+  font-style: italic; }
+
+.black {
+  color: #32373c; }
+
+.gray {
+  color: #4f4f51; }
+
+.white {
+  color: #fbfbf8; }
+
+.green {
+  color: #32ad36; }
+
+.pink {
+  color: #f7a9ab; }
+
+.black-bg {
+  background-color: #32373c; }
+
+.white-bg {
+  background-color: #fbfbf8; }
+
+.gray-bg {
+  background-color: #4f4f51; }
+
+.green-bg {
+  background-color: #32ad36; }
+
+.pink-bg {
+  background-color: #f7a9ab; }
+
+.main-background {
+  background-color: #f7a9ab;
+  width: 100vw;
+  position: absolute; }
+
+.main-content {
+  padding: 20px;
+  background-color: #fbfbf8;
+  margin: 25px; }
+
+.apply-puzzle {
+  position: fixed;
+  width: 900px;
+  top: 0;
+  right: 0;
+  transform: translate(100px, -225px); }

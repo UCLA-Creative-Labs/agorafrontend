@@ -1,12 +1,40 @@
 body {
-	margin: 0;
-	padding: 0;
-	font-family: 'Oswald', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald", sans-serif;
 }
 
-@import '../components/Button/style.scss';
-@import '../components/Card/style.scss';
-@import '../components/Header/style.scss';
-@import '../components/Project/style.scss';
-@import '../components/Row/style.scss';
-@import '../components/FormItem/style.scss';
+@import "../components/Button/style.scss";
+@import "../components/ApplyProjectMember/style.scss";
+@import "../components/Card/style.scss";
+@import "../components/Header/style.scss";
+@import "../components/Project/style.scss";
+@import "../components/Row/style.scss";
+@import "../components/FormItem/style.scss";
+@import "../components/Form/style.scss";
+@import "../components/Grid/style.scss";
+@import "../components/NavBar/style.scss";
+@import "../fonts/sentinel-web/stylesheet.css";
+@import "../fonts/untitled-sans-web/stylesheet.css";
+@import "../fonts/fonts.scss";
+@import "./colors.scss";
+
+.main-background {
+  background-color: $pink;
+  width: 100vw;
+  position: absolute;
+}
+
+.main-content {
+  padding: 20px;
+  background-color: $white;
+  margin: 25px;
+}
+
+.apply-puzzle {
+  position: fixed;
+  width: 900px;
+  top: 0;
+  right: 0;
+  transform: translate(100px, -225px);
+}

@@ -1,0 +1,29 @@
+$Sentinel: "Sentinel";
+$SentinelBook: "Sentinel Book";
+$Untitled: "Untitled Sans";
+
+.sentinel-primary {
+  font-family: $Sentinel;
+  font-weight: 600;
+}
+
+.sentinel-secondary {
+  font-family: $SentinelBook;
+  font-weight: normal;
+}
+
+.untitled-primary {
+  font-family: $Untitled;
+  font-weight: normal;
+}
+
+.untitled-secondary {
+  font-family: $Untitled;
+  font-weight: 300;
+}
+
+.untitled-secondary-italic {
+  font-family: $Untitled;
+  font-weight: 300;
+  font-style: italic;
+}
