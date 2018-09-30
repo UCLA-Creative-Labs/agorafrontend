@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 /*
 	Form component is for creating forms with FormItem components as nested children. By default,
@@ -12,39 +12,35 @@ import PropTypes from 'prop-types';
 */
 
 class Form extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-	handleSubmit() {
-		const {onSubmit} = this.props;
-		if (typeof onSubmit !== "undefined") {
-			onSubmit();
-		}
-	}
+  handleSubmit() {
+    const { onSubmit } = this.props;
+    if (typeof onSubmit !== "undefined") {
+      onSubmit();
+    }
+  }
 
-	render() {
-		const {title, description, children} = this.props;
-		return (
-			<form onSubmit={() => this.handleSubmit()}>
-				<h1>
-					{title}
-				</h1>
-				<p>
-					{description}
-				</p>
-				{children}
-				<input type="submit" className="click" />
-			</form>
-		);
-	}
+  render() {
+    const { title, description, children } = this.props;
+    return (
+      <form onSubmit={() => this.handleSubmit()}>
+        <h1>{title}</h1>
+        <p>{description}</p>
+        {children}
+        <input type="submit" className="click" />
+      </form>
+    );
+  }
 }
 
 Form.propTypes = {
-	title: PropTypes.string,
-	description: PropTypes.string,
-	onSubmit: PropTypes.func,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  onSubmit: PropTypes.func
 };
 
 export default Form;
