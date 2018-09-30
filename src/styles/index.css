@@ -35,6 +35,18 @@ body {
     outline: 0;
     background-color: #ffd69e; }
 
+.apply-teaser {
+  text-align: center; }
+
+.apply-teaser-header {
+  width: 300px;
+  margin: auto;
+  font-size: 1.8rem; }
+
+.apply-teaser-header2 {
+  margin: 10px;
+  font-size: 1.3rem; }
+
 .card {
   background-color: #fff;
   border-radius: .5rem;
@@ -118,11 +130,11 @@ td {
   border: 1px solid black; }
 
 .navbar-logo {
-  font-size: 1.85rem;
+  font-size: 1.6rem;
   margin-bottom: 9px; }
 
 .navbar-link {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 1px; }
 
 .sentinel-primary {
@@ -130,7 +142,7 @@ td {
   font-weight: 600; }
 
 .sentinel-secondary {
-  font-family: "Sentinel";
+  font-family: "Sentinel Book";
   font-weight: normal; }
 
 .untitled-primary {
@@ -154,3 +166,41 @@ td {
 
 .white {
   color: #fbfbf8; }
+
+.green {
+  color: #32ad36; }
+
+.pink {
+  color: #f7a9ab; }
+
+.black-bg {
+  background-color: #32373c; }
+
+.white-bg {
+  background-color: #fbfbf8; }
+
+.gray-bg {
+  background-color: #4f4f51; }
+
+.green-bg {
+  background-color: #32ad36; }
+
+.pink-bg {
+  background-color: #f7a9ab; }
+
+.main-background {
+  background-color: #f7a9ab;
+  width: 100vw;
+  position: absolute; }
+
+.main-content {
+  padding: 20px;
+  background-color: #fbfbf8;
+  margin: 25px; }
+
+.apply-puzzle {
+  position: fixed;
+  width: 85%;
+  top: 0;
+  right: 0;
+  transform: translate(250px, -150px); }

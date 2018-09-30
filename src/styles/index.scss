@@ -5,6 +5,7 @@ body {
 }
 
 @import "../components/Button/style.scss";
+@import "../components/ApplyProjectMember/style.scss";
 @import "../components/Card/style.scss";
 @import "../components/Header/style.scss";
 @import "../components/Project/style.scss";
@@ -17,3 +18,23 @@ body {
 @import "../fonts/untitled-sans-web/stylesheet.css";
 @import "../fonts/fonts.scss";
 @import "./colors.scss";
+
+.main-background {
+  background-color: $pink;
+  width: 100vw;
+  position: absolute;
+}
+
+.main-content {
+  padding: 20px;
+  background-color: $white;
+  margin: 25px;
+}
+
+.apply-puzzle {
+  position: fixed;
+  width: 85%;
+  top: 0;
+  right: 0;
+  transform: translate(250px, -150px);
+}
