@@ -1,14 +1,15 @@
-import React from 'react';
+# Form Version 2
 
+Import:
+
+```
 import Form from '../components/Form_V2';
 
-class Interest extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+```
 
-  render() {
+Usage:
+
+```
     const entries = [
       {
         type: "short_resp",
@@ -35,10 +36,6 @@ class Interest extends React.Component {
         title: "Are you coming to our first meeting?"
       }
     ];
-    return (
-      <Form entries={entries} title="Interest Form" description="thanks for visiting!  Fill this out and come to our first meeting!" />
-    );
-  }
-}
-
-export default Interest;
+    
+    <Form entries={entries} title="Interest Form" description="thanks for visiting!" />
+```
