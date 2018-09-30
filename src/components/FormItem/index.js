@@ -42,12 +42,12 @@ class FormItem extends React.Component {
     return (
       <div>
         <label>
-          {option}
           {reqResponse ? (
             <input type="checkbox" name={title} className="click" required />
           ) : (
             <input type="checkbox" name={title} className="click" />
           )}
+          {option}
         </label>
       </div>
     );
@@ -87,14 +87,14 @@ class FormItem extends React.Component {
       <div>
         <span>
           <label>
-            {"True"}
             <input type="radio" className="click" name="True" />
+            {"True"}
           </label>
         </span>
         <span style={{ paddingLeft: "20px" }}>
           <label>
-            {"False"}
             <input type="radio" className="click" name="True" />
+            {"False"}
           </label>
         </span>
       </div>
