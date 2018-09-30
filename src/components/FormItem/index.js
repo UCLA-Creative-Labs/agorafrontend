@@ -38,147 +38,148 @@ class FormItem extends React.Component {
     this.state = {};
   }
 
-	checkbox(title, option, reqResponse) {
-		return (
-			<div>
-				{reqResponse ? <input type="checkbox" name={title} className="click" required/>
-				: <input type="checkbox" name={title} className="click" />}
-				<label>{option}</label>
-			</div>
-		);
-	}
+  checkbox(title, option, reqResponse) {
+    return (
+      <div>
+        <label>
+          {reqResponse ? (
+            <input type="checkbox" name={title} className="click" required />
+          ) : (
+            <input type="checkbox" name={title} className="click" />
+          )}
+          {option}
+        </label>
+      </div>
+    );
+  }
 
-	short_resp(reqResponse, secure) {
-		const respType = secure ? "password" : "text";
-		return (
-			<div>
-				<div>
-					{reqResponse ? <input type={respType} maxLength="25" required/>
-					: <input type={respType} maxLength="25" />}
-				</div>
-			</div>
-		);
-	}
+  short_resp(reqResponse, secure) {
+    const respType = secure ? "password" : "text";
+    return (
+      <div>
+        <div>
+          {reqResponse ? (
+            <input type={respType} maxLength="25" required />
+          ) : (
+            <input type={respType} maxLength="25" />
+          )}
+        </div>
+      </div>
+    );
+  }
 
-	long_resp(reqResponse) {
-		return (
-			<div>
-				<div>
-					{reqResponse ? <textarea cols="40" rows="5" required></textarea>
-					: <textarea cols="40" rows="5"></textarea>}
-				</div>
-			</div>
-		);
-	}
+  long_resp(reqResponse) {
+    return (
+      <div>
+        <div>
+          {reqResponse ? (
+            <textarea cols="40" rows="5" required />
+          ) : (
+            <textarea cols="40" rows="5" />
+          )}
+        </div>
+      </div>
+    );
+  }
 
-	bool() {
-		return (
-			<div>
-				<span>
-					<input type="radio" className="click" name="True"/>
-					<label>{"True"}</label>
-				</span>
-				<span style={{paddingLeft: '20px'}}>
-					<input type="radio" className="click" name="True"/>
-					<label>{"False"}</label>
-				</span>
-			</div>
-		);
-	}
+  bool() {
+    return (
+      <div>
+        <span>
+          <label>
+            <input type="radio" className="click" name="True" />
+            {"True"}
+          </label>
+        </span>
+        <span style={{ paddingLeft: "20px" }}>
+          <label>
+            <input type="radio" className="click" name="True" />
+            {"False"}
+          </label>
+        </span>
+      </div>
+    );
+  }
 
-	displayWrapper(type, title, reqResponse, optionsArr, secure) {
-		let buffer = []
+  displayWrapper(type, title, reqResponse, optionsArr, secure) {
+    let buffer = [];
 
-		switch (type) {
-			case 'checkbox':
-				buffer = optionsArr.map((option, index) => {
-					return <div key={index}>
-						{this.checkbox(title, option, reqResponse)}
-					</div>
-				});
-				break;
-			case 'short_resp':
-				buffer.push(
-					<div key="0">
-						{this.short_resp(reqResponse, secure)}
-					</div>
-				);
-				break;
-			case 'long_resp':
-				buffer.push(
-					<div key="0">
-						{this.long_resp(title, reqResponse)}
-					</div>
-				);
-				break;
-			case 'bool':
-				buffer.push(
-					<div key="0">
-						{this.bool()}
-					</div>
-					)
-				break;
-			default:
-				break;
-		}
+    switch (type) {
+      case "checkbox":
+        buffer = optionsArr.map((option, index) => {
+          return (
+            <div key={index}>{this.checkbox(title, option, reqResponse)}</div>
+          );
+        });
+        break;
+      case "short_resp":
+        buffer.push(<div key="0">{this.short_resp(reqResponse, secure)}</div>);
+        break;
+      case "long_resp":
+        buffer.push(<div key="0">{this.long_resp(title, reqResponse)}</div>);
+        break;
+      case "bool":
+        buffer.push(<div key="0">{this.bool()}</div>);
+        break;
+      default:
+        break;
+    }
 
-		const itemContainer = {
-			margin: '0',
-			padding: '10px 0px'
-		};
+    const itemContainer = {
+      margin: "0",
+      padding: "10px 0px"
+    };
 
-		const titleContainer = {
-			padding: '0'
-		};
+    const titleContainer = {
+      padding: "0"
+    };
 
-		const titleStyle = {
-			margin: '2px',
-			display: 'inline'
-		};
+    const titleStyle = {
+      margin: "2px",
+      display: "inline"
+    };
 
-		const requiredStyle = {
-			margin: '2px',
-			paddingLeft: '50px',
-			display: 'inline',
-			color: 'red'
-		}
+    const requiredStyle = {
+      margin: "2px",
+      paddingLeft: "50px",
+      display: "inline",
+      color: "red"
+    };
 
-		const fieldSet = {
-			padding: '10px 5px',
-			margin: '5px 0px'
-		};
+    const fieldSet = {
+      padding: "10px 5px",
+      margin: "5px 0px"
+    };
 
-		return (
-			<div style={itemContainer}>
-				<div style={titleContainer}>
-					<span>
-						<p style={titleStyle}>{title}</p>
-						{reqResponse && <p style={requiredStyle}>*Required</p>}
-					</span>
-				</div>
-				<fieldset style={fieldSet}>
-					{buffer}
-				</fieldset>
-			</div>
-		);
-	}
+    return (
+      <div style={itemContainer}>
+        <div style={titleContainer}>
+          <span>
+            <p style={titleStyle}>{title}</p>
+            {reqResponse && <p style={requiredStyle}>*Required</p>}
+          </span>
+        </div>
+        <fieldset style={fieldSet}>{buffer}</fieldset>
+      </div>
+    );
+  }
 
-	render() {
-		const {type, title, required, options, secure} = this.props.entry;
+  render() {
+    const { type, title, required, options, secure } = this.props.entry;
 
-		const optionsArr = options ? options : [];
-		return this.displayWrapper(type, title, required, optionsArr, secure);
-	}
+    const optionsArr = options ? options : [];
+    return this.displayWrapper(type, title, required, optionsArr, secure);
+  }
 }
 
 FormItem.propTypes = {
-	entry: PropTypes.shape({
-		type: PropTypes.string.isRequired,
-		title: PropTypes.string.isRequired,
-		required: PropTypes.bool,
-		options: PropTypes.arrayOf(PropTypes.string),
-		secure: PropTypes.bool
-	})
+  entry: PropTypes.shape({
+    type: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    required: PropTypes.bool,
+    options: PropTypes.arrayOf(PropTypes.string),
+    secure: PropTypes.bool
+  })
 };
 
 export default FormItem;

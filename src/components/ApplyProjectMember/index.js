@@ -9,6 +9,12 @@ class ApplyProjectMember extends React.Component {
   }
 
   render() {
+    const entry = {
+      type: "short_resp",
+      title: "What project do you REALLY want to be on?",
+      required: true
+    };
+
     return (
       <div className="apply-project-member">
         <div className="apply-teaser">
@@ -20,12 +26,7 @@ class ApplyProjectMember extends React.Component {
           </h2>
         </div>
         <Form>
-          <FormItem
-            className="untitled-primary black"
-            type="short_resp"
-            title="What project do you REALLY want to be on?"
-            required={true}
-          />
+          <FormItem className="untitled-primary black" entry={entry} />
         </Form>
       </div>
     );
