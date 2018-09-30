@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import Form from '../components/Form_V2';
+import Form from "../components/Form_V2";
 
 class Interest extends React.Component {
   constructor(props) {
@@ -23,12 +23,12 @@ class Interest extends React.Component {
       {
         type: "checkbox",
         title: "What year are you?",
-        options: ['1', '2', '3', '4']
+        options: ["1", "2", "3", "4"]
       },
       {
         type: "checkbox",
         title: "What are your interests",
-        options: ['UI/UX Design', 'Web Development', 'Art', 'Engineering']
+        options: ["UI/UX Design", "Web Development", "Art", "Engineering"]
       },
       {
         type: "bool",
@@ -36,7 +36,11 @@ class Interest extends React.Component {
       }
     ];
     return (
-      <Form entries={entries} title="Interest Form" description="thanks for visiting!  Fill this out and come to our first meeting!" />
+      <Form
+        entries={entries}
+        title="Interest Form"
+        description="Thanks for visiting!  Fill this out and come to our first meeting!"
+      />
     );
   }
 }
