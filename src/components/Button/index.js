@@ -1,5 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
+
+import styled from "react-emotion";
 
 const Button = props => (
   <div>
@@ -12,7 +14,7 @@ const Button = props => (
 Button.propTypes = {
   color: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired
 };
 
 export default Button;
