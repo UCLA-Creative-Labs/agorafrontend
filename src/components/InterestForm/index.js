@@ -46,7 +46,7 @@ class InterestForm extends React.Component {
     ];
     
 		return (
-			<div style={formStyle} onClick={() => this.handleSubmit()}>
+			<div style={formStyle}>
         <h2>{title}</h2>
         <p>{description}</p>
         {entries.map((entry, index) => {
