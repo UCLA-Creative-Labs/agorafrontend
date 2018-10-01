@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
-const formItem = PropTypes.shape({
+const formItemProp = PropTypes.shape({
+  id: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   required: PropTypes.bool,
@@ -8,4 +9,11 @@ const formItem = PropTypes.shape({
   secure: PropTypes.bool
 });
 
-export default formItem;
+const FormItemTypes = {
+  BOOL: "BOOL",
+  CHECKBOX: "CHECKBOX",
+  SHORT_RESPONSE: "SHORT_RESPONSE",
+  LONG_RESPONSE: "LONG_RESPONSE"
+};
+
+export { formItemProp, FormItemTypes };
