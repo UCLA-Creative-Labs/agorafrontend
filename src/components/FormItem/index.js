@@ -1,5 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
+
+import formItem from "../../types/formItem";
 
 /*
 	FormItem component is for creating entries/input areas within a Form component.
@@ -153,13 +154,7 @@ class FormItem extends React.Component {
 }
 
 FormItem.propTypes = {
-  entry: PropTypes.shape({
-    type: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    required: PropTypes.bool,
-    options: PropTypes.arrayOf(PropTypes.string),
-    secure: PropTypes.bool
-  })
+  item: formItem
 };
 
 export default FormItem;
