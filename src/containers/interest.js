@@ -1,6 +1,7 @@
 import React from "react";
 
 import Form from "../components/Form_V2";
+import { FormItemTypes } from "../types/formItem";
 
 class Interest extends React.Component {
   constructor(props) {
@@ -9,37 +10,42 @@ class Interest extends React.Component {
   }
 
   render() {
-    const entries = [
+    const items = [
       {
-        type: "short_resp",
+        id: "name",
+        type: FormItemTypes.SHORT_RESPONSE,
         title: "Name",
         required: true
       },
       {
-        type: "short_resp",
+        id: "email",
+        type: FormItemTypes.SHORT_RESPONSE,
         title: "Email",
         required: false
       },
       {
-        type: "checkbox",
+        id: "year",
+        type: FormItemTypes.CHECKBOX,
         title: "What year are you?",
         options: ["1", "2", "3", "4"]
       },
       {
-        type: "checkbox",
+        id: "interests",
+        type: FormItemTypes.CHECKBOX,
         title: "What are your interests",
         options: ["UI/UX Design", "Web Development", "Art", "Engineering"]
       },
       {
-        type: "bool",
+        id: "meeting",
+        type: FormItemTypes.BOOL,
         title: "Are you coming to our first meeting?"
       }
     ];
     return (
       <Form
-        entries={entries}
+        items={items}
         title="Interest Form"
-        description="Thanks for visiting!  Fill this out and come to our first meeting!"
+        description="thanks for visiting!  Fill this out and come to our first meeting!"
       />
     );
   }
