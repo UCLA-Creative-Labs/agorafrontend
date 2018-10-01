@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import FormItem from "../FormItem";
+import formItem from "../../types/formItem";
 
 class Form extends React.Component {
   constructor(props) {
@@ -34,15 +36,7 @@ Form.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   onSubmit: PropTypes.func,
-  entries: PropTypes.arrayOf(
-    PropTypes.shape({
-      type: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      required: PropTypes.bool,
-      options: PropTypes.arrayOf(PropTypes.string),
-      secure: PropTypes.bool
-    })
-  )
+  entries: PropTypes.arrayOf(formItem)
 };
 
 export default Form;
