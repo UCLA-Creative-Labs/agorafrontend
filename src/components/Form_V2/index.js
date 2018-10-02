@@ -39,20 +39,19 @@ class Form extends React.Component {
   render() {
     const { title, description, items } = this.props;
 
-    const formStyle = {
-      width: "400px",
-      border: "2px solid black",
-      margin: "50px",
-      padding: "10px"
-    };
-
     return (
-      <div style={formStyle}>
-        <h2>{title}</h2>
-        <p>{description}</p>
-        {items.map((item, index) => {
-          return <FormItem key={index} item={item} />;
-        })}
+      <div className="apply-project-member">
+        <div className="apply-teaser">
+          <h1 className="apply-teaser-header sentinel-secondary black">
+            {title}
+          </h1>
+          <h2 className="untitled-secondary gray apply-teaser-header2">
+            {description}
+          </h2>
+          {items.map((item, index) => {
+            return <FormItem key={index} item={item} />;
+          })}
+        </div>
       </div>
     );
   }

@@ -1,17 +1,41 @@
 import React from "react";
-
 import { FormItemTypes, formItemProp } from "../../types/formItem";
+import styled from "react-emotion";
 
 /*
 	FormItem component is for creating entries/input areas within a Form component.
 
 	Basically, the options prop defines all of the possible options/prompts. If this was a FormItem component of type
 	'bool' and this.props.options = ['yes', 'no', 'maybe so'], we would have something like:
-
 	[ ] yes
 	[ ] no
 	[ ] maybe so
 */
+
+// emotion styles
+const PGraph = styled("p")`
+  display: inline;
+`;
+
+const InputHeader = styled("h2")`
+  margin-top: 50px;
+  margin-bottom: 10px;
+`;
+
+const ReqPgraph = styled("p")`
+  margin: 2px;
+  padding-left: 5px;
+  display: inline;
+  color: red;
+`;
+
+const ShortInput = styled("input")`
+  background-color: transparent;
+  border-color: transparent;
+`;
+
+const LongInput = ShortInput.withComponent("textarea");
+// end of emotion styles
 
 class FormItem extends React.Component {
   constructor(props) {
@@ -37,7 +61,7 @@ class FormItem extends React.Component {
               className="click"
             />
           )}
-          <label>{option}</label>
+          <PGraph className="untitled-secondary gray">{option}</PGraph>
         </div>
       );
     });
@@ -51,9 +75,18 @@ class FormItem extends React.Component {
       <div>
         <div>
           {reqResponse ? (
-            <input type={respType} maxLength="25" required />
+            <ShortInput
+              type={respType}
+              maxLength="25"
+              placeholder="Enter here..."
+              required
+            />
           ) : (
-            <input type={respType} maxLength="25" />
+            <ShortInput
+              type={respType}
+              maxLength="25"
+              placeholder="Enter here..."
+            />
           )}
         </div>
       </div>
@@ -65,9 +98,14 @@ class FormItem extends React.Component {
       <div>
         <div>
           {reqResponse ? (
-            <textarea cols="40" rows="5" required />
+            <LongInput
+              cols="40"
+              rows="5"
+              placeholder="Enter here..."
+              required
+            />
           ) : (
-            <textarea cols="40" rows="5" />
+            <LongInput cols="40" rows="5" placeholder="Enter here..." />
           )}
         </div>
       </div>
@@ -78,16 +116,12 @@ class FormItem extends React.Component {
     return (
       <div>
         <span>
-          <label>
-            <input type="radio" className="click" name="True" />
-            {"True"}
-          </label>
+          <input type="radio" className="click" name="True" />
+          <PGraph className="untitled-secondary gray">{"True"}</PGraph>
         </span>
         <span style={{ paddingLeft: "20px" }}>
-          <label>
-            <input type="radio" className="click" name="True" />
-            {"False"}
-          </label>
+          <input type="radio" className="click" name="True" />
+          <PGraph className="untitled-secondary gray">{"False"}</PGraph>
         </span>
       </div>
     );
@@ -113,48 +147,19 @@ class FormItem extends React.Component {
         break;
     }
 
-    const itemContainer = {
-      margin: "0",
-      padding: "10px 0px"
-    };
-
-    const titleContainer = {
-      padding: "0"
-    };
-
-    const titleStyle = {
-      margin: "2px",
-      display: "inline"
-    };
-
-    const requiredStyle = {
-      margin: "2px",
-      paddingLeft: "50px",
-      display: "inline",
-      color: "red"
-    };
-
-    const fieldSet = {
-      padding: "10px 5px",
-      margin: "5px 0px"
-    };
-
     return (
-      <div style={itemContainer}>
-        <div style={titleContainer}>
-          <span>
-            <p style={titleStyle}>{title}</p>
-            {reqResponse && <p style={requiredStyle}>*Required</p>}
-          </span>
-        </div>
-        <fieldset style={fieldSet}>{item}</fieldset>
+      <div>
+        <InputHeader className="untitled-secondary gray apply-teaser-header2">
+          {title}
+          {reqResponse && <ReqPgraph>(Required)</ReqPgraph>}
+        </InputHeader>
+        {item}
       </div>
     );
   }
 
   render() {
     const { type, title, required, options, secure } = this.props.item;
-
     const optionsArr = options ? options : [];
     return this.displayWrapper(type, title, required, optionsArr, secure);
   }
