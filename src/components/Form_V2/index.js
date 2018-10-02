@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "react-emotion";
+
 import FormItem from "../FormItem";
 import { formItemProp, FormItemTypes } from "../../types/formItem";
-import styled from "react-emotion";
+import Button from "../Button";
 
 // emotion styles
 const FormItemsWrapper = styled("div")`
@@ -24,6 +26,8 @@ class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -52,6 +56,12 @@ class Form extends React.Component {
     });
   }
 
+  handleSubmit() {
+    const { onSubmit } = this.props;
+
+    onSubmit(this.state);
+  }
+
   render() {
     const { title, description, items } = this.props;
 
@@ -71,6 +81,12 @@ class Form extends React.Component {
             return <FormItem key={index} item={item} />;
           })}
         </FormItemsWrapper>
+
+        <Button
+          onClick={this.handleSubmit}
+          color="primary"
+          label="Submit Application"
+        />
       </div>
     );
   }
