@@ -1,17 +1,43 @@
 import React from "react";
-
 import { FormItemTypes, formItemProp } from "../../types/formItem";
+import styled from "react-emotion";
 
 /*
 	FormItem component is for creating entries/input areas within a Form component.
 
 	Basically, the options prop defines all of the possible options/prompts. If this was a FormItem component of type
 	'bool' and this.props.options = ['yes', 'no', 'maybe so'], we would have something like:
-
 	[ ] yes
 	[ ] no
 	[ ] maybe so
 */
+
+// emotion styles
+const PGraph = styled("p")`
+  display: inline;
+`;
+
+const InputHeader = styled("h2")`
+  margin-top: 40px;
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+`;
+
+const ReqPgraph = styled("p")`
+  margin: 2px;
+  padding-left: 5px;
+  display: inline;
+  color: red;
+`;
+
+const ShortInput = styled("input")`
+  background-color: transparent;
+  border-color: transparent;
+  outline: none;
+`;
+
+const LongInput = ShortInput.withComponent("textarea");
+// end of emotion styles
 
 class FormItem extends React.Component {
   constructor(props) {
@@ -37,7 +63,7 @@ class FormItem extends React.Component {
               className="click"
             />
           )}
-          <label>{option}</label>
+          <PGraph className="untitled-secondary gray">{option}</PGraph>
         </div>
       );
     });
@@ -51,9 +77,20 @@ class FormItem extends React.Component {
       <div>
         <div>
           {reqResponse ? (
-            <input type={respType} maxLength="25" required />
+            <ShortInput
+              type={respType}
+              maxLength="25"
+              placeholder="Enter here..."
+              className="untitled-secondary-italic"
+              required
+            />
           ) : (
-            <input type={respType} maxLength="25" />
+            <ShortInput
+              type={respType}
+              maxLength="25"
+              placeholder="Enter here..."
+              className="untitled-secondary-italic"
+            />
           )}
         </div>
       </div>
@@ -65,9 +102,20 @@ class FormItem extends React.Component {
       <div>
         <div>
           {reqResponse ? (
-            <textarea cols="40" rows="5" required />
+            <LongInput
+              cols="40"
+              rows="5"
+              placeholder="Enter here..."
+              className="untitled-secondary-italic"
+              required
+            />
           ) : (
-            <textarea cols="40" rows="5" />
+            <LongInput
+              cols="40"
+              rows="5"
+              placeholder="Enter here..."
+              className="untitled-secondary-italic"
+            />
           )}
         </div>
       </div>
@@ -79,11 +127,11 @@ class FormItem extends React.Component {
       <div>
         <span>
           <input type="radio" className="click" name="True" />
-          <label>{"True"}</label>
+          <PGraph className="untitled-secondary gray">{"True"}</PGraph>
         </span>
         <span style={{ paddingLeft: "20px" }}>
           <input type="radio" className="click" name="True" />
-          <label>{"False"}</label>
+          <PGraph className="untitled-secondary gray">{"False"}</PGraph>
         </span>
       </div>
     );
@@ -109,48 +157,19 @@ class FormItem extends React.Component {
         break;
     }
 
-    const itemContainer = {
-      margin: "0",
-      padding: "10px 0px"
-    };
-
-    const titleContainer = {
-      padding: "0"
-    };
-
-    const titleStyle = {
-      margin: "2px",
-      display: "inline"
-    };
-
-    const requiredStyle = {
-      margin: "2px",
-      paddingLeft: "50px",
-      display: "inline",
-      color: "red"
-    };
-
-    const fieldSet = {
-      padding: "10px 5px",
-      margin: "5px 0px"
-    };
-
     return (
-      <div style={itemContainer}>
-        <div style={titleContainer}>
-          <span>
-            <p style={titleStyle}>{title}</p>
-            {reqResponse && <p style={requiredStyle}>*Required</p>}
-          </span>
-        </div>
-        <fieldset style={fieldSet}>{item}</fieldset>
+      <div>
+        <InputHeader className="untitled-secondary gray">
+          {title}
+          {reqResponse && <ReqPgraph>(Required)</ReqPgraph>}
+        </InputHeader>
+        {item}
       </div>
     );
   }
 
   render() {
     const { type, title, required, options, secure } = this.props.item;
-
     const optionsArr = options ? options : [];
     return this.displayWrapper(type, title, required, optionsArr, secure);
   }

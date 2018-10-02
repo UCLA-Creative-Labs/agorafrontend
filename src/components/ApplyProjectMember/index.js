@@ -1,7 +1,7 @@
 import React from "react";
 
-import Form from "../Form";
-import FormItem from "../FormItem";
+import Form from "../Form_V2";
+import { FormItemTypes } from "../../types/formItem";
 
 class ApplyProjectMember extends React.Component {
   constructor(props) {
@@ -9,26 +9,45 @@ class ApplyProjectMember extends React.Component {
   }
 
   render() {
-    const entry = {
-      type: "short_resp",
-      title: "What project do you REALLY want to be on?",
-      required: true
-    };
+    const items = [
+      {
+        id: "name",
+        type: FormItemTypes.SHORT_RESPONSE,
+        title: "Name",
+        required: true
+      },
+      {
+        id: "email",
+        type: FormItemTypes.SHORT_RESPONSE,
+        title: "Email",
+        required: false
+      },
+      {
+        id: "year",
+        type: FormItemTypes.CHECKBOX,
+        title: "What year are you?",
+        options: ["1", "2", "3", "4"]
+      },
+      {
+        id: "why_CL",
+        type: FormItemTypes.LONG_RESPONSE,
+        title: "Why are you interested in joining Creative Labs?",
+        required: true
+      },
+      {
+        id: "attend_GM",
+        type: FormItemTypes.BOOL,
+        title: "Did you attend the Fall GM?",
+        required: true
+      }
+    ];
 
     return (
-      <div className="apply-project-member">
-        <div className="apply-teaser">
-          <h1 className="apply-teaser-header sentinel-secondary black">
-            So you want to work on a project, huh?
-          </h1>
-          <h2 className="untitled-secondary gray apply-teaser-header2">
-            Tell us a bit about yourself.
-          </h2>
-        </div>
-        <Form>
-          <FormItem className="untitled-primary black" entry={entry} />
-        </Form>
-      </div>
+      <Form
+        items={items}
+        title="So you want to work on a project, huh?"
+        description="Tell us a bit about yourself."
+      />
     );
   }
 }
