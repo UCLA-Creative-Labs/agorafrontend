@@ -65,9 +65,7 @@ class Form extends React.Component {
             {description}
           </h2>
         </div>
-
         <DividingLine />
-
         <FormItemsWrapper>
           {items.map((item, index) => {
             return <FormItem key={index} item={item} />;
