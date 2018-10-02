@@ -49,20 +49,12 @@ class FormItem extends React.Component {
     const checkbox = options.map((option, index) => {
       return (
         <div key={index}>
-          {reqResponse ? (
-            <input
-              type={FormItemTypes.CHECKBOX}
-              name={title}
-              className="click"
-              required
-            />
-          ) : (
-            <input
-              type={FormItemTypes.CHECKBOX}
-              name={title}
-              className="click"
-            />
-          )}
+          <input
+            type={FormItemTypes.CHECKBOX}
+            name={title}
+            className="click"
+            required={reqResponse}
+          />
           <PGraph className="untitled-secondary gray">{option}</PGraph>
         </div>
       );
@@ -76,22 +68,13 @@ class FormItem extends React.Component {
     return (
       <div>
         <div>
-          {reqResponse ? (
-            <ShortInput
-              type={respType}
-              maxLength="25"
-              placeholder="Enter here..."
-              className="untitled-secondary-italic"
-              required
-            />
-          ) : (
-            <ShortInput
-              type={respType}
-              maxLength="25"
-              placeholder="Enter here..."
-              className="untitled-secondary-italic"
-            />
-          )}
+          <ShortInput
+            type={respType}
+            maxLength="25"
+            placeholder="Enter here..."
+            className="untitled-secondary-italic"
+            required={reqResponse}
+          />
         </div>
       </div>
     );
@@ -101,22 +84,13 @@ class FormItem extends React.Component {
     return (
       <div>
         <div>
-          {reqResponse ? (
-            <LongInput
-              cols="40"
-              rows="5"
-              placeholder="Enter here..."
-              className="untitled-secondary-italic"
-              required
-            />
-          ) : (
-            <LongInput
-              cols="40"
-              rows="5"
-              placeholder="Enter here..."
-              className="untitled-secondary-italic"
-            />
-          )}
+          <LongInput
+            cols="40"
+            rows="5"
+            placeholder="Enter here..."
+            className="untitled-secondary-italic"
+            required={reqResponse}
+          />
         </div>
       </div>
     );
