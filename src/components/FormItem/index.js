@@ -18,8 +18,9 @@ const PGraph = styled("p")`
 `;
 
 const InputHeader = styled("h2")`
-  margin-top: 50px;
-  margin-bottom: 10px;
+  margin-top: 40px;
+  margin-bottom: 5px;
+  font-size: 1.3rem;
 `;
 
 const ReqPgraph = styled("p")`
@@ -32,6 +33,7 @@ const ReqPgraph = styled("p")`
 const ShortInput = styled("input")`
   background-color: transparent;
   border-color: transparent;
+  outline: none;
 `;
 
 const LongInput = ShortInput.withComponent("textarea");
@@ -79,6 +81,7 @@ class FormItem extends React.Component {
               type={respType}
               maxLength="25"
               placeholder="Enter here..."
+              className="untitled-secondary-italic"
               required
             />
           ) : (
@@ -86,6 +89,7 @@ class FormItem extends React.Component {
               type={respType}
               maxLength="25"
               placeholder="Enter here..."
+              className="untitled-secondary-italic"
             />
           )}
         </div>
@@ -102,10 +106,16 @@ class FormItem extends React.Component {
               cols="40"
               rows="5"
               placeholder="Enter here..."
+              className="untitled-secondary-italic"
               required
             />
           ) : (
-            <LongInput cols="40" rows="5" placeholder="Enter here..." />
+            <LongInput
+              cols="40"
+              rows="5"
+              placeholder="Enter here..."
+              className="untitled-secondary-italic"
+            />
           )}
         </div>
       </div>
@@ -149,7 +159,7 @@ class FormItem extends React.Component {
 
     return (
       <div>
-        <InputHeader className="untitled-secondary gray apply-teaser-header2">
+        <InputHeader className="untitled-secondary gray">
           {title}
           {reqResponse && <ReqPgraph>(Required)</ReqPgraph>}
         </InputHeader>

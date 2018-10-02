@@ -1,8 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import FormItem from "../FormItem";
 import { formItemProp, FormItemTypes } from "../../types/formItem";
+import styled from "react-emotion";
+
+// emotion styles
+const FormItemsWrapper = styled("div")`
+  text-align: left;
+  width: 30%;
+  margin: 0 auto;
+`;
+
+const DividingLine = styled("div")`
+  border-bottom: 1px solid black;
+  width: 5%;
+  margin: 0 auto;
+  margin-top: 40px;
+`;
+
+// end of styles
 
 class Form extends React.Component {
   constructor(props) {
@@ -48,10 +64,15 @@ class Form extends React.Component {
           <h2 className="untitled-secondary gray apply-teaser-header2">
             {description}
           </h2>
+        </div>
+
+        <DividingLine />
+
+        <FormItemsWrapper>
           {items.map((item, index) => {
             return <FormItem key={index} item={item} />;
           })}
-        </div>
+        </FormItemsWrapper>
       </div>
     );
   }
