@@ -1,21 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import FormItem from '../FormItem';
+import React from "react";
+import PropTypes from "prop-types";
+import FormItem from "../FormItem";
+import ApplicationClient from "../../api/application_client";
 
 class InterestForm extends React.Component {
-	constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {};
-	}
+  }
 
-	render() {
-    const {title, description} = this.props;
-    
+  render() {
+    const { title, description } = this.props;
+
     const formStyle = {
-      width: '400px',
-      border: '2px solid black',
-      margin: '50px',
-      padding: '10px'
+      width: "400px",
+      border: "2px solid black",
+      margin: "50px",
+      padding: "10px"
     };
 
     const entries = [
@@ -32,35 +33,35 @@ class InterestForm extends React.Component {
       {
         type: "checkbox",
         title: "What year are you?",
-        options: ['1', '2', '3', '4']
+        options: ["1", "2", "3", "4"]
       },
       {
         type: "checkbox",
         title: "What are your interests",
-        options: ['UI/UX Design', 'Web Development', 'Art', 'Engineering']
+        options: ["UI/UX Design", "Web Development", "Art", "Engineering"]
       },
       {
         type: "bool",
         title: "Are you coming to our first meeting?"
       }
     ];
-    
-		return (
-			<div style={formStyle}>
+
+    return (
+      <div style={formStyle}>
         <h2>{title}</h2>
         <p>{description}</p>
         {entries.map((entry, index) => {
-          return <FormItem key={index} entry={entry} />
+          return <FormItem key={index} entry={entry} />;
         })}
-			</div>
-		);
-	}
+      </div>
+    );
+  }
 }
 
 InterestForm.propTypes = {
-	title: PropTypes.string,
-	description: PropTypes.string,
-	onSubmit: PropTypes.func,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  onSubmit: PropTypes.func
 };
 
 export default InterestForm;
