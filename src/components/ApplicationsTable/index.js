@@ -12,6 +12,27 @@ import Select from "react-select";
 class ApplicationsTable extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      yearFilter: [],
+      choiceFilter: []
+    };
+
+    this.filterYear = this.filterYear.bind(this);
+    this.filterChoice = this.filterChoice.bind(this);
+  }
+
+  filterYear(selectedOption) {
+    const temp = this.state.yearFilter.concat(
+      selectedOption[selectedOption.length - 1].label
+    );
+    this.setState({ ...this.state, yearFilter: temp });
+  }
+
+  filterChoice(selectedOption) {
+    const temp = this.state.choiceFilter.concat(
+      selectedOption[selectedOption.length - 1].label
+    );
+    this.setState({ ...this.state, choiceFilter: temp });
   }
 
   render() {
@@ -79,11 +100,17 @@ class ApplicationsTable extends React.Component {
 
     return (
       <div>
-        <Select placeholder={yearPlaceholder} options={yearOptions} isMulti />
+        <Select
+          placeholder={yearPlaceholder}
+          options={yearOptions}
+          isMulti
+          onChange={this.filterYear}
+        />
         <Select
           placeholder={choicePlaceholder}
           options={choiceOptions}
           isMulti
+          onChange={this.filterChoice}
         />
         <Grid columns={columns} data={data} />
       </div>
