@@ -138,7 +138,7 @@ class FormItem extends React.Component {
 
     return (
       <div>
-        <InputHeader className="untitled-secondary gray">
+        <InputHeader className="untitled-primary gray">
           {title}
           {reqResponse && <ReqPgraph>(Required)</ReqPgraph>}
         </InputHeader>

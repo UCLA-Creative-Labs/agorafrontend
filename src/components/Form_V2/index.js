@@ -15,7 +15,7 @@ const FormItemsWrapper = styled("div")`
 `;
 
 const DividingLine = styled("div")`
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #a9a9ad;
   width: 5%;
   margin: 0 auto;
   margin-top: 40px;
@@ -84,7 +84,7 @@ class Form extends React.Component {
             onClick={this.handleSubmit}
             color="primary"
             label="Submit Application"
-            className="app-submit"
+            className="app-submit-button"
           />
         </FormItemsWrapper>
       </div>

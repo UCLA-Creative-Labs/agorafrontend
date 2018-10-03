@@ -29,7 +29,6 @@ class Apply extends React.Component {
   async onSubmit(e) {
     const data = Object.assign({}, this.state.form);
     const res = await createApp(data);
-    console.log(res);
   }
 
   render() {

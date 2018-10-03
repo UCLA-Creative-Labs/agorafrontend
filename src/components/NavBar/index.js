@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+const linkStyling = { textDecoration: "none", display: "block" };
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -11,9 +14,19 @@ class NavBar extends React.Component {
       <div>
         <div className="sentinel-primary black navbar-logo">Creative Labs.</div>
         <div className="navbar-links">
-          <div className="untitled-primary gray navbar-link">Apply</div>
-          <div className="untitled-primary gray navbar-link">Projects</div>
-          <div className="untitled-primary gray navbar-link">Contact</div>
+          <Link to="/apply" style={linkStyling}>
+            <div className="untitled-primary lightgray navbar-link">Apply</div>
+          </Link>
+          <Link to="/projects" style={linkStyling}>
+            <div className="untitled-primary lightgray navbar-link">
+              Projects
+            </div>
+          </Link>
+          <Link to="/contact" style={linkStyling}>
+            <div className="untitled-primary lightgray navbar-link">
+              Contact
+            </div>
+          </Link>
         </div>
       </div>
     );

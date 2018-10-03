@@ -8,7 +8,7 @@ const Button = props => {
   }
   return (
     <div>
-      <button className={className} onClick={props.onClick}>
+      <button className={className} onClick={props.onClick} style={props.style}>
         <span>{props.label}</span>
       </button>
     </div>
@@ -20,7 +20,8 @@ Button.propTypes = {
   onClick: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
   // Use this to pass custom styling classes
-  className: PropTypes.string
+  className: PropTypes.string,
+  style: PropTypes.string
 };
 
 export default Button;

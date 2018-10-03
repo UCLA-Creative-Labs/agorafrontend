@@ -7,8 +7,7 @@
 @import url(../fonts/untitled-sans-web/stylesheet.css);
 body {
   margin: 0;
-  padding: 0;
-  font-family: "Oswald", sans-serif; }
+  padding: 0; }
 
 .sentinel-primary {
   font-family: "Sentinel";
@@ -33,6 +32,9 @@ body {
 
 .black {
   color: #32373c; }
+
+.lightgray {
+  color: #a9a9ad; }
 
 .gray {
   color: #4f4f51; }
@@ -67,7 +69,7 @@ body {
   position: relative;
   background: none;
   border: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
   padding: 0;
   transform-origin: left;
   -webkit-transition: all 0.75s ease;
@@ -186,6 +188,9 @@ body {
 .black {
   color: #32373c; }
 
+.lightgray {
+  color: #a9a9ad; }
+
 .gray {
   color: #4f4f51; }
 
@@ -219,7 +224,7 @@ body {
 .text-underline {
   border-bottom: 0.5px #a9a9ad solid !important; }
 
-.app-submit {
+.app-submit-button {
   margin-top: 80px; }
 
 table,
@@ -233,7 +238,26 @@ td {
 
 .navbar-link {
   font-size: 1rem;
-  margin-bottom: 1px; }
+  position: relative;
+  padding: 0;
+  transform-origin: left;
+  display: inline-block; }
+  .navbar-link::before {
+    content: "";
+    height: 1px;
+    background-color: #a9a9ad;
+    width: 100%;
+    transform: scaleX(0);
+    transition: all 0.25s ease;
+    position: absolute;
+    bottom: 0;
+    transform-origin: left; }
+  .navbar-link:hover {
+    cursor: pointer;
+    color: #32373c; }
+  .navbar-link:hover::before {
+    transform: scaleX(1);
+    background-color: #32373c; }
 
 .sentinel-primary {
   font-family: "Sentinel";
@@ -258,6 +282,9 @@ td {
 
 .black {
   color: #32373c; }
+
+.lightgray {
+  color: #a9a9ad; }
 
 .gray {
   color: #4f4f51; }
