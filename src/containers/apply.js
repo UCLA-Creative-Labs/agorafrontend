@@ -2,11 +2,13 @@ import React from "react";
 import linkState from "linkstate";
 import { CURRENT_PROJECTS } from "../config/config";
 
-import { createApp } from "../api/api";
+import ApplicationClient from "../api/application_client";
 import Button from "../components/Button";
 import ApplyProjectMember from "../components/ApplyProjectMember";
 
 import puzzle1 from "../assets/images/puzzle1.png";
+
+const applicationClient = ApplicationClient.getSingleton();
 
 class Apply extends React.Component {
   constructor(props) {
@@ -28,7 +30,7 @@ class Apply extends React.Component {
 
   async onSubmit(e) {
     const data = Object.assign({}, this.state.form);
-    const res = await createApp(data);
+    const res = await applicationClient.createApplication();
   }
 
   render() {
