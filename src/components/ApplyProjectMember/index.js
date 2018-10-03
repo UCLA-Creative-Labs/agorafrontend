@@ -2,7 +2,8 @@ import React from "react";
 
 import Form from "../Form_V2";
 import { FormItemTypes } from "../../types/formItem";
-import ApplicationClient from "../../api/application_client";
+import { createApplication } from "../../actions/applications";
+import { connect } from "react-redux";
 
 class ApplyProjectMember extends React.Component {
   constructor(props) {
@@ -14,8 +15,7 @@ class ApplyProjectMember extends React.Component {
   onSubmitForm(userInput) {
     // do some stuff to userInput
     const payload = userInput;
-
-    ApplicationClient.getSingleton().createApplication(payload);
+    this.props.createApplication(payload);
   }
 
   render() {
@@ -64,4 +64,11 @@ class ApplyProjectMember extends React.Component {
   }
 }
 
-export default ApplyProjectMember;
+const mapDispatchToProps = dispatch => ({
+  createApplication: payload => dispatch(createApplication(payload))
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(ApplyProjectMember);
