@@ -60,17 +60,19 @@ class Form extends React.Component {
 
   handleSubmit() {
     const { onSubmit } = this.props;
-
     onSubmit(this.state);
   }
 
   updateForm(id, value) {
     const newValue = {};
     newValue[id] = value;
-    this.setState(prevState => ({
-      ...prevState,
-      ...newValue
-    }));
+    this.setState(
+      prevState => ({
+        ...prevState,
+        ...newValue
+      }),
+      () => console.log(this.state)
+    );
   }
 
   render() {
@@ -88,7 +90,9 @@ class Form extends React.Component {
         <DividingLine />
         <FormItemsWrapper>
           {items.map((item, index) => {
-            return <FormItem key={index} item={item} updateForm={this.updateForm}/>;
+            return (
+              <FormItem key={index} item={item} updateForm={this.updateForm} />
+            );
           })}
           <Button
             onClick={this.handleSubmit}

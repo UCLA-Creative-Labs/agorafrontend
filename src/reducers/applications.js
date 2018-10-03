@@ -1,6 +1,6 @@
-import { Action } from '../actions/constants';
-import { combineReducers } from 'redux';
-import { FetchStatus, CreateStatus } from '../api/constants';
+import { Action } from "../actions/constants";
+import { combineReducers } from "redux";
+import { FetchStatus, CreateStatus } from "../api/constants";
 
 export const items = (state = [], action) => {
   switch (action.type) {
@@ -17,7 +17,7 @@ const fetchStatus = (state = FetchStatus.IDLE, action) => {
     case Action.FETCH_APPLIATIONS_REQUESTED:
       return FetchStatus.FETCHING;
     case Action.FETCH_APPLICATIONS_SUCCEEDED:
-     return FetchStatus.IDLE;
+      return FetchStatus.IDLE;
     case Action.FETCH_APPLICATIONS_FAILED:
       return FetchStatus.FAILED;
     default:
@@ -37,7 +37,7 @@ const createStatus = (state = CreateStatus.IDLE, action) => {
     default:
       return state;
   }
-}
+};
 
 const reducers = combineReducers({
   fetchStatus,
@@ -51,4 +51,4 @@ const selectors = state => ({
   getApplications: () => state.items
 });
 
-export {reducers, selectors};
+export { reducers, selectors };
