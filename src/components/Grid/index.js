@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Table from "rc-table";
 import "rc-table/assets/index.css";
+import styled from "react-emotion";
 
 /*
 	Grid for viewing submitted applications.
@@ -17,6 +18,14 @@ import "rc-table/assets/index.css";
 	[{'first_name': 'Steven', 'last_name': 'La', 'id': '4086381'}, {'first_name': 'Alex', 'last_name': 'Xu', 'id': '1649862'}, ...]
 	Note that an 'id' field is required.
 */
+
+// emotion styles
+const StyledTable = styled(Table)`
+  td {
+    white-space: normal;
+  }
+`;
+// end of styles
 
 class Grid extends React.Component {
   constructor(props) {
@@ -60,7 +69,7 @@ class Grid extends React.Component {
   render() {
     const columns = this.getHeaders();
     const data = this.getData();
-    return <Table columns={columns} data={data} />;
+    return <StyledTable columns={columns} data={data} />;
   }
 }
 
