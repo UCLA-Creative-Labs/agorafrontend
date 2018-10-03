@@ -5,5 +5,30 @@
 
 .navbar-link {
   font-size: 1rem;
-  margin-bottom: 1px;
+  position: relative;
+  padding: 0;
+  transform-origin: left;
+  display: inline-block;
+
+  &::before {
+    content: "";
+    height: 1px;
+    background-color: $lightgray;
+    width: 100%;
+    transform: scaleX(0);
+    transition: all 0.25s ease;
+    position: absolute;
+    bottom: 0;
+    transform-origin: left;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: $black;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+    background-color: $black;
+  }
 }

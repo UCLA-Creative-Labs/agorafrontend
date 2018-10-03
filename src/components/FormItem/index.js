@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import { FormItemTypes, formItemProp } from "../../types/formItem";
 import styled from "react-emotion";
 
@@ -28,32 +29,105 @@ const ReqPgraph = styled("p")`
   padding-left: 5px;
   display: inline;
   color: red;
+  font-size: 0.8rem;
 `;
 
 const ShortInput = styled("input")`
   background-color: transparent;
   border-color: transparent;
   outline: none;
+  font-size: 0.9rem;
 `;
 
-const LongInput = ShortInput.withComponent("textarea");
+// const LongInput = ShortInput.withComponent("textarea");
+const LongInput = styled(ShortInput.withComponent("textarea"))`
+  width: 80%;
+`;
 // end of emotion styles
 
 class FormItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+
+    this.updateForm = this.updateForm.bind(this);
+  }
+
+  componentDidMount() {
+    // Initialize options arrays for bool, checkbox
+    const { item: { options } } = this.props;
+    if (options) {
+      const newOptions = {};
+      options.forEach(opt => {
+        newOptions[opt] = false;
+      });
+
+      this.setState({...newOptions});
+    }
+  }
+
+  checkboxSelect(id, name, isMulti) {
+    // Handle selection of inputs in checkboxes
+    const { updateForm } = this.props;
+
+    const newSelect = {};
+    if (!isMulti) {
+      // Set everything to false first
+      Object.keys(this.state).forEach(key => {
+        newSelect[key] = false;
+      });
+    }
+    newSelect[name] = true;
+
+    this.setState(prevState => ({...newSelect}));
+  
+    // Return as array
+    const vals = [];
+    Object.keys(newSelect).forEach(key => {
+      if (newSelect[key]) {
+        vals.push(key);
+      }
+    });
+    return vals;
+  }
+
+  updateForm(e) {
+    const {updateForm, item: { type, id }} = this.props;
+    switch (type) {
+
+      case FormItemTypes.SHORT_RESPONSE:
+      case FormItemTypes.LONG_RESPONSE:
+        const { target: { value }} = e;
+        updateForm(id, value);
+        break;
+
+      case FormItemTypes.CHECKBOX:
+        const { target: { name }} = e;
+        const vals = this.checkboxSelect(id, name);
+        updateForm(id, vals);
+        break;
+
+      default:
+        break;
+    };
   }
 
   checkbox(title, options, reqResponse) {
+    // Reconcile html with state
+    const checked = [];
+    Object.keys(this.state).forEach( key => {
+      checked.push(this.state[key]);
+    });
     const checkbox = options.map((option, index) => {
       return (
         <div key={index}>
           <input
             type={FormItemTypes.CHECKBOX}
-            name={title}
+            name={option}
             className="click"
             required={reqResponse}
+            checked={checked[index]}
+            onClick={e => this.updateForm(e)}
           />
           <PGraph className="untitled-secondary gray">{option}</PGraph>
         </div>
@@ -71,9 +145,10 @@ class FormItem extends React.Component {
           <ShortInput
             type={respType}
             maxLength="25"
-            placeholder="Enter here..."
-            className="untitled-secondary-italic"
+            placeholder="type something..."
+            className="untitled-secondary-italic text-underline"
             required={reqResponse}
+            onChange={e => this.updateForm(e)}
           />
         </div>
       </div>
@@ -87,26 +162,12 @@ class FormItem extends React.Component {
           <LongInput
             cols="40"
             rows="5"
-            placeholder="Enter here..."
+            placeholder="type something..."
             className="untitled-secondary-italic"
             required={reqResponse}
+            onChange={e => this.updateForm(e)}
           />
         </div>
-      </div>
-    );
-  }
-
-  bool() {
-    return (
-      <div>
-        <span>
-          <input type="radio" className="click" name="True" />
-          <PGraph className="untitled-secondary gray">{"True"}</PGraph>
-        </span>
-        <span style={{ paddingLeft: "20px" }}>
-          <input type="radio" className="click" name="True" />
-          <PGraph className="untitled-secondary gray">{"False"}</PGraph>
-        </span>
       </div>
     );
   }
@@ -124,16 +185,13 @@ class FormItem extends React.Component {
       case FormItemTypes.LONG_RESPONSE:
         item = this.long_resp(title, reqResponse);
         break;
-      case FormItemTypes.BOOL:
-        item = this.bool();
-        break;
       default:
         break;
     }
 
     return (
       <div>
-        <InputHeader className="untitled-secondary gray">
+        <InputHeader className="untitled-primary gray">
           {title}
           {reqResponse && <ReqPgraph>(Required)</ReqPgraph>}
         </InputHeader>
