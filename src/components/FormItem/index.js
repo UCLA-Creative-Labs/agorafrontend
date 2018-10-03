@@ -88,7 +88,8 @@ class FormItem extends React.Component {
         break;
 
       case FormItemTypes.CHECKBOX:
-        this.checkboxSelect(id, e.target.name);
+        const { target: { name }} = e;
+        this.checkboxSelect(id, e);
         break;
 
       default:
