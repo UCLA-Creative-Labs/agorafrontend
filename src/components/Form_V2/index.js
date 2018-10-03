@@ -9,8 +9,9 @@ import Button from "../Button";
 // emotion styles
 const FormItemsWrapper = styled("div")`
   text-align: left;
-  width: 30%;
+  width: 60%;
   margin: 0 auto;
+  min-width: 500px;
 `;
 
 const DividingLine = styled("div")`
