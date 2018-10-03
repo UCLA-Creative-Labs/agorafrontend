@@ -32,9 +32,15 @@ body {
 }
 
 .apply-puzzle {
-  position: fixed;
-  width: 900px;
+  position: absolute;
+  max-height: 50%;
+  height: 600px;
   top: 0;
   right: 0;
   transform: translate(100px, -225px);
+}
+
+.apply-main {
+  z-index: 5;
+  padding-top: 100px;
 }

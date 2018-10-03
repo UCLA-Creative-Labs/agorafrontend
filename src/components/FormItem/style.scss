@@ -1,3 +1,13 @@
+@import "../../styles/colors.scss";
+
 .click:hover {
-	cursor: pointer;
+  cursor: pointer;
+}
+
+.text-underline {
+  border-bottom: 0.5px $lightgray solid !important;
+}
+
+.app-submit {
+  margin-top: 80px;
 }

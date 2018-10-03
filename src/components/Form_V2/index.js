@@ -65,7 +65,6 @@ class Form extends React.Component {
 
   render() {
     const { title, description, items } = this.props;
-
     return (
       <div className="apply-project-member">
         <div className="apply-teaser">
@@ -81,13 +80,13 @@ class Form extends React.Component {
           {items.map((item, index) => {
             return <FormItem key={index} item={item} />;
           })}
+          <Button
+            onClick={this.handleSubmit}
+            color="primary"
+            label="Submit Application"
+            className="app-submit"
+          />
         </FormItemsWrapper>
-
-        <Button
-          onClick={this.handleSubmit}
-          color="primary"
-          label="Submit Application"
-        />
       </div>
     );
   }
