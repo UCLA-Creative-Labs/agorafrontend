@@ -28,6 +28,7 @@ class Form extends React.Component {
     this.state = {};
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateForm = this.updateForm.bind(this);
   }
 
   componentDidMount() {
@@ -39,7 +40,7 @@ class Form extends React.Component {
 
       switch (item.type) {
         case FormItemTypes.CHECKBOX:
-          mountValue = [];
+          mountValue = {};
           break;
         case FormItemTypes.BOOL:
           mountValue = null;
@@ -62,9 +63,17 @@ class Form extends React.Component {
     onSubmit(this.state);
   }
 
+  updateForm(id, value) {
+    const newValue = {};
+    newValue[id] = value;
+    this.setState(prevState => ({
+      ...prevState,
+      ...newValue
+    }));
+  }
+
   render() {
     const { title, description, items } = this.props;
-
     return (
       <div className="apply-project-member">
         <div className="apply-teaser">
@@ -78,7 +87,7 @@ class Form extends React.Component {
         <DividingLine />
         <FormItemsWrapper>
           {items.map((item, index) => {
-            return <FormItem key={index} item={item} />;
+            return <FormItem key={index} item={item} updateForm={this.updateForm}/>;
           })}
         </FormItemsWrapper>
 

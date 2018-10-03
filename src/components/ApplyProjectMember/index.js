@@ -46,8 +46,9 @@ class ApplyProjectMember extends React.Component {
       },
       {
         id: "attend_GM",
-        type: FormItemTypes.BOOL,
+        type: FormItemTypes.CHECKBOX,
         title: "Did you attend the Fall GM?",
+        options: ["Yes", "No"],
         required: true
       }
     ];
