@@ -68,7 +68,8 @@ class ApplicationClient {
         return response.apps;
       })
       .catch(err => {
-        return err.message;
+        return Promise.reject(err);
+        // return err.message;
       });
   }
 }
