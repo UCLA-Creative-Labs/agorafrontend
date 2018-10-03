@@ -29,15 +29,20 @@ const ReqPgraph = styled("p")`
   padding-left: 5px;
   display: inline;
   color: red;
+  font-size: 0.8rem;
 `;
 
 const ShortInput = styled("input")`
   background-color: transparent;
   border-color: transparent;
   outline: none;
+  font-size: 0.9rem;
 `;
 
-const LongInput = ShortInput.withComponent("textarea");
+// const LongInput = ShortInput.withComponent("textarea");
+const LongInput = styled(ShortInput.withComponent("textarea"))`
+  width: 80%;
+`;
 // end of emotion styles
 
 class FormItem extends React.Component {
@@ -140,8 +145,8 @@ class FormItem extends React.Component {
           <ShortInput
             type={respType}
             maxLength="25"
-            placeholder="Enter here..."
-            className="untitled-secondary-italic"
+            placeholder="type something..."
+            className="untitled-secondary-italic text-underline"
             required={reqResponse}
             onChange={e => this.updateForm(e)}
           />
@@ -157,7 +162,7 @@ class FormItem extends React.Component {
           <LongInput
             cols="40"
             rows="5"
-            placeholder="Enter here..."
+            placeholder="type something..."
             className="untitled-secondary-italic"
             required={reqResponse}
             onChange={e => this.updateForm(e)}
@@ -186,7 +191,7 @@ class FormItem extends React.Component {
 
     return (
       <div>
-        <InputHeader className="untitled-secondary gray">
+        <InputHeader className="untitled-primary gray">
           {title}
           {reqResponse && <ReqPgraph>(Required)</ReqPgraph>}
         </InputHeader>

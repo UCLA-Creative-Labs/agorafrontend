@@ -1,11 +1,16 @@
 $black: #32373c;
 $gray: #4f4f51;
+$lightgray: #a9a9ad;
 $white: #fbfbf8;
 $green: #32ad36;
 $pink: #f7a9ab;
 
 .black {
   color: $black;
+}
+
+.lightgray {
+  color: $lightgray;
 }
 
 .gray {

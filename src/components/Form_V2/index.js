@@ -9,12 +9,13 @@ import Button from "../Button";
 // emotion styles
 const FormItemsWrapper = styled("div")`
   text-align: left;
-  width: 30%;
+  width: 60%;
   margin: 0 auto;
+  min-width: 500px;
 `;
 
 const DividingLine = styled("div")`
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #a9a9ad;
   width: 5%;
   margin: 0 auto;
   margin-top: 40px;
@@ -89,13 +90,13 @@ class Form extends React.Component {
           {items.map((item, index) => {
             return <FormItem key={index} item={item} updateForm={this.updateForm}/>;
           })}
+          <Button
+            onClick={this.handleSubmit}
+            color="primary"
+            label="Submit Application"
+            className="app-submit-button"
+          />
         </FormItemsWrapper>
-
-        <Button
-          onClick={this.handleSubmit}
-          color="primary"
-          label="Submit Application"
-        />
       </div>
     );
   }
