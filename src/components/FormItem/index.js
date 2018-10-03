@@ -62,6 +62,7 @@ class FormItem extends React.Component {
   }
 
   checkboxSelect(id, name, isMulti) {
+    // Handle selection of inputs in checkboxes
     const { updateForm } = this.props;
 
     const newSelect = {};
@@ -72,9 +73,17 @@ class FormItem extends React.Component {
       });
     }
     newSelect[name] = true;
-    
-    updateForm(id, newSelect);
+
     this.setState(prevState => ({...newSelect}));
+  
+    // Return as array
+    const vals = [];
+    Object.keys(newSelect).forEach(key => {
+      if (newSelect[key]) {
+        vals.push(key);
+      }
+    });
+    return vals;
   }
 
   updateForm(e) {
@@ -89,7 +98,8 @@ class FormItem extends React.Component {
 
       case FormItemTypes.CHECKBOX:
         const { target: { name }} = e;
-        this.checkboxSelect(id, name);
+        const vals = this.checkboxSelect(id, name);
+        updateForm(id, vals);
         break;
 
       default:
@@ -98,6 +108,7 @@ class FormItem extends React.Component {
   }
 
   checkbox(title, options, reqResponse) {
+    // Reconcile html with state
     const checked = [];
     Object.keys(this.state).forEach( key => {
       checked.push(this.state[key]);
