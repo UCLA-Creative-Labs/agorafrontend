@@ -74,7 +74,6 @@ class Form extends React.Component {
 
   render() {
     const { title, description, items } = this.props;
-    console.log(this.state);
     return (
       <div className="apply-project-member">
         <div className="apply-teaser">
