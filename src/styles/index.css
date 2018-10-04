@@ -344,7 +344,8 @@ td {
 .main-background {
   background-color: #f7a9ab;
   width: 100vw;
-  position: absolute; }
+  position: absolute;
+  overflow-x: hidden; }
 
 .main-content {
   padding: 30px;
