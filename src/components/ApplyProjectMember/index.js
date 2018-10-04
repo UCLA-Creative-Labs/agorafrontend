@@ -72,14 +72,28 @@ class ApplyProjectMember extends React.Component {
         id: "why_first_choice",
         type: FormItemTypes.LONG_RESPONSE,
         title:
-          "What skills make you a good fit for your first choice? How experienced are you at them? Tell us about those experiences.",
+          "What skills make you a good fit for your first choice? How would you use them to make the project better?",
         required: true
       },
       {
-        id: "improve_creative_labs",
+        id: "why_second_choice",
+        type: FormItemTypes.LONG_RESPONSE,
+        title:
+          "What skills make you a good fit for your second choice? How would you use them to make the project better?",
+        required: false
+      },
+      {
+        id: "why_third_choice",
+        type: FormItemTypes.LONG_RESPONSE,
+        title:
+          "What skills make you a good fit for your third choice? How would you use them to make the project better?",
+        required: false
+      },
+      {
+        id: "see_creative_labs",
         type: FormItemTypes.LONG_RESPONSE,
         title: "What would you like to to see from Creative Labs?",
-        required: false
+        required: true
       },
       {
         id: "links",
