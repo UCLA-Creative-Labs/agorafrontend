@@ -1,6 +1,8 @@
 import React from "react";
 import Grid from "../Grid";
 import Select from "react-select";
+import { connect } from "react-redux";
+import { fetchApplications } from "../../actions/applications";
 
 /*
   Container for applications grid and filtering options.
@@ -14,46 +16,56 @@ class ApplicationsTable extends React.Component {
     super(props);
     this.state = {
       yearFilter: [],
-      choiceFilter: []
+      choiceFilter: ""
     };
 
     this.filterYear = this.filterYear.bind(this);
+    this.handleFilter = this.handleFilter.bind(this);
     this.filterChoice = this.filterChoice.bind(this);
   }
 
   filterYear(selectedOption) {
     const temp = [];
     for (let i = 0; i < selectedOption.length; i++) {
-      temp.push(selectedOption[i].label);
+      temp.push(selectedOption[i].value);
     }
     this.setState({ ...this.state, yearFilter: temp });
   }
 
   filterChoice(selectedOption) {
-    const temp = [];
-    for (let i = 0; i < selectedOption.length; i++) {
-      temp.push(selectedOption[i].label);
-    }
-    this.setState({ ...this.state, choiceFilter: temp });
+    if (selectedOption.length === 0) return;
+
+    this.setState({
+      ...this.state,
+      choiceFilter: selectedOption[selectedOption.length - 1].value
+    });
+  }
+
+  handleFilter() {
+    const { fetchApplications } = this.props;
+    const temp = fetchApplications({
+      years:
+        this.state.yearFilter.length > 0 ? this.state.yearFilter : [1, 2, 3, 4],
+      firstChoice:
+        this.state.choiceFilter !== "" ? this.state.choiceFilter : undefined
+    });
+
+    console.log(temp);
   }
 
   render() {
+    const { choiceOptions } = this.props;
     const yearPlaceholder = "Filter by year";
     const choicePlaceholder = "Filter by choices";
 
-    const choiceOptions = [
-      { value: "firstChoice", label: "1" },
-      { value: "secondChoice", label: "2" },
-      { value: "thirdChoice", label: "3" }
+    const yearOptions = [
+      { label: "1", value: 1 },
+      { label: "2", value: 2 },
+      { label: "3", value: 3 },
+      { label: "4", value: 4 }
     ];
 
-    const yearOptions = [
-      { value: "firstYear", label: "1" },
-      { value: "secondYear", label: "2" },
-      { value: "thirdYear", label: "3" },
-      { value: "fourthYear", label: "4" },
-      { value: "fifthYear", label: "5+" }
-    ];
+    this.handleFilter();
 
     // hard-coded sample data --> need to make Table intelligent enough to fetch data on its own
     const columns = [
@@ -120,4 +132,13 @@ class ApplicationsTable extends React.Component {
   }
 }
 
-export default ApplicationsTable;
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchApplications: payload => dispatch(fetchApplications(payload))
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(ApplicationsTable);
