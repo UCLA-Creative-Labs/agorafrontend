@@ -30,15 +30,18 @@ class ApplicationsTable extends React.Component {
       temp.push(selectedOption[i].value);
     }
     this.setState({ ...this.state, yearFilter: temp });
+
+    this.handleFilter();
   }
 
   filterChoice(selectedOption) {
     if (selectedOption.length === 0) return;
-
     this.setState({
       ...this.state,
       choiceFilter: selectedOption[selectedOption.length - 1].value
     });
+
+    this.handleFilter();
   }
 
   handleFilter() {
@@ -49,8 +52,6 @@ class ApplicationsTable extends React.Component {
       firstChoice:
         this.state.choiceFilter !== "" ? this.state.choiceFilter : undefined
     });
-
-    console.log(temp);
   }
 
   render() {
@@ -64,8 +65,6 @@ class ApplicationsTable extends React.Component {
       { label: "3", value: 3 },
       { label: "4", value: 4 }
     ];
-
-    this.handleFilter();
 
     // hard-coded sample data --> need to make Table intelligent enough to fetch data on its own
     const columns = [
