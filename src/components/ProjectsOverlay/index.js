@@ -19,8 +19,12 @@ class ProjectsOverlay extends React.Component {
           onClick={this.props.closeOverlay}
         />
         <div className="projects-list">
-          {this.props.projects.map(project => (
-            <Project title={project.title} description={project.text} />
+          {this.props.projects.map((project, index) => (
+            <Project
+              key={index}
+              title={project.title}
+              description={project.text}
+            />
           ))}
         </div>
       </div>

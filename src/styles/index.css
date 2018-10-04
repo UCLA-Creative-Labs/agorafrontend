@@ -148,7 +148,7 @@ body {
   background-color: #f7a9ab; }
 
 .projects-overlay {
-  position: fixed;
+  position: absolute;
   min-width: 100vw;
   min-height: 100%;
   overflow: scroll;
@@ -379,6 +379,9 @@ td {
     transform: scaleX(1);
     background-color: #32373c; }
 
+.navbar {
+  position: relative; }
+
 .sentinel-primary {
   font-family: "Sentinel";
   font-weight: 600; }
@@ -453,7 +456,8 @@ td {
   height: 600px;
   top: 0;
   right: 0;
-  transform: translate(100px, -225px); }
+  transform: translate(100px, -225px);
+  z-index: 0; }
 
 .apply-main {
   z-index: 5;

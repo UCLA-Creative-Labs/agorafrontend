@@ -32,3 +32,9 @@
     background-color: $black;
   }
 }
+
+.navbar {
+  position: relative;
+  // z index fixes overlap from puzzle piece, but makes it go in front of project overlay :(
+  // z-index: 5;
+}

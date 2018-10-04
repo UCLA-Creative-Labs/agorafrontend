@@ -1,7 +1,7 @@
 @import "../../styles/colors.scss";
 
 .projects-overlay {
-  position: fixed;
+  position: absolute;
   min-width: 100vw;
   min-height: 100%;
   overflow: scroll;
