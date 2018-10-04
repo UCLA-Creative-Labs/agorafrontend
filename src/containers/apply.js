@@ -1,6 +1,5 @@
 import React from "react";
 import linkState from "linkstate";
-import { CURRENT_PROJECTS } from "../config/config";
 
 import { createApplication } from "../actions/applications";
 import Button from "../components/Button";
