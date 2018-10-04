@@ -116,7 +116,8 @@ class FormItem extends React.Component {
           target: { name }
         } = e;
         const vals = this.checkboxSelect(id, name);
-        updateForm(id, vals);
+        // pass in a single year
+        updateForm(id, vals[0]);
         break;
       default:
         break;

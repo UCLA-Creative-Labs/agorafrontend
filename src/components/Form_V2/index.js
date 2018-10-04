@@ -40,9 +40,6 @@ class Form extends React.Component {
       let mountValue;
 
       switch (item.type) {
-        case FormItemTypes.CHECKBOX:
-          mountValue = {};
-          break;
         case FormItemTypes.BOOL:
           mountValue = null;
           break;
