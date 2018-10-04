@@ -13,7 +13,7 @@ import { CreateStatus } from "../../api/constants";
 // emotion styles
 const FormItemsWrapper = styled("div")`
   text-align: left;
-  width: 60%;
+  width: 50%;
   margin: 0 auto;
   min-width: 500px;
 `;

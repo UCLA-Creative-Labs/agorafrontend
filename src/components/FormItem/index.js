@@ -38,6 +38,9 @@ const ShortInput = styled("input")`
   border-color: transparent;
   outline: none;
   font-size: 1.1rem;
+  padding: 8px;
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 3px;
 `;
 
 // const LongInput = ShortInput.withComponent("textarea");

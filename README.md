@@ -4,6 +4,8 @@ creative labs
 
 ## setup
 
+node v9.4
+
 ```
 yarn install
 ```

@@ -176,7 +176,7 @@ const PROJECT_MEMBER_FORM = [
   {
     id: "links",
     type: FormItemTypes.LONG_RESPONSE,
-    title: "Time to brag! Drop us some links.",
+    title: "Time to brag! Drop us some links (GitHub, LinkedIn, Portfolio...).",
     required: false
   },
   {
