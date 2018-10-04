@@ -9,6 +9,9 @@ body {
   margin: 0;
   padding: 0; }
 
+* {
+  box-sizing: border-box; }
+
 .sentinel-primary {
   font-family: "Sentinel";
   font-weight: 600; }
@@ -35,6 +38,12 @@ body {
 
 .lightgray {
   color: #a9a9ad; }
+
+.darkgray {
+  color: #383636; }
+
+.darkwhite {
+  color: #d2d2d6; }
 
 .gray {
   color: #4f4f51; }
@@ -99,6 +108,74 @@ body {
     .btn:hover::before, .btn:active::before, .btn:focus::before {
       transform: scaleX(1); }
 
+.black {
+  color: #32373c; }
+
+.lightgray {
+  color: #a9a9ad; }
+
+.darkgray {
+  color: #383636; }
+
+.darkwhite {
+  color: #d2d2d6; }
+
+.gray {
+  color: #4f4f51; }
+
+.white {
+  color: #fbfbf8; }
+
+.green {
+  color: #32ad36; }
+
+.pink {
+  color: #f7a9ab; }
+
+.black-bg {
+  background-color: #32373c; }
+
+.white-bg {
+  background-color: #fbfbf8; }
+
+.gray-bg {
+  background-color: #4f4f51; }
+
+.green-bg {
+  background-color: #32ad36; }
+
+.pink-bg {
+  background-color: #f7a9ab; }
+
+.projects-overlay {
+  position: absolute;
+  min-width: 100vw;
+  min-height: 100%;
+  overflow: scroll;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 13, 23, 0.9);
+  padding-left: 350px;
+  display: flex;
+  align-items: center; }
+
+.projects-overlay-back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 30px;
+  font-size: 2rem;
+  color: #a9a9ad; }
+  .projects-overlay-back:hover {
+    color: #fbfbf8; }
+  .projects-overlay-back::before {
+    display: none; }
+
+.projects-list {
+  white-space: nowrap; }
+
 .loading-screen-block {
   text-align: center; }
 
@@ -106,13 +183,14 @@ body {
   text-align: center; }
 
 .apply-teaser-header {
-  width: 300px;
+  width: 350px;
+  max-width: 80%;
   margin: auto;
-  font-size: 1.8rem; }
+  font-size: 2.25rem; }
 
 .apply-teaser-header2 {
   margin: 10px;
-  font-size: 1.3rem; }
+  font-size: 1.6rem; }
 
 .card {
   background-color: #fff;
@@ -174,21 +252,17 @@ body {
   text-align: center; }
 
 .project {
-  width: 50%;
-  margin: 4rem 0 7rem 0; }
+  width: 500px;
+  margin-right: 500px;
+  display: inline-block; }
   .project img {
     width: 100%; }
-  .project .body {
-    padding: 1rem 1rem; }
-    .project .body h1 {
-      color: black;
-      margin: 0;
-      color: #0A0B12;
-      font-family: "Oswald", sans-serif; }
-    .project .body p {
-      color: #7B7B7B;
-      font-family: "Quattrocentro", serif;
-      margin: 0; }
+  .project .body h1 {
+    margin: 0;
+    margin-bottom: 5px; }
+  .project .body p {
+    margin: 0;
+    white-space: normal; }
 
 .row {
   display: flex;
@@ -199,6 +273,12 @@ body {
 
 .lightgray {
   color: #a9a9ad; }
+
+.darkgray {
+  color: #383636; }
+
+.darkwhite {
+  color: #d2d2d6; }
 
 .gray {
   color: #4f4f51; }
@@ -263,6 +343,9 @@ body {
 
 .form-item-container {
   margin-bottom: 50px; }
+  @media only screen and (max-width: 600px) {
+    .form-item-container {
+      max-width: 50%; } }
 
 table,
 th,
@@ -296,6 +379,9 @@ td {
     transform: scaleX(1);
     background-color: #32373c; }
 
+.navbar {
+  position: relative; }
+
 .sentinel-primary {
   font-family: "Sentinel";
   font-weight: 600; }
@@ -322,6 +408,12 @@ td {
 
 .lightgray {
   color: #a9a9ad; }
+
+.darkgray {
+  color: #383636; }
+
+.darkwhite {
+  color: #d2d2d6; }
 
 .gray {
   color: #4f4f51; }
@@ -350,29 +442,33 @@ td {
 .pink-bg {
   background-color: #f7a9ab; }
 
-.main-background {
-  background-color: #f7a9ab;
-  width: 100vw;
-  position: absolute;
-  overflow-x: hidden;
-  min-height: 100vh;
-  height: 1px; }
-
 .main-content {
   padding: 30px;
   background-color: #fbfbf8;
-  margin: 25px;
   padding-bottom: 50px;
-  min-height: 100%; }
+  min-height: 100vh;
+  border: 25px solid #f7a9ab;
+  overflow-x: hidden; }
 
 .apply-puzzle {
-  position: absolute;
+  position: fixed;
   max-height: 70%;
   height: 600px;
   top: 0;
   right: 0;
-  transform: translate(100px, -225px); }
+  transform: translate(100px, -225px);
+  z-index: 0; }
 
 .apply-main {
   z-index: 5;
+  position: relative;
   padding-top: 100px; }
+
+.project-quarters {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.project-quarter {
+  font-size: 2rem; }

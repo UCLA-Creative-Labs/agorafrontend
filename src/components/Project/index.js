@@ -1,16 +1,14 @@
-import React from 'react';
+import React from "react";
 
 const Project = props => (
   <div className="project">
-    {props.img && props.alt && (
-      <img src={props.img} alt={props.alt} />
-    )}
+    {props.img && props.alt && <img src={props.img} alt={props.alt} />}
     <div className="body">
       {props.title && (
-        <h1>{props.title}</h1>
+        <h1 className="sentinel-secondary white">{props.title}</h1>
       )}
       {props.description && (
-        <p>{props.description}</p>
+        <p className="lightgray untitled-secondary">{props.description}</p>
       )}
     </div>
   </div>
