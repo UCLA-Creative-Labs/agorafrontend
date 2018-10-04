@@ -157,9 +157,12 @@ body {
   right: 0;
   bottom: 0;
   background: rgba(0, 13, 23, 0.9);
-  padding-left: 350px;
+  padding-left: 200px;
   display: flex;
   align-items: center; }
+  @media only screen and (max-width: 600px) {
+    .projects-overlay {
+      padding-left: 30px; } }
 
 .projects-overlay-back {
   position: fixed;
