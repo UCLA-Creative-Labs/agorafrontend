@@ -1,21 +1,20 @@
 import { FormItemTypes } from "../types/formItem";
 
-const PROJECTS = [
-  {
-    name: "winter 2017-18",
+const PROJECTS = {
+  F_18: {
     projects: [
       {
-        title: "home",
+        title: "Home",
         text:
           "An interactive visual, audio, and animated experience that takes you around some of our favorite spots in LA."
       },
       {
-        title: "fashion lookbook",
+        title: "Fashion Lookbook",
         text:
           "An interactive visual, audio, and animated experience that takes you around some of our favorite spots in LA."
       },
       {
-        title: "zine",
+        title: "Zine",
         text:
           "An interactive visual, audio, and animated experience that takes you around some of our favorite spots in LA."
       },
@@ -30,28 +29,8 @@ const PROJECTS = [
           "An interactive visual, audio, and animated experience that takes you around some of our favorite spots in LA."
       }
     ]
-  },
-  {
-    name: "fall 2017",
-    projects: [
-      {
-        title: "A Day in LA",
-        text:
-          "An interactive visual, audio, and animated experience that takes you around some of our favorite spots in LA."
-      },
-      {
-        title: "A Day in LA",
-        text:
-          "An interactive visual, audio, and animated experience that takes you around some of our favorite spots in LA."
-      },
-      {
-        title: "A Day in LA",
-        text:
-          "An interactive visual, audio, and animated experience that takes you around some of our favorite spots in LA."
-      }
-    ]
   }
-];
+};
 
 const CURRENT_PROJECTS = [
   {

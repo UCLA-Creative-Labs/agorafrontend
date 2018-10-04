@@ -1,25 +1,25 @@
 @import "../../config/styles";
 
 .project {
-  width: 50%;
-  margin: 4rem 0 7rem 0;
+  width: 500px;
+  margin-right: 500px;
+  display: inline-block;
 
   img {
     width: 100%;
   }
 
   .body {
-    padding: 1rem 1rem;
+    // padding: 1rem 1rem;
 
     h1 {
-      color:black;
       margin: 0;
-      @include font-primary();
+      margin-bottom: 5px;
     }
 
     p {
-      @include font-secondary();
       margin: 0;
+      white-space: normal;
     }
   }
 }

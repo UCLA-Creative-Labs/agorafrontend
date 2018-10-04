@@ -1,9 +1,11 @@
 $black: #32373c;
 $gray: #4f4f51;
 $lightgray: #a9a9ad;
+$darkgray: #383636;
 $white: #fbfbf8;
 $green: #32ad36;
 $pink: #f7a9ab;
+$darkwhite: #d2d2d6;
 
 .black {
   color: $black;
@@ -11,6 +13,14 @@ $pink: #f7a9ab;
 
 .lightgray {
   color: $lightgray;
+}
+
+.darkgray {
+  color: $darkgray;
+}
+
+.darkwhite {
+  color: $darkwhite;
 }
 
 .gray {

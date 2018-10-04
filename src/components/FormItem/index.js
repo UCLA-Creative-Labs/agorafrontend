@@ -43,6 +43,7 @@ const ShortInput = styled("input")`
 // const LongInput = ShortInput.withComponent("textarea");
 const LongInput = styled(ShortInput.withComponent("textarea"))`
   width: 80%;
+  resize: none;
 `;
 // end of emotion styles
 
