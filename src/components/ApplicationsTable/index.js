@@ -22,16 +22,18 @@ class ApplicationsTable extends React.Component {
   }
 
   filterYear(selectedOption) {
-    const temp = this.state.yearFilter.concat(
-      selectedOption[selectedOption.length - 1].label
-    );
+    const temp = [];
+    for (let i = 0; i < selectedOption.length; i++) {
+      temp.push(selectedOption[i].label);
+    }
     this.setState({ ...this.state, yearFilter: temp });
   }
 
   filterChoice(selectedOption) {
-    const temp = this.state.choiceFilter.concat(
-      selectedOption[selectedOption.length - 1].label
-    );
+    const temp = [];
+    for (let i = 0; i < selectedOption.length; i++) {
+      temp.push(selectedOption[i].label);
+    }
     this.setState({ ...this.state, choiceFilter: temp });
   }
 
