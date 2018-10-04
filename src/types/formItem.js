@@ -13,7 +13,8 @@ const FormItemTypes = {
   BOOL: "BOOL",
   CHECKBOX: "CHECKBOX",
   SHORT_RESPONSE: "SHORT_RESPONSE",
-  LONG_RESPONSE: "LONG_RESPONSE"
+  LONG_RESPONSE: "LONG_RESPONSE",
+  DROPDOWN: "DROPDOWN"
 };
 
 export { formItemProp, FormItemTypes };
