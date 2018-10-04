@@ -5,6 +5,10 @@ import styled from "react-emotion";
 import FormItem from "../FormItem";
 import { formItemProp, FormItemTypes } from "../../types/formItem";
 import Button from "../Button";
+import LoadingScreen from "../LoadingScreen";
+import SuccessScreen from "../SuccessScreen";
+import FailedScreen from "../FailedScreen";
+import { CreateStatus } from "../../api/constants";
 
 // emotion styles
 const FormItemsWrapper = styled("div")`
@@ -63,16 +67,13 @@ class Form extends React.Component {
   updateForm(id, value) {
     const newValue = {};
     newValue[id] = value;
-    this.setState(
-      prevState => ({
-        ...prevState,
-        ...newValue
-      }),
-      () => console.log(this.state)
-    );
+    this.setState(prevState => ({
+      ...prevState,
+      ...newValue
+    }));
   }
 
-  render() {
+  idleForm() {
     const { title, description, items } = this.props;
     return (
       <div className="apply-project-member">
@@ -100,6 +101,45 @@ class Form extends React.Component {
         </FormItemsWrapper>
       </div>
     );
+  }
+
+  creatingForm() {
+    return <LoadingScreen />;
+  }
+
+  failedForm() {
+    return (
+      <FailedScreen
+        link="/"
+        text="Failed to submit application :("
+        linkText="Refresh and try again"
+      />
+    );
+  }
+
+  successForm() {
+    return <SuccessScreen text="Thanks for applying!" />;
+  }
+
+  render() {
+    const { createStatus } = this.props;
+    switch (createStatus) {
+      case CreateStatus.IDLE: {
+        return this.idleForm();
+      }
+      case CreateStatus.CREATING: {
+        return this.creatingForm();
+      }
+      case CreateStatus.FAILED: {
+        return this.failedForm();
+      }
+      case CreateStatus.SUCCESS: {
+        return this.successForm();
+      }
+      default: {
+        return this.idleForm();
+      }
+    }
   }
 }
 

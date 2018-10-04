@@ -31,7 +31,7 @@ const createStatus = (state = CreateStatus.IDLE, action) => {
     case Action.CREATE_APPLICATION_REQUESTED:
       return CreateStatus.CREATING;
     case Action.CREATE_APPLICATION_SUCCEEDED:
-      return CreateStatus.IDLE;
+      return CreateStatus.SUCCESS;
     case Action.CREATE_APPLICATION_FAILED:
       return CreateStatus.FAILED;
     default:

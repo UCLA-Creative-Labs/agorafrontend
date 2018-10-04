@@ -4,9 +4,12 @@ body {
 }
 
 @import "../components/Button/style.scss";
+@import "../components/LoadingScreen/style.scss";
 @import "../components/ApplyProjectMember/style.scss";
 @import "../components/Card/style.scss";
 @import "../components/Header/style.scss";
+@import "../components/SuccessScreen/style.scss";
+@import "../components/FailedScreen/style.scss";
 @import "../components/Project/style.scss";
 @import "../components/Row/style.scss";
 @import "../components/FormItem/style.scss";
@@ -23,6 +26,8 @@ body {
   width: 100vw;
   position: absolute;
   overflow-x: hidden;
+  min-height: 100vh;
+  height: 1px;
 }
 
 .main-content {
@@ -30,11 +35,12 @@ body {
   background-color: $white;
   margin: 25px;
   padding-bottom: 50px;
+  min-height: 100%;
 }
 
 .apply-puzzle {
   position: absolute;
-  max-height: 50%;
+  max-height: 70%;
   height: 600px;
   top: 0;
   right: 0;

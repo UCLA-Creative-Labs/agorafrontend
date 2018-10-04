@@ -26,17 +26,22 @@ class ApplyProjectMember extends React.Component {
         items={PROJECT_MEMBER_FORM}
         title="So you want to work on a project, huh?"
         description="Tell us a bit about yourself."
+        createStatus={this.props.createStatus}
         onSubmit={this.onSubmitForm}
       />
     );
   }
 }
 
+const mapStateToProps = state => ({
+  createStatus: state.applications.createStatus
+});
+
 const mapDispatchToProps = dispatch => ({
   createApplication: payload => dispatch(createApplication(payload))
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(ApplyProjectMember);

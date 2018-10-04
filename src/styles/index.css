@@ -99,6 +99,9 @@ body {
     .btn:hover::before, .btn:active::before, .btn:focus::before {
       transform: scaleX(1); }
 
+.loading-screen-block {
+  text-align: center; }
+
 .apply-teaser {
   text-align: center; }
 
@@ -163,6 +166,12 @@ body {
         .hdr .links_container .link p:hover, .hdr .links_container .link p:active, .hdr .links_container .link p:focus {
           outline: 0;
           color: #ffd69e; }
+
+.success-screen-block {
+  text-align: center; }
+
+.failed-screen-block {
+  text-align: center; }
 
 .project {
   width: 50%;
@@ -345,17 +354,20 @@ td {
   background-color: #f7a9ab;
   width: 100vw;
   position: absolute;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  min-height: 100vh;
+  height: 1px; }
 
 .main-content {
   padding: 30px;
   background-color: #fbfbf8;
   margin: 25px;
-  padding-bottom: 50px; }
+  padding-bottom: 50px;
+  min-height: 100%; }
 
 .apply-puzzle {
   position: absolute;
-  max-height: 50%;
+  max-height: 70%;
   height: 600px;
   top: 0;
   right: 0;
