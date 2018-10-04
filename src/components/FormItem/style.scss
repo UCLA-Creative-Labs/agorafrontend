@@ -1,4 +1,5 @@
 @import "../../styles/colors.scss";
+@import "../../fonts/fonts.scss";
 
 .click:hover {
   cursor: pointer;
@@ -9,5 +10,14 @@
 }
 
 .app-submit-button {
-  margin-top: 80px;
+  margin-top: 0px;
+  font-size: 1.3rem;
+}
+
+.form-dropdown {
+  margin-top: 10px;
+}
+
+.form-item-container {
+  margin-bottom: 50px;
 }

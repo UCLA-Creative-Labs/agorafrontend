@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { FormItemTypes, formItemProp } from "../../types/formItem";
 import styled from "react-emotion";
+import Select from "react-select";
 
 /*
 	FormItem component is for creating entries/input areas within a Form component.
@@ -36,7 +37,7 @@ const ShortInput = styled("input")`
   background-color: transparent;
   border-color: transparent;
   outline: none;
-  font-size: 0.9rem;
+  font-size: 1rem;
 `;
 
 // const LongInput = ShortInput.withComponent("textarea");
@@ -48,21 +49,27 @@ const LongInput = styled(ShortInput.withComponent("textarea"))`
 class FormItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state =
+      props.item.type === FormItemTypes.DROPDOWN
+        ? { selectedOption: null }
+        : {};
 
     this.updateForm = this.updateForm.bind(this);
+    this.updateDropdown = this.updateDropdown.bind(this);
   }
 
   componentDidMount() {
     // Initialize options arrays for bool, checkbox
-    const { item: { options } } = this.props;
+    const {
+      item: { options }
+    } = this.props;
     if (options) {
       const newOptions = {};
       options.forEach(opt => {
         newOptions[opt] = false;
       });
 
-      this.setState({...newOptions});
+      this.setState({ ...newOptions });
     }
   }
 
@@ -79,8 +86,8 @@ class FormItem extends React.Component {
     }
     newSelect[name] = true;
 
-    this.setState(prevState => ({...newSelect}));
-  
+    this.setState(prevState => ({ ...newSelect }));
+
     // Return as array
     const vals = [];
     Object.keys(newSelect).forEach(key => {
@@ -92,30 +99,46 @@ class FormItem extends React.Component {
   }
 
   updateForm(e) {
-    const {updateForm, item: { type, id }} = this.props;
+    const {
+      updateForm,
+      item: { type, id }
+    } = this.props;
     switch (type) {
-
       case FormItemTypes.SHORT_RESPONSE:
       case FormItemTypes.LONG_RESPONSE:
-        const { target: { value }} = e;
+        const {
+          target: { value }
+        } = e;
         updateForm(id, value);
         break;
-
       case FormItemTypes.CHECKBOX:
-        const { target: { name }} = e;
+        const {
+          target: { name }
+        } = e;
         const vals = this.checkboxSelect(id, name);
-        updateForm(id, vals);
+        // pass in a single year
+        updateForm(id, vals[0]);
         break;
-
       default:
         break;
-    };
+    }
+  }
+
+  updateDropdown(selectedOption) {
+    const {
+      updateForm,
+      item: { type, id }
+    } = this.props;
+    this.setState({
+      selectedOption
+    });
+    updateForm(id, selectedOption.value);
   }
 
   checkbox(title, options, reqResponse) {
     // Reconcile html with state
     const checked = [];
-    Object.keys(this.state).forEach( key => {
+    Object.keys(this.state).forEach(key => {
       checked.push(this.state[key]);
     });
     const checkbox = options.map((option, index) => {
@@ -137,6 +160,21 @@ class FormItem extends React.Component {
     return checkbox;
   }
 
+  dropdown(value, optionStrings) {
+    const options = optionStrings.map(string => ({
+      value: string,
+      label: string
+    }));
+    return (
+      <Select
+        className="form-dropdown untitled-primary"
+        value={value}
+        onChange={this.updateDropdown}
+        options={options}
+      />
+    );
+  }
+
   short_resp(reqResponse, secure) {
     const respType = secure ? "password" : "text";
     return (
@@ -146,7 +184,7 @@ class FormItem extends React.Component {
             type={respType}
             maxLength="25"
             placeholder="type something..."
-            className="untitled-secondary-italic text-underline"
+            className="untitled-secondary text-underline gray"
             required={reqResponse}
             onChange={e => this.updateForm(e)}
           />
@@ -163,7 +201,7 @@ class FormItem extends React.Component {
             cols="40"
             rows="5"
             placeholder="type something..."
-            className="untitled-secondary-italic"
+            className="untitled-secondary gray"
             required={reqResponse}
             onChange={e => this.updateForm(e)}
           />
@@ -185,12 +223,15 @@ class FormItem extends React.Component {
       case FormItemTypes.LONG_RESPONSE:
         item = this.long_resp(title, reqResponse);
         break;
+      case FormItemTypes.DROPDOWN:
+        item = this.dropdown(this.state.selectedOption, optionsArr);
+        break;
       default:
         break;
     }
 
     return (
-      <div>
+      <div className="form-item-container">
         <InputHeader className="untitled-primary gray">
           {title}
           {reqResponse && <ReqPgraph>(Required)</ReqPgraph>}

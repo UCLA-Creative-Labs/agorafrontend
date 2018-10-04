@@ -26,15 +26,36 @@ class ApplicationClient {
    * @returns {Promise}
    */
   createApplication({
-    firstName,
-    lastName,
+    name,
     email,
-    response,
     year,
-    firstChoice
+    pastProject,
+    firstChoiceProject,
+    secondChoiceProject,
+    thirdChoiceProject,
+    whyFirstChoice,
+    whySecondChoice,
+    whyThirdChoice,
+    seeCreativeLabs,
+    links,
+    creativity
   }) {
     const URL = `${APPLICATION_HOST}/create`;
-    const params = { firstName, lastName, email, response, year, firstChoice };
+    const params = {
+      name,
+      email,
+      year,
+      pastProject,
+      firstChoiceProject,
+      secondChoiceProject,
+      thirdChoiceProject,
+      whyFirstChoice,
+      whySecondChoice,
+      whyThirdChoice,
+      seeCreativeLabs,
+      links,
+      creativity
+    };
 
     return Request.post(URL, params)
       .then(response => {
