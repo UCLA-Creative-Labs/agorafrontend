@@ -21,7 +21,7 @@ const PGraph = styled("p")`
 
 const InputHeader = styled("h2")`
   margin-top: 40px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-size: 1.3rem;
 `;
 
@@ -37,7 +37,7 @@ const ShortInput = styled("input")`
   background-color: transparent;
   border-color: transparent;
   outline: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
 `;
 
 // const LongInput = ShortInput.withComponent("textarea");
