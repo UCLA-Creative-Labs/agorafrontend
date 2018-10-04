@@ -5,6 +5,8 @@ import { FormItemTypes } from "../../types/formItem";
 import { createApplication } from "../../actions/applications";
 import { connect } from "react-redux";
 
+import { CURRENT_PROJECTS } from "../../config/config";
+
 class ApplyProjectMember extends React.Component {
   constructor(props) {
     super(props);
@@ -30,7 +32,7 @@ class ApplyProjectMember extends React.Component {
         id: "email",
         type: FormItemTypes.SHORT_RESPONSE,
         title: "Email",
-        required: false
+        required: true
       },
       {
         id: "year",
@@ -39,17 +41,57 @@ class ApplyProjectMember extends React.Component {
         options: ["1", "2", "3", "4"]
       },
       {
-        id: "why_CL",
+        id: "past_project",
         type: FormItemTypes.LONG_RESPONSE,
-        title: "Why are you interested in joining Creative Labs?",
+        title:
+          "Tell us about a project you've worked on. What were some challenges you faced and how did you overcome them?",
         required: true
       },
       {
-        id: "attend_GM",
-        type: FormItemTypes.CHECKBOX,
-        title: "Did you attend the Fall GM?",
-        options: ["Yes", "No"],
+        id: "first_choice_project",
+        type: FormItemTypes.DROPDOWN,
+        title: "Which project is your first choice?",
+        options: CURRENT_PROJECTS.map(project => project.title),
         required: true
+      },
+      {
+        id: "second_choice_project",
+        type: FormItemTypes.DROPDOWN,
+        title: "Second choice?",
+        options: CURRENT_PROJECTS.map(project => project.title),
+        required: true
+      },
+      {
+        id: "third_choice_project",
+        type: FormItemTypes.DROPDOWN,
+        title: "Third choice?",
+        options: CURRENT_PROJECTS.map(project => project.title),
+        required: true
+      },
+      {
+        id: "why_first_choice",
+        type: FormItemTypes.LONG_RESPONSE,
+        title:
+          "What skills make you a good fit for your first choice? Tell us about a time you've used them before.",
+        required: false
+      },
+      {
+        id: "improve_creative_labs",
+        type: FormItemTypes.LONG_RESPONSE,
+        title: "What would you make better about Creative Labs?",
+        required: true
+      },
+      {
+        id: "links",
+        type: FormItemTypes.LONG_RESPONSE,
+        title: "Time to brag! Drop us some links.",
+        required: false
+      },
+      {
+        id: "creativity",
+        type: FormItemTypes.LONG_RESPONSE,
+        title: "Solve for x.",
+        required: false
       }
     ];
 
