@@ -201,6 +201,8 @@ class FormItem extends React.Component {
           <LongInput
             cols="40"
             rows="5"
+            // request fails if above this length
+            maxLength="1100"
             placeholder="type something..."
             className="untitled-secondary gray"
             required={reqResponse}
