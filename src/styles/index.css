@@ -36,6 +36,9 @@ body {
 .black {
   color: #32373c; }
 
+.red {
+  color: #ef3a3a; }
+
 .lightgray {
   color: #a9a9ad; }
 
@@ -110,6 +113,9 @@ body {
 
 .black {
   color: #32373c; }
+
+.red {
+  color: #ef3a3a; }
 
 .lightgray {
   color: #a9a9ad; }
@@ -274,6 +280,9 @@ body {
 .black {
   color: #32373c; }
 
+.red {
+  color: #ef3a3a; }
+
 .lightgray {
   color: #a9a9ad; }
 
@@ -350,6 +359,9 @@ body {
     .form-item-container {
       max-width: 50%; } }
 
+.required-msg {
+  font-size: 0.8rem; }
+
 table,
 th,
 td {
@@ -408,6 +420,9 @@ td {
 
 .black {
   color: #32373c; }
+
+.red {
+  color: #ef3a3a; }
 
 .lightgray {
   color: #a9a9ad; }
