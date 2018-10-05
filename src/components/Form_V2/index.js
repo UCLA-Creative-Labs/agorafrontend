@@ -135,8 +135,8 @@ class Form extends React.Component {
   failedForm() {
     return (
       <FailedScreen
-        link="/"
-        text="Failed to submit application :("
+        link="/apply"
+        text="Our code monkeys ditched work today. Please let us know by contacting us on Facebook."
         linkText="Refresh and try again"
       />
     );
