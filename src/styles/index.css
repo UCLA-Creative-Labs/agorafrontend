@@ -473,12 +473,14 @@ td {
 
 .apply-puzzle {
   position: fixed;
-  max-height: 70%;
   height: 600px;
   top: 0;
   right: 0;
   transform: translate(100px, -225px);
   z-index: 0; }
+  @media only screen and (max-width: 600px) {
+    .apply-puzzle {
+      display: none; } }
 
 .apply-main {
   z-index: 5;
