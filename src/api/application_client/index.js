@@ -5,8 +5,8 @@ import Request from "../utils/request_api";
  * will pass through here.  The API Layer utilizes Request layer to make http requests.
  */
 
-const APPLICATION_HOST = "http://localhost:3001/apps";
-
+//const APPLICATION_HOST = "http://localhost:3001/apps";
+const APPLICATION_HOST = "https://creativelabsucla.com/api/apps";
 class ApplicationClient {
   // using singleton design pattern here
   // there should only exist one instance of ApplicationClient for our entire app
