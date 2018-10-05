@@ -6,15 +6,10 @@ import { Link } from "react-router-dom";
 // emotion styles
 const Div = styled("div")`
   text-align: center;
-  height: 100;
-  width: 100;
 `;
 
 const H1 = styled("h1")`
-  width: 1000px;
-  max-width: 80%;
-  margin: auto;
-  font-size: 4rem;
+  font-size: 5rem;
   padding: 30px;
 `;
 
@@ -26,7 +21,7 @@ const H2 = styled("h2")`
 `;
 
 const ApplyDiv = styled("div")`
-  font-size: 4rem;
+  font-size: 3rem;
   position: relative;
   padding: 0;
   transform-origin: left;
