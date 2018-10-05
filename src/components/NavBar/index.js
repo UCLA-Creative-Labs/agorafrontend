@@ -12,7 +12,11 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="navbar">
-        <div className="sentinel-primary black navbar-logo">Creative Labs.</div>
+        <div>
+          <Link className="sentinel-primary black navbar-logo" to="/">
+            Creative Labs.
+          </Link>
+        </div>
         <div className="navbar-links">
           <Link to="/apply" style={linkStyling}>
             <div className="untitled-primary lightgray navbar-link">Apply</div>

@@ -369,7 +369,8 @@ td {
 
 .navbar-logo {
   font-size: 1.6rem;
-  margin-bottom: 9px; }
+  margin-bottom: 9px;
+  text-decoration: none; }
 
 .navbar-link {
   font-size: 1rem;
