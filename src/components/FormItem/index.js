@@ -183,7 +183,7 @@ class FormItem extends React.Component {
         <div>
           <ShortInput
             type={respType}
-            maxLength="25"
+            maxLength="50"
             placeholder="type something..."
             className="untitled-secondary text-underline gray"
             required={reqResponse}
@@ -202,7 +202,7 @@ class FormItem extends React.Component {
             cols="40"
             rows="5"
             // request fails if above this length
-            maxLength="1100"
+            maxLength="1200"
             placeholder="type something..."
             className="untitled-secondary gray"
             required={reqResponse}
