@@ -231,6 +231,12 @@ class FormItem extends React.Component {
         break;
     }
 
+    const requiredMsg = (
+      <div className="required-msg red untitled-secondary">
+        Please enter an answer.
+      </div>
+    );
+
     return (
       <div className="form-item-container">
         <InputHeader className="untitled-primary gray">
@@ -238,6 +244,7 @@ class FormItem extends React.Component {
           {reqResponse && <ReqPgraph>(Required)</ReqPgraph>}
         </InputHeader>
         {item}
+        {this.props.missingReqAnswer ? requiredMsg : null}
       </div>
     );
   }

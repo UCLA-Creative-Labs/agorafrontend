@@ -30,7 +30,7 @@ const DividingLine = styled("div")`
 class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { triedSubmit: false, missingFields: [] };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateForm = this.updateForm.bind(this);
@@ -60,7 +60,23 @@ class Form extends React.Component {
   }
 
   handleSubmit() {
+    this.setState({ triedSubmit: true });
     const { onSubmit } = this.props;
+    const { items } = this.props;
+    // check for missing fields, return if any are missing
+    const missingFields = [];
+    let missingAnyField = false;
+    items.forEach(item => {
+      const formItemValue = this.state[item.id];
+      if (item.required && (formItemValue == null || formItemValue == "")) {
+        missingFields.push(item.id);
+        missingAnyField = true;
+      }
+    });
+    if (missingAnyField) {
+      this.setState({ missingFields });
+      return;
+    }
     onSubmit(this.state);
   }
 
@@ -88,8 +104,17 @@ class Form extends React.Component {
         <DividingLine />
         <FormItemsWrapper>
           {items.map((item, index) => {
+            // if missing a required answer and they tried to submit the form, tell them it's missing
+            // this should be handled in the form item component but it doesn't store its value in its own state
+            const missingReqAnswer =
+              this.state.missingFields.indexOf(item.id) > -1;
             return (
-              <FormItem key={index} item={item} updateForm={this.updateForm} />
+              <FormItem
+                key={index}
+                item={item}
+                updateForm={this.updateForm}
+                missingReqAnswer={missingReqAnswer}
+              />
             );
           })}
           <Button
