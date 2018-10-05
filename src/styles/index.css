@@ -495,3 +495,9 @@ td {
 
 .project-quarter {
   font-size: 2rem; }
+
+.landing-container {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%; }

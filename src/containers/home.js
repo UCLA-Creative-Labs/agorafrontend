@@ -9,19 +9,12 @@ const Div = styled("div")`
 `;
 
 const H1 = styled("h1")`
-  font-size: 5rem;
+  font-size: 2.5rem;
   padding: 30px;
 `;
 
-const H2 = styled("h2")`
-  width: 1000px;
-  max-width: 80%;
-  margin: auto;
-  font-size: 2rem;
-`;
-
 const ApplyDiv = styled("div")`
-  font-size: 3rem;
+  font-size: 1.75rem;
   position: relative;
   padding: 0;
   transform-origin: left;
@@ -83,12 +76,13 @@ class Home extends React.Component {
     */
 
     return (
-      <Div>
-        <H2 className="sentinel-secondary black">Creative Labs.</H2>
-        <H1 className="sentinel-secondary black">Put down your piece.</H1>
+      <Div className="landing-container">
+        <H1 className="sentinel-secondary black">
+          Creative Labs: put down your piece.
+        </H1>
         <Link to="/apply">
-          <ApplyDiv className="sentinel-secondary black navbar-link">
-            Apply now.
+          <ApplyDiv className="untitled-primary gray navbar-link">
+            Apply now
           </ApplyDiv>
         </Link>
       </Div>
