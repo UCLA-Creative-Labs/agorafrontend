@@ -1,4 +1,5 @@
 {
+  "homepage": "http://mnyu.github.io/agorafrontend",
   "name": "agorafrontend",
   "version": "0.1.0",
   "private": true,
@@ -70,9 +71,11 @@
     "start": "node scripts/start.js",
     "start-admin": "node scripts/start-admin.js",
     "build-js": "node scripts/build.js",
-    "build": "npm run build-css && npm run build-js",
+    "build": "react-scripts build",
     "test": "jest",
-    "lint": "eslint ./src --ext .js --ignore-pattern node_modules/"
+    "lint": "eslint ./src --ext .js --ignore-pattern node_modules/",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "babel-jest": "^22.4.3",
