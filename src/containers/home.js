@@ -77,7 +77,7 @@ class Home extends React.Component {
 
     return (
       <Div className="landing-container">
-        <H1 className="sentinel-secondary black">
+        <H1 className="sentinel-primary black">
           Creative Labs: put down your piece.
         </H1>
         <Link to="/apply">
