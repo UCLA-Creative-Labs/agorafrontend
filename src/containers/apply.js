@@ -13,8 +13,8 @@ class Apply extends React.Component {
       <div className="apply-content">
         <img className="apply-puzzle" src={puzzle1} />
         <div className="apply-main">
-          <ApplyProjectMember />
-          {/* <SuccessScreen text="Applications are now closed. Thanks!" /> */}
+          {/* <ApplyProjectMember /> */}
+          <SuccessScreen text="Applications are now closed. Thanks!" />
         </div>
       </div>
     );
