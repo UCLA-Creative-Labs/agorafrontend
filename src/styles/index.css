@@ -264,6 +264,8 @@ body {
   width: 500px;
   margin-right: 500px;
   display: inline-block; }
+  .project a {
+    color: white; }
   .project img {
     width: 100%; }
   .project .body h1 {

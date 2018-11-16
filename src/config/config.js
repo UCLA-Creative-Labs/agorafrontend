@@ -3,7 +3,201 @@ import { FormItemTypes } from "../types/formItem";
 const CURRENT_QUARTER = "F_18";
 
 const PROJECTS = {
+  F_16: {
+    label: "Fall 2016",
+    projects: [
+      {
+        title: "Introduction to Prototyping",
+        lead: ["Rishabh Agarwal"],
+        text: ""
+      },
+      {
+        title: "iOS for Beginners: Todo Application",
+        lead: ["Jahan Cherian"],
+        text: ""
+      },
+      {
+        title: "Interactive Motion Graphics",
+        lead: ["Rosalind Chang", "Allison Jeng"],
+        text: ""
+      },
+      {
+        title: "Animated Web Infographics",
+        lead: ["Nina Ling"],
+        text: ""
+      },
+      {
+        title: "Visualizing LA",
+        lead: ["Mihir Mathur"],
+        text: ""
+      }
+    ]
+  },
+  W_17: {
+    label: "Winter 2017",
+    projects: [
+      {
+        title: "Quotebook",
+        lead: ["Jahan Cherian"],
+        text: ""
+      },
+      {
+        title: "Philosophy of Photoshop",
+        lead: ["Ruth Shaffer"],
+        text: ""
+      },
+      {
+        title: "Synesthize",
+        lead: ["Nina Ling"],
+        text: "",
+        link: "http://www.synaesthetic.io/"
+      },
+      {
+        title: "Processing and Kinect",
+        lead: ["Anshul Aggarwal", "Rosalind Chang"],
+        text: ""
+      },
+      {
+        title: "Animated Web Infographics",
+        lead: ["Nina Ling"],
+        text: ""
+      }
+    ]
+  },
+  S_17: {
+    label: "Spring 2017",
+    projects: [
+      {
+        title: "Fashion in AR",
+        lead: ["Lilyan Kris"],
+        text: ""
+      },
+      {
+        title: "VR Child's Journey",
+        lead: ["Anshul Aggarwal", "Brendon Daugherty"],
+        text: ""
+      },
+      {
+        title: "Digital Music",
+        lead: ["Gina Kim", "Alvin Chen"],
+        text: ""
+      },
+      {
+        title: "VR Perspectives and Puzzles",
+        lead: ["Shree Dhamija"],
+        text: ""
+      },
+      {
+        title: "Physical States",
+        lead: ["Nina Ling", "Max Woo"],
+        text: ""
+      }
+    ]
+  },
+  F_17: {
+    label: "Fall 2017",
+    projects: [
+      {
+        title: "Stitched",
+        lead: ["Gina Kim", "Jane Kim"],
+        text: ""
+      },
+      {
+        title: "Gravity PlayGround",
+        lead: ["Nina Ling", "Will"],
+        text: ""
+      },
+      {
+        title: "WebGL Experience",
+        lead: ["Bryan Wong"],
+        text: ""
+      },
+      {
+        title: "Narratively",
+        lead: ["Rishabh Aggarwal", "Ellen"],
+        text: ""
+      }
+    ]
+  },
+  W_18: {
+    label: "Winter 2018",
+    projects: [
+      {
+        title: "Blitzmoji AR",
+        lead: ["Jade Bisht"],
+        text: ""
+      },
+      {
+        title: "Campus",
+        lead: ["Jason Kuang"],
+        text: ""
+      },
+      {
+        title: "Fashion Lookbook Videos",
+        lead: ["Dylan Han", "Rohan Kumar"],
+        text: ""
+      },
+      {
+        title: "Illuminate",
+        lead: ["Bryan Ong", "April Ding"],
+        text: ""
+      },
+      {
+        title: "Interactive Data Arts for Charity",
+        lead: ["Michael Yu", "Bryan Wong"],
+        text: ""
+      },
+      {
+        title: "Soundscapes",
+        lead: ["Yvonne Chen", "Rosalind Chang"],
+        text: ""
+      }
+    ]
+  },
+  S_18: {
+    label: "Spring 2018",
+    projects: [
+      {
+        title: "Introduction to Unity",
+        lead: ["Anshul Aggarwal", "Simon Zhou"],
+        text:
+          "This project focuses on offering a deep dive into virtual reality (Unity) for beginners. Each week, project members will learn a new concept in VR, including but not limited to: speed level design, interactions, animation sequencing, scripting.",
+        link: "http://cl-introtovr.surge.sh/"
+      },
+      {
+        title: "Blender3d",
+        lead: ["Kiana Abad", "Jade Bisht"],
+        text: ""
+      },
+      {
+        title: "Game & Dev",
+        lead: ["Kartik Vinayak", "Wasiq Al Mamun"],
+        text: ""
+      },
+      {
+        title: "Genie",
+        lead: ["Michael Yu", "Henry Yang"],
+        text: ""
+      },
+      {
+        title: "Orwell",
+        lead: ["Karen Fann", "Baolinh Nguyen"],
+        text: ""
+      },
+      {
+        title: "Soundscapes",
+        lead: ["Gina Kim"],
+        text: ""
+      },
+      {
+        title: "Metrospect LA Exploration Guide",
+        lead: ["Antoine Delcaryre", "Ludi Zhu"],
+        text: ""
+      }
+    ]
+  },
   F_18: {
+    label: "Fall 2018",
     projects: [
       {
         title: "Color",
@@ -157,4 +351,10 @@ const PROJECT_MEMBER_FORM = [
   }
 ];
 
-export { PROJECTS, CURRENT_PROJECTS, USERS, PROJECT_MEMBER_FORM };
+export {
+  PROJECTS,
+  CURRENT_QUARTER,
+  CURRENT_PROJECTS,
+  USERS,
+  PROJECT_MEMBER_FORM
+};

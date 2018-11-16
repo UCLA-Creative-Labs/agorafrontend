@@ -10,6 +10,11 @@ const Project = props => (
       {props.description && (
         <p className="lightgray untitled-secondary">{props.description}</p>
       )}
+      {props.link && (
+        <a target="_blank" href={props.link}>
+          Link
+        </a>
+      )}
     </div>
   </div>
 );
