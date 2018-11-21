@@ -8,12 +8,18 @@ class About extends React.Component {
 
   render() {
     const aboutStyle = {
-      margin: "4rem"
+      margin: "8rem"
     };
 
     return (
       <div style={aboutStyle}>
         <h1>about</h1>
+        <p>
+          Creative Labs provides a space for students at UCLA to work on
+          creative projects. Founded in 2016, Creative Labs was comprised of
+          mostly Design Media Arts (DESMA) and Computer Science majors but has
+          grown since to include students from all parts of campus.
+        </p>
       </div>
     );
   }

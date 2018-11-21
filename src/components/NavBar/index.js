@@ -18,6 +18,9 @@ class NavBar extends React.Component {
           </Link>
         </div>
         <div className="navbar-links">
+          <Link to="/about" style={linkStyling}>
+            <div className="untitled-primary lightgray navbar-link">About</div>
+          </Link>
           <Link to="/apply" style={linkStyling}>
             <div className="untitled-primary lightgray navbar-link">Apply</div>
           </Link>
