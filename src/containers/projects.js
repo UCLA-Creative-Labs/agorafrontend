@@ -81,7 +81,7 @@ class Projects extends React.Component {
         <div className="project-quarters">
           <Button
             color="primary"
-            label="Winter 2018"
+            label="Winter 2019"
             className="sentinel-primary darkgray project-quarter"
             onClick={() => this.mountProjectsOverlay("W_18")}
           />
