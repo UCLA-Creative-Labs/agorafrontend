@@ -70,8 +70,14 @@ const PROJECTS = {
         lead: "Lead: Sonia Xavier",
         text:
           "With being one of the busiest cities in the world, LA also brings along a massive demand for exchanging files, food, delivery, products etc. When you think globally, sending food or gifts to friends and family is often inefficient and unaffordable. In this project we will build an app that will creatively make the hectic process of “package exchange” more convenient!",
-        desired:
-          "Who we're looking for: \n\nTeam Values: Passionate, Collaborative, Creative! \n\nTech Lead, App Developers, Designers, and if you are really interested and wondering how you can contribute in a different way come talk to me!\n\nsonia.creativelabs@gmail.com\n\nNumber of People: 10"
+        desired: [
+          // split into different lines
+          "Team Values: Passionate, Collaborative, Creative!",
+          "Who we're looking for:",
+          "Tech Lead, App Developers, Designers, and if you are really interested and wondering how you can contribute in a different way come talk to me!",
+          "sonia.creativelabs@gmail.com",
+          "Number of People: 10"
+        ]
       },
       {
         title: "Glia: Mental Health Gratitude Journal",

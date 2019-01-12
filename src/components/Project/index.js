@@ -13,7 +13,15 @@ const Project = props => (
       {props.description && (
         <p className="lightgray untitled-secondary">{props.description}</p>
       )}
-      {props.desired && (
+      {// some projects have multiple lines for their desired section so in that case its an array
+      props.desired != null &&
+        props.desired instanceof Array &&
+        props.desired.map((desiredItem, index) => (
+          <p key={index} className="lightgray untitled-secondary">
+            {desiredItem}
+          </p>
+        ))}
+      {props.desired && !(props.desired instanceof Array) && (
         <p className="lightgray untitled-secondary">{props.desired}</p>
       )}
     </div>
