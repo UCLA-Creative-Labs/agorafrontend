@@ -99,9 +99,9 @@ const PROJECTS = {
         title: "Animated Interactive Learning",
         lead: "Lead: Jordan Murti",
         text:
-          "What it is: An interactive and creativity driven learning experience. For this quarter we will choose one stem course to base a series of animated videos to more effectively teach and to engage students by playing different content based on user input. This will help students learn at their own pace, and enjoy learning even more by seeing your engaging animations.",
+          "What it is: An interactive and creativity driven learning experience. For this quarter we will choose one stem course to base a series of animated videos to more effectively teach and to engage students by playing different content based on user input. This will help students learn at their own pace, and enjoy learning even more by seeing your engaging animations. If the kinds of animations to be made, just watch this video of mine! https://youtu.be/1M3MD-oqvG0, but do know that for our project we will have real people in the scene along with an interactive component.",
         desired:
-          "Who we're looking for: Beginner CS Students Welcome! Have experience using Flash or Unity? Even better! Have experience acting or teaching or just want to start by speaking in front of a camera like Bill Nye? Come Over! You also can animate and edit videos? Even Better! Lastly do you love the Science or Math enough to try and Teach it? Please Come! Also Let me know what types of programs and code you can use (Motion, After Effects, Xcode, Visual Studio, C#, HTML, etc...) Number of People: 7"
+          "Who we're looking for: Beginner Coders Welcome! Have experience acting or teaching or just want to start by speaking in front of a camera like Bill Nye? Come Over! You also can animate and edit videos? Even Better! Lastly do you love the Science or Math enough to try and Teach it? Please Come! Also Let me know what types of programs and code you can use (Motion, After Effects, Xcode, Visual Studio, C#, HTML, etc...) And lastly Tell me about your favorite class/ subject. Number of People: 7"
       },
       {
         title: "TTYL: Marketing",
