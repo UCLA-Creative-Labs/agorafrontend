@@ -203,8 +203,8 @@ const PROJECT_MEMBER_FORM = [
   },
   {
     id: "seeCreativeLabs",
-    type: FormItemTypes.LONG_RESPONSE,
-    title: "What would you like to to see from Creative Labs?",
+    type: FormItemTypes.SHORT_RESPONSE,
+    title: "What is your major?",
     required: false
   },
   {
