@@ -75,7 +75,11 @@ const PROJECTS = {
       },
       {
         title: "Mental Health Gratitude Journal",
-        text: "Coming..."
+        lead: "Lead: Daniela Sarmiento & Catherine Wang",
+        text:
+          "In this project, we aim to build a clean, no-frills mental health “gratitude journal” app made for college students. According to a 2017 report from the Center for Collegiate Mental Health, every 1 in 5 college students has depression. One of the best ways to combat depression is through the practice of gratitude. A 2017 study from the University of California, Berkeley, demonstrated that habitual gratitude - recording reasons for feeling grateful and routinely reviewing these reasons - can help to reduce toxic emotions associated with depression and even helped to positively restructure the brain. Naturally, building the habit of being grateful can be difficult for busy college students, and this app is here to help. The app provides daily notifications that prompt the user to record one thing they feel grateful for in text format, and the app also allows the user to look through and review past entries.",
+        desired:
+          "Who we're looking for: We're looking for mobile app developers who know any of the following languages/programs: React Native, or Android Studio/Java, or Swift/XCode. We're also open to UI/UX designers!"
       },
       {
         title: "Stories Around Us",
