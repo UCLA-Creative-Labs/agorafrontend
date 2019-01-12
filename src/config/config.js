@@ -55,7 +55,7 @@ const PROJECTS = {
         text:
           "What it is: The purpose of Pianotes is to translate piano playing into sheet music. There will be a virtual piano displayed on the screen, and keys on the keyboard will correspond to certain piano notes. By pressing a record button and starting to play the virtual piano, the sheet music will begin to appear on the screen as you play. Once the recording ends, the sheet music will be downloadable in PDF format. The program will also have additional features, such as the option to change the time signature (beats per measure) and key that the music is played in.  ",
         desired:
-          "Who we're looking for: I'm looking for people who are interested in music and computer science. They don't necessarily need to know how to read piano sheet music, but it would be preferred if they could. They should be well-versed in programming in Java and/or C++ as well."
+          "Who we're looking for: I'm looking for people who are interested in music and computer science. They don't necessarily need to know how to read piano sheet music, but it would be preferred if they could. They should be well-versed in programming in Java and/or C++ as well. Number of People: 4"
       },
       {
         title: "Pondi",
@@ -63,7 +63,7 @@ const PROJECTS = {
         text:
           "What it is: We are creating a virtual guided journal that sparks deep introspection and interesting conversations. With the web app, users can respond to prompts and see how their close friends answered the same questions. Of course, users can choose which of their entries private or shared. With thought-provoking prompts like “Think of something you lost recently. What are two positive experiences you gained from it?”, the journal helps people better understand their friends, and more importantly, themselves.",
         desired:
-          "Who we're looking for: We are looking for artists and designers who have UI/UX experience. We are also looking for programmers with Python back end and web development experience."
+          "Who we're looking for: We are looking for artists and designers who have UI/UX experience. We are also looking for programmers with Python back end and web development experience. Number of People: 6"
       },
       {
         title: "Package Exchange",
@@ -71,15 +71,15 @@ const PROJECTS = {
         text:
           "What it is: Having friends and family in Malaysia, Singapore, Australia, England, Italy, France, Germany and Switzerland made me hyper-aware of the inconvenience of moving products if I ever needed to send them gifts, food etc. Living in LA made me conscious of how much city traffic and product exchanges happen in the working world, there is a massive demand to get a file, package or delivery to someone. This product will creatively tackle to solve this problem by making the hectic process of exchanging more convenient!",
         desired:
-          "Who we're looking for: Tech Lead, experience with app dev, design, UI/UX, and if you are really interested and wondering how you can contribute in a different way come talk to me!"
+          "Who we're looking for: Tech Lead, experience with app dev, design, UI/UX, and if you are really interested and wondering how you can contribute in a different way come talk to me! Number of People: 10"
       },
       {
-        title: "Mental Health Gratitude Journal",
+        title: "Glia: Mental Health Gratitude Journal",
         lead: "Lead: Daniela Sarmiento & Catherine Wang",
         text:
           "In this project, we aim to build a clean, no-frills mental health “gratitude journal” app made for college students. According to a 2017 report from the Center for Collegiate Mental Health, every 1 in 5 college students has depression. One of the best ways to combat depression is through the practice of gratitude. A 2017 study from the University of California, Berkeley, demonstrated that habitual gratitude - recording reasons for feeling grateful and routinely reviewing these reasons - can help to reduce toxic emotions associated with depression and even helped to positively restructure the brain. Naturally, building the habit of being grateful can be difficult for busy college students, and this app is here to help. The app provides daily notifications that prompt the user to record one thing they feel grateful for in text format, and the app also allows the user to look through and review past entries.",
         desired:
-          "Who we're looking for: We're looking for mobile app developers who know any of the following languages/programs: React Native, or Android Studio/Java, or Swift/XCode. We're also open to UI/UX designers!"
+          "Who we're looking for: We're looking for mobile app developers who know any of the following languages/programs: React Native, or Android Studio/Java, or Swift/XCode. We're also open to UI/UX designers! Number of People: 7"
       },
       {
         title: "Stories Around Us",
@@ -87,7 +87,7 @@ const PROJECTS = {
         text:
           "What it is: For many of us these days, it feels as if the United States has never been less united. The nation has become irrevocably fractured along political and ideological lines. We believe the root of the problem is the lack of understanding. With that in mind, we want to share stories of people around us. We want to share genuine experiences of people from all backgrounds to help everyone understand where some opinions are coming from. We are aiming to create a beautiful website displaying the stories, gradually expanding our project to other social network platforms such as Instagram and Facebook. At the end of the day, we are not trying to change people’s opinions, but rather to help people understand other opinions. If you are interested to help us achieve this vision, please apply!",
         desired:
-          "Who we're looking for: Looking for front-end, back-end, full-stack web developers, photographers, designers, editors! Most importantly, we are looking for anyone passionate about our vision!"
+          "Who we're looking for: Looking for front-end, back-end, full-stack web developers, photographers, designers, editors! Most importantly, we are looking for anyone passionate about our vision! Number of People: 5"
       },
       {
         title: "Animated Interactive Learning",
@@ -95,7 +95,7 @@ const PROJECTS = {
         text:
           "What it is: An interactive and creativity driven learning experience. For this quarter we will choose one stem course to base a series of animated videos to more effectively teach and to engage students by playing different content based on user input. This will help students learn at their own pace, and enjoy learning even more by seeing your engaging animations.",
         desired:
-          "Who we're looking for: Beginner CS Students Welcome! Have experience using Flash or Unity? Even better! Have experience acting or teaching or just want to start by speaking in front of a camera like Bill Nye? Come Over! You also can animate and edit videos? Even Better! Lastly do you love the Science or Math enough to try and Teach it? Please Come! Also Let me know what types of programs and code you can use (Motion, After Effects, Xcode, Visual Studio, C#, HTML, etc...)"
+          "Who we're looking for: Beginner CS Students Welcome! Have experience using Flash or Unity? Even better! Have experience acting or teaching or just want to start by speaking in front of a camera like Bill Nye? Come Over! You also can animate and edit videos? Even Better! Lastly do you love the Science or Math enough to try and Teach it? Please Come! Also Let me know what types of programs and code you can use (Motion, After Effects, Xcode, Visual Studio, C#, HTML, etc...) Number of People: 7"
       },
       {
         title: "TTYL: Marketing",
@@ -103,7 +103,7 @@ const PROJECTS = {
         text:
           "What it is: Continuation of a project last quarter in working with a social media venture backed startup. However, this time we are tackling a different area for the company, such as marketing, brand and logo design, etc.",
         desired:
-          "Who we're looking for: I am looking for people who have a passion for marketing, know what makes people want to keep using specific apps, and have a unique perspective on different situations. Branding strategy experience is a huge plus.  Must be able to commit time once a week during the day for transit to their office."
+          "Who we're looking for: I am looking for people who have a passion for marketing, know what makes people want to keep using specific apps, and have a unique perspective on different situations. Branding strategy experience is a huge plus.  Must be able to commit time once a week during the day for transit to their office. Number of People: 5"
       },
       {
         title: "TTYL: Design",
@@ -111,7 +111,7 @@ const PROJECTS = {
         text:
           "What it is: Continuation of a project last quarter in working with a social media venture backed startup. This project team will work on the product design of an early stage social media communication app. We'll be working on implementing a broad feature, which is currently undecided and will be up to the interests of the team members.",
         desired:
-          "Who we're looking for: People interested in product design and user experience design. Must be able to commit time once a week during the day for transit to their office."
+          "Who we're looking for: People interested in product design and user experience design. Must be able to commit time once a week during the day for transit to their office. Number of People: 5"
       }
     ]
   }
