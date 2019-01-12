@@ -24,6 +24,8 @@ class ProjectsOverlay extends React.Component {
               key={index}
               title={project.title}
               description={project.text}
+              lead={project.lead}
+              desired={project.desired}
             />
           ))}
         </div>

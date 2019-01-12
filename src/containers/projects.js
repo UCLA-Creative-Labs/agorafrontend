@@ -81,9 +81,9 @@ class Projects extends React.Component {
         <div className="project-quarters">
           <Button
             color="primary"
-            label="Fall 2018"
+            label="Winter 2018"
             className="sentinel-primary darkgray project-quarter"
-            onClick={() => this.mountProjectsOverlay("F_18")}
+            onClick={() => this.mountProjectsOverlay("W_18")}
           />
         </div>
         {this.state.activeOverlay != null ? (
