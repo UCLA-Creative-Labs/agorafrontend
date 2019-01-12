@@ -69,9 +69,9 @@ const PROJECTS = {
         title: "Package Exchange",
         lead: "Lead: Sonia Xavier",
         text:
-          "What it is: Having friends and family in Malaysia, Singapore, Australia, England, Italy, France, Germany and Switzerland made me hyper-aware of the inconvenience of moving products if I ever needed to send them gifts, food etc. Living in LA made me conscious of how much city traffic and product exchanges happen in the working world, there is a massive demand to get a file, package or delivery to someone. This product will creatively tackle to solve this problem by making the hectic process of exchanging more convenient!",
+          "With being one of the busiest cities in the world, LA also brings along a massive demand for exchanging files, food, delivery, products etc. When you think globally, sending food or gifts to friends and family is often inefficient and unaffordable. In this project we will build an app that will creatively make the hectic process of “package exchange” more convenient!",
         desired:
-          "Who we're looking for: Tech Lead, experience with app dev, design, UI/UX, and if you are really interested and wondering how you can contribute in a different way come talk to me! Number of People: 10"
+          "Who we're looking for: \n\nTeam Values: Passionate, Collaborative, Creative! \n\nTech Lead, App Developers, Designers, and if you are really interested and wondering how you can contribute in a different way come talk to me!\n\nsonia.creativelabs@gmail.com\n\nNumber of People: 10"
       },
       {
         title: "Glia: Mental Health Gratitude Journal",
