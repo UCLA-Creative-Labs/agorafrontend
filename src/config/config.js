@@ -69,14 +69,14 @@ const PROJECTS = {
         title: "Package Exchange",
         lead: "Lead: Sonia Xavier",
         text:
-          "With being one of the busiest cities in the world, LA also brings along a massive demand for exchanging files, food, delivery, products etc. When you think globally, sending food or gifts to friends and family is often inefficient and unaffordable. In this project we will build an app that will creatively make the hectic process of “package exchange” more convenient!",
+          "Our project will create a simple mobile app that will make the hectic process of “package exchange” more convenient and accessible to all! Being one of the busiest cities in the world, LA brings a massive demand for exchanging files, food, delivery, products etc. One common factor in all successful projects is the ability to cater to the mass market. Our mobile app will appeal to the mass market in big cities, such as LA and New York, to inclusively serve those who exchange packages: the old, the young, the rich, the poor. Our project aims to successfully make the process of “package exchange” more clean, efficient, and affordable.",
         desired: [
           // split into different lines
-          "Team Values: Passionate, Collaborative, Creative!",
           "Who we're looking for:",
-          "Tech Lead, App Developers, Designers, and if you are really interested and wondering how you can contribute in a different way come talk to me!",
-          "sonia.creativelabs@gmail.com",
-          "Number of People: 10"
+          "Mobile app developers. Those majoring in Computer Science or interested in the field. Should be experienced in React Native, or C++, or Java, or Swift.",
+          "Taking in designers too!",
+          "Reach me for questions or if you just want to discuss: sonia.creativelabs@gmail.com",
+          "Number of People: 6"
         ]
       },
       {
