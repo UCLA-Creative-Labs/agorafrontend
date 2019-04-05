@@ -80,11 +80,16 @@ class Home extends React.Component {
         <H1 className="sentinel-primary black">
           Creative Labs: put down your piece.
         </H1>
-        <Link to="/apply">
+        {/* <Link to="/apply">
           <ApplyDiv className="untitled-primary gray navbar-link">
             Apply now
           </ApplyDiv>
-        </Link>
+        </Link> */}
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1DHxnf2xVKCwbXJ57sLww5WXZ1ijvAEdVhEUF7KwZu_OqIQ/viewform">
+          <ApplyDiv className="untitled-primary gray navbar-link">
+            Apply now
+          </ApplyDiv>
+        </a>
       </Div>
     );
   }
