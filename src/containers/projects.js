@@ -4,13 +4,10 @@ import { push } from "react-router-redux";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-import { PROJECTS, CURRENT_QUARTER } from "../config/config";
+import { PROJECTS } from "../config/config";
 
-import Header from "../components/Header";
-import Project from "../components/Project";
 import ProjectsOverlay from "../components/ProjectsOverlay";
 import Button from "../components/Button";
-import MovingArrow from "../components/MovingArrow";
 
 const ProjectQuarters = styled("div")`
   position: absolute;

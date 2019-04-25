@@ -85,6 +85,11 @@ class Landing extends React.Component {
           color="primary"
           onClick={this.createApp}
         />
+        <Button
+          label="delete application"
+          color="primary"
+          onClick={this.deleteApp}
+        />
 
         {showLoadingIcon && (
           <Button
